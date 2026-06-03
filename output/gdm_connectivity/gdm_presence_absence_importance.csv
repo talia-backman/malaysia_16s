@@ -1,0 +1,6 @@
+predictor,importance,p_value
+Geographic,46.251,0
+coast_east,5.978,0
+habitat_mangrove,5.133,0
+habitat_coral,0.79,0.16
+protected_yes,0.141,0.4

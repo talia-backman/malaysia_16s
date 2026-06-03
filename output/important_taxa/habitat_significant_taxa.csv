@@ -1,0 +1,20 @@
+taxon_id,Phylum,Class,Order,Family,Genus,taxonomy
+Taxon_98,Bacillota,Bacilli,Acholeplasmatales,Acholeplasmataceae,Acholeplasma,Acholeplasmataceae: Acholeplasma
+Taxon_95,Bacteroidota,Bacteroidia,Flavobacteriales,Crocinitomicaceae,Fluviicola,Crocinitomicaceae: Fluviicola
+Taxon_93,Bacteroidota,Bacteroidia,Flavobacteriales,Crocinitomicaceae,Salinirepens,Crocinitomicaceae: Salinirepens
+Taxon_82,Bacteroidota,Bacteroidia,Flavobacteriales,Flavobacteriaceae,NS2b marine group,Flavobacteriaceae: NS2b marine group
+Taxon_86,Bacteroidota,Bacteroidia,Flavobacteriales,Flavobacteriaceae,NS4 marine group,Flavobacteriaceae: NS4 marine group
+Taxon_74,Bacteroidota,Bacteroidia,Flavobacteriales,Flavobacteriaceae,Pseudotenacibaculum,Flavobacteriaceae: Pseudotenacibaculum
+Taxon_84,Bacteroidota,Bacteroidia,Flavobacteriales,Flavobacteriaceae,NA,Flavobacteriaceae
+Taxon_91,Bacteroidota,Bacteroidia,Flavobacteriales,NS7 marine group,NA,NS7 marine group
+Taxon_99,Cyanobacteriota,Cyanobacteriia,Synechococcales,Cyanobiaceae,Cyanobium PCC-6307,Cyanobiaceae: Cyanobium PCC-6307
+Taxon_100,Cyanobacteriota,Cyanobacteriia,Synechococcales,Cyanobiaceae,Synechococcus CC9902,Cyanobiaceae: Synechococcus CC9902
+Taxon_18,Planctomycetota,Phycisphaerae,Phycisphaerales,Phycisphaeraceae,CL500-3,Phycisphaeraceae: CL500-3
+Taxon_14,Planctomycetota,Planctomycetes,Pirellulales,Pirellulaceae,Mariniblastus,Pirellulaceae: Mariniblastus
+Taxon_11,Planctomycetota,Planctomycetes,Pirellulales,Pirellulaceae,Pirellula,Pirellulaceae: Pirellula
+Taxon_6,Planctomycetota,OM190,NA,NA,NA,Planctomycetota
+Taxon_112,Pseudomonadota,Gammaproteobacteria,Pseudomonadales,Halieaceae,OM60(NOR5) clade,Halieaceae: OM60(NOR5) clade
+Taxon_132,Pseudomonadota,Gammaproteobacteria,Pseudomonadales,Nitrincolaceae,Marinobacterium,Nitrincolaceae: Marinobacterium
+Taxon_220,Pseudomonadota,Alphaproteobacteria,Rhodobacterales,Paracoccaceae,Marivivens,Paracoccaceae: Marivivens
+Taxon_225,Pseudomonadota,Alphaproteobacteria,Rhodobacterales,Paracoccaceae,Roseovarius,Paracoccaceae: Roseovarius
+Taxon_30,Verrucomicrobiota,Verrucomicrobiia,Verrucomicrobiales,DEV007,NA,DEV007

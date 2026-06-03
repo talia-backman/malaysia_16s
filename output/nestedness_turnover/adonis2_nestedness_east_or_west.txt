@@ -1,0 +1,9 @@
+Permutation test for adonis under reduced model
+Permutation: free
+Number of permutations: 999
+
+adonis2(formula = dist_nestedness ~ east_or_west, data = meta, permutations = 999)
+          Df SumOfSqs       R2       F Pr(>F)
+Model      1 -0.52058 -0.27228 -22.471      1
+Residual 105  2.43250  1.27228               
+Total    106  1.91192  1.00000               

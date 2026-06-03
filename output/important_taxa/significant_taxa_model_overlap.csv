@@ -1,0 +1,43 @@
+taxon_id,sig_habitat,sig_coast,sig_combined,category,Phylum,Class,Order,Family,Genus,taxonomy
+Taxon_166,FALSE,TRUE,TRUE,coast_only,Pseudomonadota,Alphaproteobacteria,Rhodospirillales,AEGEAN-169 marine group,NA,AEGEAN-169 marine group
+Taxon_56,FALSE,TRUE,TRUE,coast_only,Actinomycetota,Acidimicrobiia,Actinomarinales,Actinomarinaceae,Candidatus Actinomarina,Actinomarinaceae: Candidatus Actinomarina
+Taxon_203,FALSE,TRUE,FALSE,coast_only,Pseudomonadota,Alphaproteobacteria,Hyphomicrobiales,Beijerinckiaceae,NA,Beijerinckiaceae
+Taxon_61,FALSE,TRUE,FALSE,coast_only,Bacteroidota,Bacteroidia,Chitinophagales,NA,NA,Chitinophagales
+Taxon_170,FALSE,TRUE,TRUE,coast_only,Pseudomonadota,Alphaproteobacteria,Pelagibacterales,Clade I,Clade Ia,Clade I: Clade Ia
+Taxon_162,FALSE,TRUE,FALSE,coast_only,Pseudomonadota,Gammaproteobacteria,Burkholderiales,Ferrovaceae,Ferrovum,Ferrovaceae: Ferrovum
+Taxon_85,FALSE,TRUE,TRUE,coast_only,Bacteroidota,Bacteroidia,Flavobacteriales,Flavobacteriaceae,NS5 marine group,Flavobacteriaceae: NS5 marine group
+Taxon_42,FALSE,TRUE,TRUE,coast_only,Actinomycetota,Acidimicrobiia,Microtrichales,Ilumatobacteraceae,Ilumatobacter,Ilumatobacteraceae: Ilumatobacter
+Taxon_88,FALSE,TRUE,FALSE,coast_only,Bacteroidota,Bacteroidia,Sphingobacteriales,NS11-12 marine group,NA,NS11-12 marine group
+Taxon_96,FALSE,TRUE,FALSE,coast_only,Bacteroidota,Bacteroidia,Flavobacteriales,NS9 marine group,NA,NS9 marine group
+Taxon_142,FALSE,TRUE,TRUE,coast_only,Pseudomonadota,Gammaproteobacteria,Burkholderiales,Nitrosomonadaceae,IS-44,Nitrosomonadaceae: IS-44
+Taxon_129,FALSE,TRUE,TRUE,coast_only,Pseudomonadota,Gammaproteobacteria,Pseudomonadales,OM182 clade,NA,OM182 clade
+Taxon_24,FALSE,TRUE,TRUE,coast_only,Verrucomicrobiota,Verrucomicrobiia,Pedosphaerales,Pedosphaeraceae,SCGC AAA164-E04,Pedosphaeraceae: SCGC AAA164-E04
+Taxon_137,FALSE,TRUE,TRUE,coast_only,Pseudomonadota,Gammaproteobacteria,Pseudomonadales,SAR86 clade,NA,SAR86 clade
+Taxon_171,FALSE,FALSE,TRUE,combined_only,Pseudomonadota,Alphaproteobacteria,Pelagibacterales,Clade I,Clade Ib,Clade I: Clade Ib
+Taxon_71,FALSE,FALSE,TRUE,combined_only,Bacteroidota,Bacteroidia,Cytophagales,Cyclobacteriaceae,Marinoscillum,Cyclobacteriaceae: Marinoscillum
+Taxon_44,FALSE,FALSE,TRUE,combined_only,Actinomycetota,Acidimicrobiia,Microtrichales,Ilumatobacteraceae,NA,Ilumatobacteraceae
+Taxon_43,FALSE,FALSE,TRUE,combined_only,Actinomycetota,Acidimicrobiia,Microtrichales,Ilumatobacteraceae,Desertimonas,Ilumatobacteraceae: Desertimonas
+Taxon_230,FALSE,FALSE,TRUE,combined_only,Pseudomonadota,Alphaproteobacteria,Rhodobacterales,Paracoccaceae,HIMB11,Paracoccaceae: HIMB11
+Taxon_228,FALSE,FALSE,TRUE,combined_only,Pseudomonadota,Alphaproteobacteria,Rhodobacterales,Paracoccaceae,Litorimicrobium,Paracoccaceae: Litorimicrobium
+Taxon_16,FALSE,FALSE,TRUE,combined_only,Planctomycetota,Planctomycetes,Pirellulales,Pirellulaceae,NA,Pirellulaceae
+Taxon_13,FALSE,FALSE,TRUE,combined_only,Planctomycetota,Planctomycetes,Pirellulales,Pirellulaceae,Rubripirellula,Pirellulaceae: Rubripirellula
+Taxon_204,FALSE,FALSE,TRUE,combined_only,Pseudomonadota,Alphaproteobacteria,Hyphomicrobiales,Stappiaceae,NA,Stappiaceae
+Taxon_98,TRUE,TRUE,TRUE,habitat_and_coast,Bacillota,Bacilli,Acholeplasmatales,Acholeplasmataceae,Acholeplasma,Acholeplasmataceae: Acholeplasma
+Taxon_95,TRUE,TRUE,TRUE,habitat_and_coast,Bacteroidota,Bacteroidia,Flavobacteriales,Crocinitomicaceae,Fluviicola,Crocinitomicaceae: Fluviicola
+Taxon_93,TRUE,TRUE,TRUE,habitat_and_coast,Bacteroidota,Bacteroidia,Flavobacteriales,Crocinitomicaceae,Salinirepens,Crocinitomicaceae: Salinirepens
+Taxon_99,TRUE,TRUE,TRUE,habitat_and_coast,Cyanobacteriota,Cyanobacteriia,Synechococcales,Cyanobiaceae,Cyanobium PCC-6307,Cyanobiaceae: Cyanobium PCC-6307
+Taxon_84,TRUE,TRUE,TRUE,habitat_and_coast,Bacteroidota,Bacteroidia,Flavobacteriales,Flavobacteriaceae,NA,Flavobacteriaceae
+Taxon_82,TRUE,TRUE,TRUE,habitat_and_coast,Bacteroidota,Bacteroidia,Flavobacteriales,Flavobacteriaceae,NS2b marine group,Flavobacteriaceae: NS2b marine group
+Taxon_18,TRUE,TRUE,TRUE,habitat_and_coast,Planctomycetota,Phycisphaerae,Phycisphaerales,Phycisphaeraceae,CL500-3,Phycisphaeraceae: CL500-3
+Taxon_100,TRUE,FALSE,TRUE,habitat_only,Cyanobacteriota,Cyanobacteriia,Synechococcales,Cyanobiaceae,Synechococcus CC9902,Cyanobiaceae: Synechococcus CC9902
+Taxon_30,TRUE,FALSE,TRUE,habitat_only,Verrucomicrobiota,Verrucomicrobiia,Verrucomicrobiales,DEV007,NA,DEV007
+Taxon_86,TRUE,FALSE,TRUE,habitat_only,Bacteroidota,Bacteroidia,Flavobacteriales,Flavobacteriaceae,NS4 marine group,Flavobacteriaceae: NS4 marine group
+Taxon_74,TRUE,FALSE,TRUE,habitat_only,Bacteroidota,Bacteroidia,Flavobacteriales,Flavobacteriaceae,Pseudotenacibaculum,Flavobacteriaceae: Pseudotenacibaculum
+Taxon_112,TRUE,FALSE,TRUE,habitat_only,Pseudomonadota,Gammaproteobacteria,Pseudomonadales,Halieaceae,OM60(NOR5) clade,Halieaceae: OM60(NOR5) clade
+Taxon_91,TRUE,FALSE,TRUE,habitat_only,Bacteroidota,Bacteroidia,Flavobacteriales,NS7 marine group,NA,NS7 marine group
+Taxon_132,TRUE,FALSE,TRUE,habitat_only,Pseudomonadota,Gammaproteobacteria,Pseudomonadales,Nitrincolaceae,Marinobacterium,Nitrincolaceae: Marinobacterium
+Taxon_220,TRUE,FALSE,TRUE,habitat_only,Pseudomonadota,Alphaproteobacteria,Rhodobacterales,Paracoccaceae,Marivivens,Paracoccaceae: Marivivens
+Taxon_225,TRUE,FALSE,TRUE,habitat_only,Pseudomonadota,Alphaproteobacteria,Rhodobacterales,Paracoccaceae,Roseovarius,Paracoccaceae: Roseovarius
+Taxon_14,TRUE,FALSE,TRUE,habitat_only,Planctomycetota,Planctomycetes,Pirellulales,Pirellulaceae,Mariniblastus,Pirellulaceae: Mariniblastus
+Taxon_11,TRUE,FALSE,FALSE,habitat_only,Planctomycetota,Planctomycetes,Pirellulales,Pirellulaceae,Pirellula,Pirellulaceae: Pirellula
+Taxon_6,TRUE,FALSE,TRUE,habitat_only,Planctomycetota,OM190,NA,NA,NA,Planctomycetota

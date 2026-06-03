@@ -1,0 +1,88 @@
+alpha diversity mixed models
+
+
+richness observed
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Observed ~ east_west * habitat + (1 | site_name)
+   Data: alpha2
+
+REML criterion at convergence: 1117.4
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.2053 -0.3623 -0.0735  0.2656  3.9642 
+
+Random effects:
+ Groups    Name        Variance Std.Dev.
+ site_name (Intercept) 8265     90.91   
+ Residual              1378     37.12   
+Number of obs: 110, groups:  site_name, 20
+
+Fixed effects:
+                              Estimate Std. Error      df t value Pr(>|t|)
+(Intercept)                     55.539     34.660  19.598   1.602    0.125
+east_westwest                   72.128     63.625  16.848   1.134    0.273
+habitatmangrove                 20.019     22.416 100.749   0.893    0.374
+habitatseagrass                 -8.659     22.845  96.495  -0.379    0.706
+east_westwest:habitatmangrove  -19.942     67.597  19.535  -0.295    0.771
+east_westwest:habitatseagrass  -30.808     87.401  18.103  -0.352    0.729
+
+Correlation of Fixed Effects:
+                 (Intr) est_ws hbttmn hbttsg est_wstwst:hbttm
+east_wstwst      -0.545                                      
+habittmngrv      -0.323  0.176                               
+habittsgrss      -0.242  0.132  0.491                        
+est_wstwst:hbttm  0.107 -0.720 -0.332 -0.163                 
+est_wstwst:hbtts  0.063 -0.546 -0.128 -0.261  0.524          
+
+anova type iii
+Type III Analysis of Variance Table with Satterthwaite's method
+                   Sum Sq Mean Sq NumDF  DenDF F value Pr(>F)
+east_west         2097.91 2097.91     1 15.967  1.5227 0.2351
+habitat           1070.32  535.16     2 18.925  0.3884 0.6834
+east_west:habitat  194.26   97.13     2 18.925  0.0705 0.9322
+
+shannon diversity
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: Shannon ~ east_west * habitat + (1 | site_name)
+   Data: alpha2
+
+REML criterion at convergence: 259.9
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.7187 -0.4384  0.0530  0.4480  2.3131 
+
+Random effects:
+ Groups    Name        Variance Std.Dev.
+ site_name (Intercept) 1.6686   1.2918  
+ Residual              0.3784   0.6151  
+Number of obs: 110, groups:  site_name, 20
+
+Fixed effects:
+                              Estimate Std. Error       df t value Pr(>|t|)    
+(Intercept)                     2.8383     0.5037  19.7561   5.635  1.7e-05 ***
+east_westwest                   1.1363     0.9139  16.3760   1.243    0.231    
+habitatmangrove                 0.2333     0.3660 102.8322   0.637    0.525    
+habitatseagrass                -0.5078     0.3752  98.4225  -1.353    0.179    
+east_westwest:habitatmangrove  -0.1212     0.9821  19.6715  -0.123    0.903    
+east_westwest:habitatseagrass   0.4920     1.2627  17.9888   0.390    0.701    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+                 (Intr) est_ws hbttmn hbttsg est_wstwst:hbttm
+east_wstwst      -0.551                                      
+habittmngrv      -0.363  0.200                               
+habittsgrss      -0.272  0.150  0.488                        
+est_wstwst:hbttm  0.135 -0.722 -0.373 -0.182                 
+est_wstwst:hbtts  0.081 -0.548 -0.145 -0.297  0.523          
+
+anova type iii
+Type III Analysis of Variance Table with Satterthwaite's method
+                   Sum Sq Mean Sq NumDF  DenDF F value  Pr(>F)  
+east_west         1.46700 1.46700     1 15.299  3.8771 0.06734 .
+habitat           0.23331 0.11665     2 18.968  0.3083 0.73830  
+east_west:habitat 0.11320 0.05660     2 18.968  0.1496 0.86207  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

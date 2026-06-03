@@ -1,0 +1,121 @@
+Plate	Well Position	Well Pos	sample_id	site_code	site_replicate	latitude	longitude	environmental_sample	Habitat	Protected Area	Site Name	East or West	notes	sampling_date	volume_ml	total_reads	len_mean	depth_flag
+Plate 1	A01	A	1	Man_Kukup	1	1.334569	103.430838	water	Mangrove	N	Kukup	West	Mangrove Kukup	2025-04-12 00:00:00	5000	864185	1481.76	ok
+Plate 1	B01	B	2	Man_Kukup	2	1.339308	103.417687	water	Mangrove	N	Kukup	West	Mangrove Kukup	2025-04-12 00:00:00	5000	1629232	1476.32	ok
+Plate 1	C01	C	3	Man_Kukup	3	1.32334	103.417405	water	Mangrove	N	Kukup	West	Mangrove Kukup	2025-04-12 00:00:00	5000	1061131	1480.97	ok
+Plate 1	D01	D	4	Man_Kukup	4	1.307934	103.419101	water	Mangrove	N	Kukup	West	Mangrove Kukup	2025-04-12 00:00:00	5000	716659	1478.25	ok
+Plate 1	E01	E	5	Man_Kukup	5	1.31334	103.437827	water	Mangrove	N	Kukup	West	Mangrove Kukup	2025-04-12 00:00:00	5000	749166	1475.93	ok
+Plate 1	F01	F	6	Man_Batu_Pahat	1	1.814848	102.886778	water	Mangrove	N	Batu Pahat	West	Mangrove Batu Pahat	2025-04-13 00:00:00	5000	909505	1486.17	ok
+Plate 1	G01	G	7	Man_Batu_Pahat	2	1.819224	102.890102	water	Mangrove	N	Batu Pahat	West	Mangrove Batu Pahat	2025-04-13 00:00:00	5000	1161292	1488.23	ok
+Plate 1	H01	H	RN01	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	10614	1470.05	ok
+Plate 1	A02	A	8	Man_Batu_Pahat	3	1.813331	102.893828	water	Mangrove	N	Batu Pahat	West	Mangrove Batu Pahat	2025-04-13 00:00:00	5000	2819463	1489.86	ok
+Plate 1	B02	B	9	Man_Batu_Pahat	4	1.817167	102.892885	water	Mangrove	N	Batu Pahat	West	Mangrove Batu Pahat	2025-04-13 00:00:00	5000	2794270	1487.43	ok
+Plate 1	C02	C	10	Man_Batu_Pahat	5	1.822633	102.895415	water	Mangrove	N	Batu Pahat	West	Mangrove Batu Pahat	2025-04-13 00:00:00	5000	1395210	1486.51	ok
+Plate 1	D02	D	11	Man_PPAF	1	2.400972	101.954072	water	Mangrove	N	Pasir Panjang	West	Mangrove Pasir Panjang Amenity Forest	2025-04-14 00:00:00	5000	4010454	1471.43	ok
+Plate 1	E02	E	12	Man_PPAF	2	2.404443	101.949849	water	Mangrove	N	Pasir Panjang	West	Mangrove Pasir Panjang Amenity Forest	2025-04-14 00:00:00	5000	3444971	1470.56	ok
+Plate 1	F02	F	13	Man_PPAF	3	2.40735	101.945124	water	Mangrove	N	Pasir Panjang	West	Mangrove Pasir Panjang Amenity Forest	2025-04-14 00:00:00	5000	3267644	1464.81	ok
+Plate 1	G02	G	14	Man_PPAF	4	2.408991	101.942416	water	Mangrove	N	Pasir Panjang	West	Mangrove Pasir Panjang Amenity Forest	2025-04-14 00:00:00	5000	3946333	1469.68	ok
+Plate 1	H02	H	RN02	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	14896	1460.88	ok
+Plate 1	A03	A	15	Man_PPAF	5	2.412531	101.939708	water	Mangrove	N	Pasir Panjang	West	Mangrove Pasir Panjang Amenity Forest	2025-04-14 00:00:00	5000	3250794	1467.78	ok
+Plate 1	B03	B	16	Cor_ PB_PP	1	2.416537	101.886223	water	Coral	Y	Pulau Babi	West	Coral Pulau Babi_Pulau Perjudi	2025-04-15 00:00:00	5000	1144407	1464.33	ok
+Plate 1	C03	C	17	Cor_ PB_PP	2	2.415967	101.889648	water	Coral	Y	Pulau Babi	West	Coral Pulau Babi_Pulau Perjudi	2025-04-15 00:00:00	5000	874669	1466.22	ok
+Plate 1	D03	D	18	Cor_ PB_PP	3	2.414291	101.892398	water	Coral	Y	Pulau Babi	West	Coral Pulau Babi_Pulau Perjudi	2025-04-15 00:00:00	5000	920941	1471.55	ok
+Plate 1	E03	E	19	Cor_ PB_PP	4	2.413761	101.895526	water	Coral	Y	Pulau Babi	West	Coral Pulau Babi_Pulau Perjudi	2025-04-15 00:00:00	5000	765530	1469.08	ok
+Plate 1	F03	F	20	Cor_ PB_PP	5	2.417129	101.883533	water	Coral	Y	Pulau Babi	West	Coral Pulau Babi_Pulau Perjudi	2025-04-15 00:00:00	5000	985796	1465.83	ok
+Plate 1	G03	G	21	Man_Pulau_Tinggi	1	2.287462	104.109177	water	Mangrove	Y	Pulau Tinggi	East	Mangrove Pulau Tinggi	2025-04-26 00:00:00	5000	33327	1471.98	ok
+Plate 1	H03	H	22	Man_Pulau_Tinggi	2	2.289198	104.110969	water	Mangrove	Y	Pulau Tinggi	East	Mangrove Pulau Tinggi	2025-04-26 00:00:00	5000	159503	1470.87	ok
+Plate 1	A04	A	23	Man_Pulau_Tinggi	3	2.290686	104.110262	water	Mangrove	Y	Pulau Tinggi	East	Mangrove Pulau Tinggi	2025-04-26 00:00:00	5000	259364	1479.89	ok
+Plate 1	B04	B	24	Man_Pulau_Tinggi	4	2.290271	104.108844	water	Mangrove	Y	Pulau Tinggi	East	Mangrove Pulau Tinggi	2025-04-26 00:00:00	5000	256432	1475.6	ok
+Plate 1	C04	C	25	Man_Pulau_Tinggi	5	2.289627	104.110053	water	Mangrove	Y	Pulau Tinggi	East	Mangrove Pulau Tinggi	2025-04-26 00:00:00	5000	648057	1472.55	ok
+Plate 1	D04	D	26	SeG_PulauTinggi	1	2.280441	104.113867	water	Seagrass	Y	Pulau Tinggi	East	Seagrass_PulauTinggi	2025-04-26 00:00:00	5000	121909	1475.37	ok
+Plate 1	E04	E	27	SeG_PulauTinggi	2	2.279617	104.11021	water	Seagrass	Y	Pulau Tinggi	East	Seagrass_PulauTinggi	2025-04-26 00:00:00	5000	30559	1474.4	ok
+Plate 1	F04	F	28	SeG_PulauTinggi	3	2.282247	104.106545	water	Seagrass	Y	Pulau Tinggi	East	Seagrass_PulauTinggi	2025-04-26 00:00:00	5000	84305	1474.01	ok
+Plate 1	G04	G	29	SeG_PulauTinggi	4	2.28497	104.105134	water	Seagrass	Y	Pulau Tinggi	East	Seagrass_PulauTinggi	2025-04-26 00:00:00	5000	24320	1474.47	ok
+Plate 1	H04	H	RN03	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	971	1461.2	very_low
+Plate 1	A05	A	30	SeG_PulauTinggi	5	2.288352	104.10363	water	Seagrass	Y	Pulau Tinggi	East	Seagrass_PulauTinggi	2025-04-26 00:00:00	5000	64024	1475.44	ok
+Plate 1	B05	B	31	Cor_Pulau_Tinggi	1	2.312019	104.091371	water	Coral	Y	Pulau Tinggi	East	Coral Pulau Tinggi	2025-04-26 00:00:00	5000	153919	1475.08	ok
+Plate 1	C05	C	32	Cor_Pulau_Tinggi	2	2.309456	104.09154	water	Coral	Y	Pulau Tinggi	East	Coral Pulau Tinggi	2025-04-26 00:00:00	5000	69056	1474.63	ok
+Plate 1	D05	D	33	Cor_Pulau_Tinggi	3	2.302878	104.092553	water	Coral	Y	Pulau Tinggi	East	Coral Pulau Tinggi	2025-04-26 00:00:00	5000	127581	1476.26	ok
+Plate 1	E05	E	34	Cor_Pulau_Tinggi	4	2.303181	104.092958	water	Coral	Y	Pulau Tinggi	East	Coral Pulau Tinggi	2025-04-26 00:00:00	5000	70722	1475.86	ok
+Plate 1	F05	F	35	Cor_Pulau_Tinggi	5	2.301022	104.093701	water	Coral	Y	Pulau Tinggi	East	Coral Pulau Tinggi	2025-04-26 00:00:00	5000	424028	1470.65	ok
+Plate 1	G05	G	36	Man_Nenasi	1	3.109037	103.443207	water	Mangrove	N	Nenasi	East	Mangrove Nenasi	2025-04-27 00:00:00	5000	118522	1484.58	ok
+Plate 1	H05	H	RN04	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	1636	1466.01	low
+Plate 1	A06	A	37	Man_Nenasi	2	3.101512	103.446143	water	Mangrove	N	Nenasi	East	Mangrove Nenasi	2025-04-27 00:00:00	5000	125063	1486.66	ok
+Plate 1	B06	B	38	Man_Nenasi	3	3.094182	103.442717	water	Mangrove	N	Nenasi	East	Mangrove Nenasi	2025-04-27 00:00:00	5000	65817	1481.65	ok
+Plate 1	C06	C	39	Man_Nenasi	4	3.087342	103.44027	water	Mangrove	N	Nenasi	East	Mangrove Nenasi	2025-04-27 00:00:00	5000	45363	1483.56	ok
+Plate 1	D06	D	40	Man_Nenasi	5	3.078358	103.442128	water	Mangrove	N	Nenasi	East	Mangrove Nenasi	2025-04-27 00:00:00	5000	283798	1480.31	ok
+Plate 1	E06	E	41	Cor_Pulau_Ular	1	4.053491	103.404452	water	Coral	N	Pulau Ular	East	Coral Pulau Ular	2025-04-28 00:00:00	5000	105715	1480.51	ok
+Plate 1	F06	F	42	Cor_Pulau_Ular	2	4.054416	103.409527	water	Coral	N	Pulau Ular	East	Coral Pulau Ular	2025-04-28 00:00:00	5000	301609	1483.87	ok
+Plate 1	G06	G	43	Cor_Pulau_Ular	3	4.057277	103.409519	water	Coral	N	Pulau Ular	East	Coral Pulau Ular	2025-04-28 00:00:00	5000	70744	1480.7	ok
+Plate 1	H06	H	44	Cor_Pulau_Ular	4	4.058469	103.407966	water	Coral	N	Pulau Ular	East	Coral Pulau Ular	2025-04-28 00:00:00	5000	332492	1474.67	ok
+Plate 1	A07	A	45	Cor_Pulau_Ular	5	4.05599	103.405705	water	Coral	N	Pulau Ular	East	Coral Pulau Ular	2025-04-28 00:00:00	5000	270307	1481.29	ok
+Plate 1	B07	B	46	Man_Sungai_Ular	1	4.04739	103.39389	water	Mangrove	N	Sungai Ular	East	Mangrove Sungai Ular	2025-04-28 00:00:00	5000	1491172	1473.73	ok
+Plate 1	C07	C	47	Man_Sungai_Ular	2	4.047681	103.395217	water	Mangrove	N	Sungai Ular	East	Mangrove Sungai Ular	2025-04-28 00:00:00	5000	225238	1467.2	ok
+Plate 1	D07	D	48	Man_Sungai_Ular	3	4.048489	103.395758	water	Mangrove	N	Sungai Ular	East	Mangrove Sungai Ular	2025-04-28 00:00:00	5000	2431509	1472.89	ok
+Plate 1	E07	E	49	Man_Sungai_Ular	4	4.04984	103.395527	water	Mangrove	N	Sungai Ular	East	Mangrove Sungai Ular	2025-04-28 00:00:00	5000	100920	1474.1	ok
+Plate 1	F07	F	50	Man_Sungai_Ular	5	4.050552	103.395166	water	Mangrove	N	Sungai Ular	East	Mangrove Sungai Ular	2025-04-28 00:00:00	5000	246932	1470.36	ok
+Plate 1	G07	G	51	ManSeG_Paka	1	4.657741	103.438562	water	Seagrass	N	Paka	East	Paka mix mangrove seagrass	2025-04-28 00:00:00	5000	488775	1468.88	ok
+Plate 1	H07	H	RN05	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	5743	1462.67	low
+Plate 1	A08	A	52	ManSeG_Paka	2	4.656438	103.436615	water	Seagrass	N	Paka	East	Paka mix mangrove seagrass	2025-04-28 00:00:00	5000	606169	1469.31	ok
+Plate 1	B08	B	53	ManSeG_Paka	3	4.653916	103.433807	water	Seagrass	N	Paka	East	Paka mix mangrove seagrass	2025-04-28 00:00:00	5000	1816943	1468.08	ok
+Plate 1	C08	C	54	ManSeG_Paka	4	4.648234	103.435003	water	Seagrass	N	Paka	East	Paka mix mangrove seagrass	2025-04-28 00:00:00	5000	1012227	1463.37	ok
+Plate 1	D08	D	55	ManSeG_Paka	5	4.644799	103.436867	water	Seagrass	N	Paka	East	Paka mix mangrove seagrass	2025-04-28 00:00:00	5000	1456116	1466.17	ok
+Plate 1	E08	E	56	Cor_Pulau_Intan	1	6.231933	99.71668	water	Coral	N	Pulau Intan	West	Coral Pulau Intan	2025-05-14 00:00:00	5000	498632	1476.02	ok
+Plate 1	F08	F	57	Cor_Pulau_Intan	2	6.235042	99.713494	water	Coral	N	Pulau Intan	West	Coral Pulau Intan	2025-05-14 00:00:00	5000	653437	1473.24	ok
+Plate 1	G08	G	58	Cor_Pulau_Intan	3	6.241277	99.713092	water	Coral	N	Pulau Intan	West	Coral Pulau Intan	2025-05-14 00:00:00	5000	1727522	1472.99	ok
+Plate 1	H08	H	RN06	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank		Blank	7176	1461.82	low
+Plate 1	A09	A	59	Cor_Pulau_Intan	4	6.242925	99.71689	water	Coral	N	Pulau Intan	West	Coral Pulau Intan	2025-05-14 00:00:00	5000	749704	1471.89	ok
+Plate 1	B09	B	60	Cor_Pulau_Intan	5	6.239442	99.719555	water	Coral	N	Pulau Intan	West	Coral Pulau Intan	2025-05-14 00:00:00	5000	1222513	1472.58	ok
+Plate 1	C09	C	61	Man_Selat_Nyior	1	6.217682	99.829402	water	Mangrove	N	Selat Nyior	West	Mangrove Selat Nyior	2025-05-14 00:00:00	5000	591311	1475.94	ok
+Plate 1	D09	D	62	Man_Selat_Nyior	2	6.220929	99.825029	water	Mangrove	N	Selat Nyior	West	Mangrove Selat Nyior	2025-05-14 00:00:00	5000	435117	1476.39	ok
+Plate 1	E09	E	63	Man_Selat_Nyior	3	6.224728	99.821968	water	Mangrove	N	Selat Nyior	West	Mangrove Selat Nyior	2025-05-14 00:00:00	5000	603523	1478.11	ok
+Plate 1	F09	F	64	Man_Selat_Nyior	4	6.228636	99.820188	water	Mangrove	N	Selat Nyior	West	Mangrove Selat Nyior	2025-05-14 00:00:00	5000	778742	1480.02	ok
+Plate 1	G09	G	65	Man_Selat_Nyior	5	6.235251	99.818035	water	Mangrove	N	Selat Nyior	West	Mangrove Selat Nyior	2025-05-14 00:00:00	5000	895336	1476.15	ok
+Plate 1	H09	H	66	SeG_Tanjung_Rhu	1	6.460722	99.827135	water	Seagrass	N	Tanjung Rhu	West	Seagrass Tanjung Rhu	2025-05-17 00:00:00	5000	389709	1472.89	ok
+Plate 1	A10	A	67	SeG_Tanjung_Rhu	2	6.460835	99.825327	water	Seagrass	N	Tanjung Rhu	West	Seagrass Tanjung Rhu	2025-05-17 00:00:00	5000	599133	1471.1	ok
+Plate 1	B10	B	68	SeG_Tanjung_Rhu	3	6.461043	99.823702	water	Seagrass	N	Tanjung Rhu	West	Seagrass Tanjung Rhu	2025-05-17 00:00:00	5000	1008407	1468.68	ok
+Plate 1	C10	C	69	SeG_Tanjung_Rhu	4	6.461208	99.823448	water	Seagrass	N	Tanjung Rhu	West	Seagrass Tanjung Rhu	2025-05-17 00:00:00	5000	1112028	1470.77	ok
+Plate 1	D10	D	70	SeG_Tanjung_Rhu	5	6.461547	99.819962	water	Seagrass	N	Tanjung Rhu	West	Seagrass Tanjung Rhu	2025-05-17 00:00:00	5000	835802	1470.04	ok
+Plate 1	E10	E	71	Cor_Pulau_Redang	1	5.814393	103.009382	water	Coral	Y	Pulau Redang	East	Coral Pulau Redang	2025-05-22 00:00:00	5000	19277	1471.43	ok
+Plate 1	F10	F	72	Cor_Pulau_Redang	2	5.816391	103.00963	water	Coral	Y	Pulau Redang	East	Coral Pulau Redang	2025-05-22 00:00:00	5000	19935	1472.62	ok
+Plate 1	G10	G	73	Cor_Pulau_Redang	3	5.816677	103.007751	water	Coral	Y	Pulau Redang	East	Coral Pulau Redang	2025-05-22 00:00:00	5000	16179	1474.63	ok
+Plate 1	H10	H	RN07	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	2257	1463.02	low
+Plate 1	A11	A	74	Cor_Pulau_Redang	4	5.816281	103.005989	water	Coral	Y	Pulau Redang	East	Coral Pulau Redang	2025-05-22 00:00:00	5000	27891	1476.72	ok
+Plate 1	B11	B	75	Cor_Pulau_Redang	5	5.814536	103.006378	water	Coral	Y	Pulau Redang	East	Coral Pulau Redang	2025-05-22 00:00:00	5000	48071	1476.7	ok
+Plate 1	C11	C	76	Cor_Pulau_Bidong	1	5.621594	103.056428	water	Coral	N	Pulau Bidong	East	Coral Pulau Bidong	2025-05-22 00:00:00	5000	24337	1475.81	ok
+Plate 1	D11	D	77	Cor_Pulau_Bidong	2	5.624215	103.056647	water	Coral	N	Pulau Bidong	East	Coral Pulau Bidong	2025-05-22 00:00:00	5000	84172	1478.02	ok
+Plate 1	E11	E	78	Cor_Pulau_Bidong	3	5.625977	103.057468	water	Coral	N	Pulau Bidong	East	Coral Pulau Bidong	2025-05-22 00:00:00	5000	147948	1477.93	ok
+Plate 1	F11	F	79	Cor_Pulau_Bidong	4	5.626976	103.058018	water	Coral	N	Pulau Bidong	East	Coral Pulau Bidong	2025-05-22 00:00:00	5000	37220	1470.46	ok
+Plate 1	G11	G	80	Cor_Pulau_Bidong	5	5.627685	103.059864	water	Coral	N	Pulau Bidong	East	Coral Pulau Bidong	2025-05-22 00:00:00	5000	46209	1474.59	ok
+Plate 1	H11	H	EN01	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	6985	1461.71	low
+Plate 1	A12	A	81	Man_Merang	1	5.527989	102.944516	water	Mangrove	N	Merang	East	Mangrove Merang	2025-05-22 00:00:00	5000	857685	1471.53	ok
+Plate 1	B12	B	82	Man_Merang	2	5.526065	102.943286	water	Mangrove	N	Merang	East	Mangrove Merang	2025-05-22 00:00:00	5000	2587193	1470.22	ok
+Plate 1	C12	C	83	Man_Merang	3	5.526248	102.941049	water	Mangrove	N	Merang	East	Mangrove Merang	2025-05-22 00:00:00	5000	1175751	1471.34	ok
+Plate 1	D12	D	84	Man_Merang	4	5.528314	102.940522	water	Mangrove	N	Merang	East	Mangrove Merang	2025-05-22 00:00:00	5000	916070	1470	ok
+Plate 1	E12	E	85	Man_Merang	5	5.528731	102.938759	water	Mangrove	N	Merang	East	Mangrove Merang	2025-05-22 00:00:00	5000	572942	1469.85	ok
+Plate 1	F12	F	86	Man_Penaga	1	5.517253	100.364968	water	Mangrove	N	Penaga	West	Mangrove Penaga	2025-06-09 00:00:00	5000	798665	1486.64	ok
+Plate 1	G12	G	87	Man_Penaga	2	5.51815	100.366985	water	Mangrove	N	Penaga	West	Mangrove Penaga	2025-06-09 00:00:00	5000	463689	1488.16	ok
+Plate 1	H12	H	88	Man_Penaga	3	5.519453	100.369366	water	Mangrove	N	Penaga	West	Mangrove Penaga	2025-06-09 00:00:00	5000	1382371	1464.99	ok
+Plate 2	A01	A	89	Man_Penaga	4	5.520585	100.371383	water	Mangrove	N	Penaga	West	Mangrove Penaga	2025-06-09 00:00:00	5000	940768	1468.93	ok
+Plate 2	B01	B	90	Man_Penaga	5	5.522977	100.372478	water	Mangrove	N	Penaga	West	Mangrove Penaga	2025-06-09 00:00:00	5000	1407653	1466.5	ok
+Plate 2	C01	C	91	SeG_Pulau_Kezambo	1	5.363009	100.324704	water	Seagrass	N	Pulau Kezambo	West	Seagrass Pulau Kezambo	2025-06-09 00:00:00	5000	607869	1471.23	ok
+Plate 2	D01	D	92	SeG_Pulau_Kezambo	2	5.364814	100.324618	water	Seagrass	N	Pulau Kezambo	West	Seagrass Pulau Kezambo	2025-06-09 00:00:00	5000	248009	1474.17	ok
+Plate 2	E01	E	93	SeG_Pulau_Kezambo	3	5.365017	100.326968	water	Seagrass	N	Pulau Kezambo	West	Seagrass Pulau Kezambo	2025-06-09 00:00:00	5000	179977	1475.95	ok
+Plate 2	F01	F	94	SeG_Pulau_Kezambo	4	5.36303	100.327461	water	Seagrass	N	Pulau Kezambo	West	Seagrass Pulau Kezambo	2025-06-09 00:00:00	5000	104337	1475.79	ok
+Plate 2	G01	G	95	SeG_Pulau_Kezambo	5	5.361535	100.325841	water	Seagrass	N	Pulau Kezambo	West	Seagrass Pulau Kezambo	2025-06-09 00:00:00	5000	187886	1475.56	ok
+Plate 2	H01	H	96	Man_Kuala_Sepetang	1	4.78359	100.607457	water	Mangrove	N	Kuala Sepetang	West	Mangrove Kuala Sepetang	2025-06-11 00:00:00	5000	462508	1482.95	ok
+Plate 2	A02	A	97	Man_Kuala_Sepetang	2	4.787012	100.612692	water	Mangrove	N	Kuala Sepetang	West	Mangrove Kuala Sepetang	2025-06-11 00:00:00	5000	335856	1481.06	ok
+Plate 2	B02	B	98	Man_Kuala_Sepetang	3	4.788979	100.618615	water	Mangrove	N	Kuala Sepetang	West	Mangrove Kuala Sepetang	2025-06-11 00:00:00	5000	824397	1480.59	ok
+Plate 2	C02	C	99	Man_Kuala_Sepetang	4	4.791801	100.624022	water	Mangrove	N	Kuala Sepetang	West	Mangrove Kuala Sepetang	2025-06-11 00:00:00	5000	554150	1479.23	ok
+Plate 2	D02	D	100	Man_Kuala_Sepetang	5	4.797275	100.62634	water	Mangrove	N	Kuala Sepetang	West	Mangrove Kuala Sepetang	2025-06-11 00:00:00	5000	973360	1475.76	ok
+Plate 2	E02	E	101	Cor_Pulau_Pangkor	1	4.190014	100.572274	water	Coral	N	Pulau Pangkor	West	Coral Pulau Pangkor	2025-06-11 00:00:00	5000	68375	1479.73	ok
+Plate 2	F02	F	102	Cor_Pulau_Pangkor	2	4.187189	100.543949	water	Coral	N	Pulau Pangkor	West	Coral Pulau Pangkor	2025-06-11 00:00:00	5000	29901	1472.16	ok
+Plate 2	G02	G	103	Cor_Pulau_Pangkor	3	4.192025	100.537855	water	Coral	N	Pulau Pangkor	West	Coral Pulau Pangkor	2025-06-11 00:00:00	5000	53975	1475.17	ok
+Plate 2	H02	H	104	Cor_Pulau_Pangkor	4	4.203476	100.545476	water	Coral	N	Pulau Pangkor	West	Coral Pulau Pangkor	2025-06-11 00:00:00	5000	54296	1474.98	ok
+Plate 2	A03	A	105	Cor_Pulau_Pangkor	5	4.194839	100.559803	water	Coral	N	Pulau Pangkor	West	Coral Pulau Pangkor	2025-06-11 00:00:00	5000	84447	1481.84	ok
+Plate 2	B03	B	106	Man_Pulau_Ketam	1	3.024487	101.320359	water	Mangrove	N	Pulau Ketam	West	Mangrove Pulau Ketam	2025-06-13 00:00:00	5000	195078	1479.51	ok
+Plate 2	C03	C	107	Man_Pulau_Ketam	2	3.021921	101.326184	water	Mangrove	N	Pulau Ketam	West	Mangrove Pulau Ketam	2025-06-13 00:00:00	5000	147224	1482.87	ok
+Plate 2	D03	D	108	Man_Pulau_Ketam	3	3.014735	101.325529	water	Mangrove	N	Pulau Ketam	West	Mangrove Pulau Ketam	2025-06-13 00:00:00	5000	139189	1482.37	ok
+Plate 2	E03	E	109	Man_Pulau_Ketam	4	3.016972	101.333548	water	Mangrove	N	Pulau Ketam	West	Mangrove Pulau Ketam	2025-06-13 00:00:00	5000	122060	1482.91	ok
+Plate 2	F03	F	110	Man_Pulau_Ketam	5	3.01341	101.336968	water	Mangrove	N	Pulau Ketam	West	Mangrove Pulau Ketam	2025-06-13 00:00:00	5000	149765	1482.04	ok
+Plate 2	G03	G	EN02	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	729	1471.65	very_low
+Plate 2	H03	H	EN03	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	Blank	1607	1465.8	low

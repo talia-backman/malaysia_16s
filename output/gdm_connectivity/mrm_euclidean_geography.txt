@@ -1,0 +1,13 @@
+$coef
+         comm_dist_pa        pval
+Int         0.8669759 1.000000000
+geo_dist    0.0161190 0.001001001
+
+$r.squared
+         R2        pval 
+0.053181227 0.001001001 
+
+$F.test
+           F       F.pval 
+3.184182e+02 1.001001e-03 
+

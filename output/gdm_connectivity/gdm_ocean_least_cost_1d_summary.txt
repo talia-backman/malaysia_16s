@@ -1,0 +1,80 @@
+[1] 
+[1] 
+[1] GDM Modelling Summary
+[1] Creation Date:  Mon Jun  1 17:22:04 2026
+[1] 
+[1] Name:  gdm_ocean
+[1] 
+[1] Data:  gdm_input_ocean
+[1] 
+[1] Samples:  5671
+[1] 
+[1] Geographical distance used in model fitting?  TRUE
+[1] 
+[1] NULL Deviance:  741.766
+[1] GDM Deviance:  608.366
+[1] Percent Deviance Explained:  17.984
+[1] 
+[1] Intercept:  1.548
+[1] 
+[1] PREDICTOR ORDER BY SUM OF I-SPLINE COEFFICIENTS:
+[1] 
+[1] Predictor 1: Geographic
+[1] Splines: 3
+[1] Min Knot: 0
+[1] 50% Knot: 336.787
+[1] Max Knot: 836.634
+[1] Coefficient[1]: 0.726
+[1] Coefficient[2]: 0
+[1] Coefficient[3]: 0
+[1] Sum of coefficients for Geographic: 0.726
+[1] 
+[1] Predictor 2: coast_east
+[1] Splines: 3
+[1] Min Knot: 0
+[1] 50% Knot: 0
+[1] Max Knot: 1
+[1] Coefficient[1]: 0
+[1] Coefficient[2]: 0.366
+[1] Coefficient[3]: 0
+[1] Sum of coefficients for coast_east: 0.366
+[1] 
+[1] Predictor 3: habitat_mangrove
+[1] Splines: 3
+[1] Min Knot: 0
+[1] 50% Knot: 1
+[1] Max Knot: 1
+[1] Coefficient[1]: 0
+[1] Coefficient[2]: 0.306
+[1] Coefficient[3]: 0
+[1] Sum of coefficients for habitat_mangrove: 0.306
+[1] 
+[1] Predictor 4: protected_yes
+[1] Splines: 3
+[1] Min Knot: 0
+[1] 50% Knot: 0
+[1] Max Knot: 1
+[1] Coefficient[1]: 0.174
+[1] Coefficient[2]: 0
+[1] Coefficient[3]: 0
+[1] Sum of coefficients for protected_yes: 0.174
+[1] 
+[1] Predictor 5: habitat_coral
+[1] Splines: 3
+[1] Min Knot: 0
+[1] 50% Knot: 0
+[1] Max Knot: 1
+[1] Coefficient[1]: 0
+[1] Coefficient[2]: 0.139
+[1] Coefficient[3]: 0
+[1] Sum of coefficients for habitat_coral: 0.139
+[1] 
+[1] Predictor 6: habitat_seagrass
+[1] Splines: 3
+[1] Min Knot: 0
+[1] 50% Knot: 0
+[1] Max Knot: 1
+[1] Coefficient[1]: 0
+[1] Coefficient[2]: 0
+[1] Coefficient[3]: 0
+[1] Sum of coefficients for habitat_seagrass: 0

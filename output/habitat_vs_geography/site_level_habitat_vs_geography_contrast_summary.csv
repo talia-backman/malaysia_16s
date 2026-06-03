@@ -1,0 +1,5 @@
+contrast_group,n_pairs,mean_distance,median_distance,sd_distance
+"Different habitat
+same coast",73,0.5749298540498506,0.5810811593215548,0.19179330241070747
+"Same habitat
+different coast",44,0.5683527435991877,0.5424748822458035,0.14266818198952727

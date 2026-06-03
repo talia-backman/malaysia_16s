@@ -1,0 +1,13 @@
+metric,test,n_samples,statistic_r,p
+unifrac,all,107,0.17023437162349148,0.001
+wunifrac,all,107,0.16241138797304427,0.001
+unifrac,east_only,47,0.22377172788903324,0.001
+wunifrac,east_only,47,0.37243944703739923,0.001
+unifrac,west_only,60,0.17016358464629816,0.001
+wunifrac,west_only,60,0.18795233413479115,0.001
+unifrac,habitat_coral,32,0.29724070294893734,0.001
+wunifrac,habitat_coral,32,0.354826545834839,0.001
+unifrac,habitat_mangrove,55,0.1625689992616825,0.001
+wunifrac,habitat_mangrove,55,0.17815097140535083,0.001
+unifrac,habitat_seagrass,20,0.6573138739951692,0.001
+wunifrac,habitat_seagrass,20,0.5065717382026651,0.001

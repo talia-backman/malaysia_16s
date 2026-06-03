@@ -1,0 +1,14 @@
+$coef
+                    comm_dist_pa        pval
+Int                 0.8601044846 0.985985986
+geo_dist           -0.0058247551 0.129129129
+ocean_dist_as_dist  0.0001442218 0.001001001
+
+$r.squared
+         R2        pval 
+0.095703484 0.001001001 
+
+$F.test
+           F       F.pval 
+2.999278e+02 1.001001e-03 
+
