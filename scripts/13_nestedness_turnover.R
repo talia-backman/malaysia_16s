@@ -1,8 +1,7 @@
 # 13_nestedness_turnover.R
 #
-# partition presence-absence beta diversity into turnover and nestedness components
+# sort presence-absence beta diversity into turnover and nestedness components
 # test whether community differences reflect taxon replacement or subset structure
-# save supplemental results
 
 set.seed(666)
 
@@ -18,7 +17,6 @@ source("./scripts/R/functions.R")
 # set paths
 ps_path <- "./output/16s_physeq_cleaned_w_tree.RDS"
 out_dir <- "./output/nestedness_turnover"
-
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
 # load phyloseq object
@@ -39,9 +37,8 @@ if (taxa_are_rows(ps)) { otu_pa <- t(otu_pa) }
 otu_pa[otu_pa > 0] <- 1
 otu_pa <- as.data.frame(otu_pa)
 
-# partition sorensen beta diversity
+# sort sorensen beta diversity
 beta_parts <- betapart::beta.pair(otu_pa, index.family = "sorensen")
-
 dist_turnover <- beta_parts$beta.sim
 dist_nestedness <- beta_parts$beta.sne
 dist_total_sor <- beta_parts$beta.sor
@@ -86,4 +83,4 @@ nestedness_tbl <- bind_rows(
 
 write_csv(nestedness_tbl, file.path(out_dir, "nestedness_turnover_permanova_summary.csv"))
 
-message("done. outputs in: ", out_dir)
+message("script 13 done. outputs in: ", out_dir)
