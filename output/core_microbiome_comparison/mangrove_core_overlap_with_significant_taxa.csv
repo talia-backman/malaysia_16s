@@ -1,0 +1,8 @@
+overlap_set,taxon_id,phylum,class,order,family,genus,genus_clean,taxonomy,source_table,category,sig_habitat,sig_coast,sig_combined
+habitat-associated taxa,Taxon_11,Planctomycetota,Planctomycetes,Pirellulales,Pirellulaceae,Pirellula,Pirellula,Pirellulaceae: Pirellula,habitat_significant_taxa,NA,NA,NA,NA
+habitat-associated taxa,Taxon_132,Pseudomonadota,Gammaproteobacteria,Pseudomonadales,Nitrincolaceae,Marinobacterium,Marinobacterium,Nitrincolaceae: Marinobacterium,habitat_significant_taxa,NA,NA,NA,NA
+coast-associated taxa,Taxon_42,Actinomycetota,Acidimicrobiia,Microtrichales,Ilumatobacteraceae,Ilumatobacter,Ilumatobacter,Ilumatobacteraceae: Ilumatobacter,eastwest_significant_taxa,NA,NA,NA,NA
+any significant taxa,Taxon_42,Actinomycetota,Acidimicrobiia,Microtrichales,Ilumatobacteraceae,Ilumatobacter,Ilumatobacter,Ilumatobacteraceae: Ilumatobacter,significant_taxa_model_overlap,coast_only,FALSE,TRUE,TRUE
+any significant taxa,Taxon_13,Planctomycetota,Planctomycetes,Pirellulales,Pirellulaceae,Rubripirellula,Rubripirellula,Pirellulaceae: Rubripirellula,significant_taxa_model_overlap,combined_only,FALSE,FALSE,TRUE
+any significant taxa,Taxon_132,Pseudomonadota,Gammaproteobacteria,Pseudomonadales,Nitrincolaceae,Marinobacterium,Marinobacterium,Nitrincolaceae: Marinobacterium,significant_taxa_model_overlap,habitat_only,TRUE,FALSE,TRUE
+any significant taxa,Taxon_11,Planctomycetota,Planctomycetes,Pirellulales,Pirellulaceae,Pirellula,Pirellula,Pirellulaceae: Pirellula,significant_taxa_model_overlap,habitat_only,TRUE,FALSE,FALSE
