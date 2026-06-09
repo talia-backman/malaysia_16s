@@ -158,4 +158,4 @@ figure_s4_habitat_vs_geography
 ggsave(file.path(fig_dir, "figure_s4_habitat_vs_geography.pdf"), figure_s4_habitat_vs_geography, width = 8, height = 9)
 ggsave(file.path(fig_dir, "figure_s4_habitat_vs_geography.png"), figure_s4_habitat_vs_geography, width = 8, height = 9, dpi = 300)
 
-message("done. outputs in: ", out_dir)
+message("script 12 done. outputs in: ", out_dir)

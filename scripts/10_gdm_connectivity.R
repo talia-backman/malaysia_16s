@@ -175,4 +175,4 @@ figure4_gdm
 ggsave(file.path(fig_dir, "figure4_gdm_connectivity.pdf"), figure4_gdm, width = 15, height = 4.5)
 ggsave(file.path(fig_dir, "figure4_gdm_connectivity.png"), figure4_gdm, width = 15, height = 4.5, dpi = 600)
 
-message("done. outputs in: ", out_dir)
+message("script 10 done. outputs in: ", out_dir)

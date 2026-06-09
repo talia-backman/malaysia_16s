@@ -82,4 +82,4 @@ cat("\nanova type iii\n")
 print(anova(mod_shan, type = 3))
 sink()
 
-message("done. outputs in: ", out_dir)
+message("script 6 done. outputs in: ", out_dir)

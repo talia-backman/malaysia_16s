@@ -179,7 +179,7 @@ malaysia_map <- world_sf %>% filter(admin %in% c("Malaysia", "Thailand", "Indone
 habitat_cols <- c(coral = "#440154FF", mangrove = "#21908CFF", seagrass = "#FDE725FF")
 
 p_map <- ggplot() + geom_sf(data = malaysia_map, linewidth = 0.2, fill = "grey90", color = "grey50") +
-  geom_jitter(data = pts_df, aes(x = lon, y = lat, fill = habitat), shape = 21, size = 1.5, alpha = 0.6,
+  geom_jitter(data = pts_df, aes(x = lon, y = lat, fill = habitat), shape = 21, size = 2.5, alpha = 0.6,
               width = 0.3, height = 0.3, color = "black", stroke = 0.3) +
   coord_sf(xlim = range(pts_df$lon) + c(-1.5, 1.5), ylim = range(pts_df$lat) + c(-1.5, 1.5), expand = FALSE) +
   annotation_scale(location = "bl", width_hint = 0.25) +
@@ -196,4 +196,4 @@ figure2_spatial
 ggsave(file.path(fig_dir, "figure2_spatial_connectivity.pdf"), figure2_spatial, width = 11, height = 5)
 ggsave(file.path(fig_dir, "figure2_spatial_connectivity.png"), figure2_spatial, width = 11, height = 5, dpi = 300)
 
-message("done. outputs in: ", out_dir)
+message("script 8 done. outputs in: ", out_dir)

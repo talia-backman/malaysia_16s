@@ -76,3 +76,5 @@ overlap_table <- combined_overlap %>% dplyr::select(taxon_id, phylum, class, ord
   arrange(category, genus)
 
 write_csv(overlap_table, file.path(out_dir, "mangrove_core_overlap_publication_table.csv"))
+
+message("script 14 done. outputs in: ", out_dir)

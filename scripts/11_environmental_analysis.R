@@ -108,6 +108,7 @@ env_pca_scores <- bind_cols(env_data_fixed, as_tibble(env_pca$x))
 
 capture.output(summary(env_pca), file = file.path(out_dir, "biooracle_environment_pca_summary.txt"))
 
+habitat_cols <- c(Coral = "#440154FF", Mangrove = "#21908CFF", Seagrass = "#FDE725FF")
 coast_cols <- c(East = "#39568CFF", West = "#95D840FF")
 
 p_env_pca <- ggplot(env_pca_scores, aes(PC1, PC2, color = east_or_west, shape = habitat)) +
@@ -179,4 +180,4 @@ p_nmds_envfit
 ggsave(file.path(fig_dir, "figure5_environment_envfit.pdf"), p_nmds_envfit, width = 7, height = 5)
 ggsave(file.path(fig_dir, "figure5_environment_envfit.png"), p_nmds_envfit, width = 7, height = 5, dpi = 300)
 
-message("done. outputs in: ", out_dir)
+message("script 11 done. outputs in: ", out_dir)

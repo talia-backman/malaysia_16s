@@ -111,4 +111,4 @@ betadisp_distances <- bind_rows(bd_eastwest$distances, bd_habitat$distances, bd_
 write_csv(betadisp_summary, file.path(out_dir, "betadisper_unifrac_summary.csv"))
 write_csv(betadisp_distances, file.path(out_dir, "betadisper_unifrac_distances.csv"))
 
-message("done. outputs in: ", out_dir)
+message("script 7 done. outputs in: ", out_dir)
