@@ -76,12 +76,3 @@ overlap_table <- combined_overlap %>% dplyr::select(taxon_id, phylum, class, ord
   arrange(category, genus)
 
 write_csv(overlap_table, file.path(out_dir, "mangrove_core_overlap_publication_table.csv"))
-
-# print results
-message("mangrove core genera: ", n_distinct(mangrove_core_genera$genus_clean))
-message("overlap with habitat-associated taxa: ", n_distinct(habitat_overlap$genus_clean))
-message("overlap with coast-associated taxa: ", n_distinct(coast_overlap$genus_clean))
-message("overlap with all significant taxa: ", n_distinct(combined_overlap$genus_clean))
-
-print(overlap_summary)
-print(overlap_table, n = Inf)

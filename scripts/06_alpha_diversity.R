@@ -45,15 +45,15 @@ habitat_cols <- c(coral = "#440154FF", mangrove = "#21908CFF", seagrass = "#FDE7
 
 p_rich <- alpha %>% ggplot(aes(x = east_west, y = Observed)) +
   geom_boxplot(outlier.shape = NA, fill = "grey90", color = "grey40") +
-  geom_jitter(aes(color = habitat), width = 0.15, height = 0, alpha = 0.75, size = 2.3) +
-  facet_wrap(~ habitat, scales = "free_y") + scale_color_manual(values = habitat_cols) +
-  theme_bw() + labs(x = "coast", y = "asv richness", color = "habitat")
+  geom_jitter(aes(fill = habitat), shape = 21, color = "black", width = 0.15, height = 0, alpha = 0.75, size = 2.3, stroke = 0.3) +
+  facet_wrap(~ habitat, scales = "free_y") + scale_fill_manual(values = habitat_cols) +
+  theme_bw() + labs(x = "coast", y = "asv richness", fill = "habitat")
 
 p_shan <- alpha %>% ggplot(aes(x = east_west, y = Shannon)) +
   geom_boxplot(outlier.shape = NA, fill = "grey90", color = "grey40") +
-  geom_jitter(aes(color = habitat), width = 0.15, height = 0, alpha = 0.75, size = 2.3) +
-  facet_wrap(~ habitat, scales = "free_y") + scale_color_manual(values = habitat_cols) +
-  theme_bw() + labs(x = "coast", y = "shannon diversity", color = "habitat")
+  geom_jitter(aes(fill = habitat), shape = 21, color = "black", width = 0.15, height = 0, alpha = 0.75, size = 2.3, stroke = 0.3) +
+  facet_wrap(~ habitat, scales = "free_y") + scale_fill_manual(values = habitat_cols) +
+  theme_bw() + labs(x = "coast", y = "shannon diversity", fill = "habitat")
 
 p_alpha <- (p_rich / p_shan) + plot_layout(guides = "collect") &
   theme(text = element_text(size = 14), plot.title = element_text(face = "bold"), legend.position = "none")

@@ -176,13 +176,14 @@ ggsave(file.path(fig_dir, "distance_decay_by_habitat.png"), p_habitat, width = 1
 # build map panel
 world_sf <- rnaturalearth::ne_countries(scale = "medium", returnclass = "sf")
 malaysia_map <- world_sf %>% filter(admin %in% c("Malaysia", "Thailand", "Indonesia", "Singapore", "Brunei", "Philippines")) %>% st_make_valid()
+habitat_cols <- c(coral = "#440154FF", mangrove = "#21908CFF", seagrass = "#FDE725FF")
 
 p_map <- ggplot() + geom_sf(data = malaysia_map, linewidth = 0.2, fill = "grey90", color = "grey50") +
-  geom_jitter(data = pts_df, aes(x = lon, y = lat, shape = habitat, fill = habitat), size = 2.8, alpha = 0.8,
-              width = 0.3, height = 0.3, color = "grey20", stroke = 0.25) +
+  geom_jitter(data = pts_df, aes(x = lon, y = lat, fill = habitat), shape = 21, size = 1.5, alpha = 0.6,
+              width = 0.3, height = 0.3, color = "black", stroke = 0.3) +
   coord_sf(xlim = range(pts_df$lon) + c(-1.5, 1.5), ylim = range(pts_df$lat) + c(-1.5, 1.5), expand = FALSE) +
   annotation_scale(location = "bl", width_hint = 0.25) +
-  scale_fill_manual(values = c(coral = "#440154FF", mangrove = "#21908CFF", seagrass = "#FDE725FF")) +
+  scale_fill_manual(values = habitat_cols) +
   scale_shape_manual(values = c(coral = 21, mangrove = 24, seagrass = 22)) +
   labs(x = "longitude", y = "latitude", fill = "habitat", shape = "habitat") + theme_bw()
 
