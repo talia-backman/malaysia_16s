@@ -111,10 +111,10 @@ capture.output(summary(env_pca), file = file.path(out_dir, "biooracle_environmen
 habitat_cols <- c(Coral = "#440154FF", Mangrove = "#21908CFF", Seagrass = "#FDE725FF")
 coast_cols <- c(East = "#39568CFF", West = "#95D840FF")
 
-p_env_pca <- ggplot(env_pca_scores, aes(PC1, PC2, color = east_or_west, shape = habitat)) +
-  geom_point(size = 3, alpha = 0.9) + scale_color_manual(values = coast_cols) +
-  scale_shape_manual(values = c(Coral = 16, Mangrove = 17, Seagrass = 15)) +
-  theme_bw() + labs(x = "PC1", y = "PC2", color = "coast", shape = "habitat")
+p_env_pca <- ggplot(env_pca_scores, aes(PC1, PC2)) +
+  geom_point(aes(fill = east_or_west, shape = habitat), color = "black", size = 3, alpha = 0.9, stroke = 0.3) +
+  scale_fill_manual(values = coast_cols) + scale_shape_manual(values = c(Coral = 21, Mangrove = 24,Seagrass = 22)) +
+  theme_bw() + labs(x = "PC1", y = "PC2", fill = "coast", shape = "habitat")
 
 ggsave(file.path(fig_supp_dir, "figure_s3_environment_pca.pdf"), p_env_pca, width = 7, height = 5)
 ggsave(file.path(fig_supp_dir, "figure_s3_environment_pca.png"), p_env_pca, width = 7, height = 5, dpi = 300)
@@ -167,14 +167,14 @@ scr <- as.data.frame(ord_nmds$points) %>% rownames_to_column("sample_id") %>% le
 
 p_nmds_envfit <- ggplot(scr, aes(x = MDS1, y = MDS2)) +
   stat_ellipse(aes(color = east_or_west, group = east_or_west), linewidth = 0.8, level = 0.75) +
-  geom_point(aes(color = east_or_west, shape = habitat), size = 3, alpha = 0.9) +
+  geom_point(aes(fill = east_or_west, shape = habitat), color = "black", size = 3, alpha = 0.9, stroke = 0.3) +
   geom_segment(data = envfit_vectors_plot, aes(x = 0, y = 0, xend = NMDS1_end, yend = NMDS2_end),
                inherit.aes = FALSE, arrow = arrow(length = unit(0.25, "cm")), linewidth = 0.9) +
   geom_label_repel(data = envfit_vectors_plot, aes(x = NMDS1_end, y = NMDS2_end, label = variable_clean),
                    inherit.aes = FALSE, size = 3.5, fill = "white", label.size = 0.2) +
-  scale_color_manual(values = coast_cols) + scale_shape_manual(values = c(Coral = 16, Mangrove = 17, Seagrass = 15)) +
-  theme_bw() + labs(x = "NMDS1", y = "NMDS2", color = "coast", shape = "habitat")
-
+  scale_fill_manual(values = coast_cols) + scale_color_manual(values = coast_cols) +
+  scale_shape_manual(values = c(Coral = 21, Mangrove = 24, Seagrass = 22)) + theme_bw() +
+  labs(x = "NMDS1", y = "NMDS2", fill = "coast", color = "coast", shape = "habitat")
 p_nmds_envfit
 
 ggsave(file.path(fig_dir, "figure5_environment_envfit.pdf"), p_nmds_envfit, width = 7, height = 5)
