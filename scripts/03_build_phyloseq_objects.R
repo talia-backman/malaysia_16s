@@ -74,4 +74,4 @@ sam_no_neg_df$sample_name <- NULL
 ps_no_neg <- phyloseq(otu_table(seqtab_no_neg, taxa_are_rows = FALSE), sample_data(sam_no_neg_df), taxmat)
 saveRDS(ps_no_neg, file.path(out_dir, "phyloseq_not_cleaned_noNeg.rds"))
 
-message("done. outputs in: ", out_dir)
+message("script 3 done. outputs in: ", out_dir)

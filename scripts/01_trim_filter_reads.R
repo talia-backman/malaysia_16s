@@ -99,4 +99,4 @@ if (nrow(todo) > 0) {
   }
 } else { message("all qc filtered files already exist; skipping filter step.") }
 
-message("done. outputs in: ", out_filtered)
+message("script 1 done. outputs in: ", out_filtered)

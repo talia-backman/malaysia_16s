@@ -43,4 +43,4 @@ tree$tip.label <- taxa_names(ps)[asv_order]
 ps_w_tree <- phyloseq(otu_table(ps), tax_table(ps), sample_data(ps), phy_tree(tree))
 saveRDS(ps_w_tree, file.path(out_dir, "16s_physeq_cleaned_w_tree.RDS"))
 
-message("done. outputs in: ", out_dir)
+message("script 5 done. outputs in: ", out_dir)

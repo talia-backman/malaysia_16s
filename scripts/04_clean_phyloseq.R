@@ -94,4 +94,4 @@ writeLines(c(
   paste0("final cleaned:      ", nsamples(ps_clean), " samples; ", ntaxa(ps_clean), " ASVs")
 ), con = con)
 
-message("done. outputs in: ", out_dir)
+message("script 4 done. outputs in: ", out_dir)

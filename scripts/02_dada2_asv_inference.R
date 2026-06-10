@@ -146,4 +146,4 @@ if (!file.exists(tax_rds)) {
   saveRDS(tax, tax_rds)
 } else { tax <- readRDS(tax_rds) }
 
-message("done. outputs in: ", out_dir)
+message("script 2 done. outputs in: ", out_dir)
