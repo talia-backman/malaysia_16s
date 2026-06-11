@@ -1,6 +1,6 @@
 # Malaysia Marine 16S
 
-Analysis of PacBio HiFi 16S rRNA sequencing data from Malaysian coastal marine habitats (coral, mangrove, seagrass, and open marine environments).
+Analysis of PacBio HiFi 16S rRNA sequencing data from Malaysian coastal marine habitats (coral, mangrove, seagrass).
 
 ## Dataset
 
@@ -13,11 +13,10 @@ Final dataset:
 
 ## Repository structure
 
-* `data/` – external datasets and Bio-ORACLE layers
+* `data/` – external datasets and Bio-ORACLE data
 * `scripts/` – analysis scripts
 * `output/` – intermediate and statistical outputs
 * `figures/` – manuscript figures
-* `manuscript/` – manuscript drafts
 
 ## Analysis workflow
 
