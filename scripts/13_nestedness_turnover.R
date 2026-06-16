@@ -108,6 +108,33 @@ pairwise_beta_summary <- pairwise_beta_df %>% group_by(habitat_pair) %>%
 write_csv(pairwise_beta_df, file.path(out_dir, "pairwise_sample_beta_components_focal_habitats.csv"))
 write_csv(pairwise_beta_summary, file.path(out_dir, "pairwise_beta_components_focal_habitat_summary.csv"))
 
+# test whether pairwise beta diversity components differ among focal habitat pairs
+kruskal_total_sor <- kruskal.test(beta_sor ~ habitat_pair, data = pairwise_beta_df)
+kruskal_turnover <- kruskal.test(beta_sim_turnover ~ habitat_pair, data = pairwise_beta_df)
+kruskal_nestedness <- kruskal.test(beta_sne_nestedness ~ habitat_pair, data = pairwise_beta_df)
+
+capture.output(kruskal_total_sor, file = file.path(out_dir, "kruskal_total_sorensen_focal_habitat_pairs.txt"))
+capture.output(kruskal_turnover, file = file.path(out_dir, "kruskal_turnover_focal_habitat_pairs.txt"))
+capture.output(kruskal_nestedness, file = file.path(out_dir, "kruskal_nestedness_focal_habitat_pairs.txt"))
+
+pairwise_wilcox_total_sor <- pairwise.wilcox.test(pairwise_beta_df$beta_sor, pairwise_beta_df$habitat_pair,
+  p.adjust.method = "BH")
+pairwise_wilcox_turnover <- pairwise.wilcox.test(pairwise_beta_df$beta_sim_turnover, pairwise_beta_df$habitat_pair,
+  p.adjust.method = "BH")
+pairwise_wilcox_nestedness <- pairwise.wilcox.test(pairwise_beta_df$beta_sne_nestedness,pairwise_beta_df$habitat_pair,
+  p.adjust.method = "BH")
+
+capture.output(pairwise_wilcox_total_sor,file = file.path(out_dir, "pairwise_wilcox_total_sorensen_focal_habitat_pairs.txt"))
+capture.output(pairwise_wilcox_turnover,file = file.path(out_dir, "pairwise_wilcox_turnover_focal_habitat_pairs.txt"))
+capture.output(pairwise_wilcox_nestedness,file = file.path(out_dir, "pairwise_wilcox_nestedness_focal_habitat_pairs.txt")) 
+
+pairwise_beta_stats <- tibble(metric = c("total_sorensen", "turnover", "nestedness"),
+  kruskal_chisq = c(unname(kruskal_total_sor$statistic),unname(kruskal_turnover$statistic),
+    unname(kruskal_nestedness$statistic)),
+  kruskal_p = c(kruskal_total_sor$p.value,kruskal_turnover$p.value,kruskal_nestedness$p.value))
+
+write_csv(pairwise_beta_stats,file.path(out_dir, "pairwise_beta_component_statistics.csv"))
+
 seagrass_bridge_beta_summary <- pairwise_beta_summary %>%
   select(habitat_pair, mean_total_sorensen, mean_turnover, mean_nestedness) %>%
   pivot_wider(names_from = habitat_pair, values_from = c(mean_total_sorensen, mean_turnover, mean_nestedness)) %>%

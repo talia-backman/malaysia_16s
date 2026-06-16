@@ -1,0 +1,10 @@
+
+	Pairwise comparisons using Wilcoxon rank sum test with continuity correction 
+
+data:  pairwise_beta_df$beta_sim_turnover and pairwise_beta_df$habitat_pair 
+
+                     Coral_vs_Mangrove Coral_vs_Seagrass
+Coral_vs_Seagrass    < 2e-16           -                
+Mangrove_vs_Seagrass 1.4e-15           3.0e-15          
+
+P value adjustment method: BH 
