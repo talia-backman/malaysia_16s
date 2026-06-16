@@ -83,55 +83,6 @@ nestedness_tbl <- bind_rows(
 
 write_csv(nestedness_tbl, file.path(out_dir, "nestedness_turnover_permanova_summary.csv"))
 
-# habitat ASV overlap analysis
-# tests whether seagrass shares ASVs with both mangrove and coral communities
-habitat_pa <- otu_pa %>% rownames_to_column("sample_name") %>%
-  left_join(meta %>% select(sample_name, habitat, east_or_west), by = "sample_name") %>%
-  filter(habitat %in% c("Coral", "Mangrove", "Seagrass")) %>%
-  pivot_longer(cols = -c(sample_name, habitat, east_or_west), names_to = "asv", values_to = "present") %>%
-  group_by(habitat, asv) %>% summarize(present_in_habitat = as.integer(any(present > 0)), .groups = "drop")
-
-habitat_asv_sets <- habitat_pa %>% filter(present_in_habitat == 1) %>%
-  group_by(habitat) %>% summarize(asvs = list(asv), n_asvs = n(), .groups = "drop")
-
-coral_asvs <- habitat_asv_sets %>% filter(habitat == "Coral") %>% pull(asvs) %>% pluck(1)
-mangrove_asvs <- habitat_asv_sets %>% filter(habitat == "Mangrove") %>% pull(asvs) %>% pluck(1)
-seagrass_asvs <- habitat_asv_sets %>% filter(habitat == "Seagrass") %>% pull(asvs) %>% pluck(1)
-
-habitat_pairwise_overlap <- tibble(habitat_1 = c("Coral", "Coral", "Mangrove"),
-  habitat_2 = c("Mangrove", "Seagrass", "Seagrass"),
-  shared_asvs = c(length(intersect(coral_asvs, mangrove_asvs)),
-    length(intersect(coral_asvs, seagrass_asvs)), length(intersect(mangrove_asvs, seagrass_asvs))),
-  habitat_1_asvs = c(length(coral_asvs), length(coral_asvs), length(mangrove_asvs)),
-  habitat_2_asvs = c(length(mangrove_asvs), length(seagrass_asvs), length(seagrass_asvs))) %>%
-  mutate(union_asvs = habitat_1_asvs + habitat_2_asvs - shared_asvs,
-    jaccard_similarity = shared_asvs / union_asvs,
-    sorensen_similarity = 2 * shared_asvs / (habitat_1_asvs + habitat_2_asvs))
-
-write_csv(habitat_asv_sets %>% select(habitat, n_asvs), file.path(out_dir, "habitat_asv_richness_presence_absence.csv"))
-write_csv(habitat_pairwise_overlap, file.path(out_dir, "habitat_pairwise_asv_overlap.csv"))
-
-seagrass_bridge_overlap_summary <- habitat_pairwise_overlap %>%
-  mutate(comparison = paste(habitat_1, habitat_2, sep = "_vs_")) %>%
-  select(comparison, shared_asvs, jaccard_similarity, sorensen_similarity) %>%
-  pivot_wider(names_from = comparison, values_from = c(shared_asvs, jaccard_similarity, sorensen_similarity)) %>%
-  mutate(seagrass_shares_more_asvs_with_coral_than_mangrove_does =
-      shared_asvs_Coral_vs_Seagrass > shared_asvs_Coral_vs_Mangrove,
-    seagrass_shares_more_asvs_with_mangrove_than_coral_does =
-      shared_asvs_Mangrove_vs_Seagrass > shared_asvs_Coral_vs_Mangrove,
-    seagrass_has_higher_jaccard_with_coral_than_mangrove_does =
-      jaccard_similarity_Coral_vs_Seagrass > jaccard_similarity_Coral_vs_Mangrove,
-    seagrass_has_higher_jaccard_with_mangrove_than_coral_does =
-      jaccard_similarity_Mangrove_vs_Seagrass > jaccard_similarity_Coral_vs_Mangrove,
-    seagrass_bridge_by_shared_asvs =
-      seagrass_shares_more_asvs_with_coral_than_mangrove_does &
-      seagrass_shares_more_asvs_with_mangrove_than_coral_does,
-    seagrass_bridge_by_jaccard =
-      seagrass_has_higher_jaccard_with_coral_than_mangrove_does &
-      seagrass_has_higher_jaccard_with_mangrove_than_coral_does)
-
-write_csv(seagrass_bridge_overlap_summary, file.path(out_dir, "seagrass_bridge_asv_overlap_summary.csv"))
-
 # pairwise turnover and nestedness summaries among focal habitats
 pairwise_beta_df <- tibble(
   sample_1 = rownames(as.matrix(dist_total_sor))[row(as.matrix(dist_total_sor))[lower.tri(as.matrix(dist_total_sor))]],
