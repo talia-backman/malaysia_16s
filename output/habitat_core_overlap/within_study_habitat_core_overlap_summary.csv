@@ -1,0 +1,5 @@
+comparison,focal_core_n,overlap_n,overlap_fraction
+coral_core_in_seagrass_core,5,4,0.8
+mangrove_core_in_seagrass_core,3,3,1
+coral_core_in_mangrove_core,5,3,0.6
+mangrove_core_in_coral_core,3,3,1
