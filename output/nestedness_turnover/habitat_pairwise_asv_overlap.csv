@@ -1,0 +1,4 @@
+habitat_1,habitat_2,shared_asvs,habitat_1_asvs,habitat_2_asvs,union_asvs,jaccard_similarity,sorensen_similarity
+Coral,Mangrove,579,725,1607,1753,0.3302909298345693,0.49656946826758147
+Coral,Seagrass,347,725,636,1014,0.3422090729783038,0.5099191770756797
+Mangrove,Seagrass,512,1607,636,1731,0.29578278451761986,0.456531431119037

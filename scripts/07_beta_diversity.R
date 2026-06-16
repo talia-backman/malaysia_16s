@@ -44,6 +44,54 @@ scr <- as.data.frame(ord_nmds$points) %>% rownames_to_column("sample_name") %>% 
 
 habitat_cols <- c(Coral = "#440154FF", Mangrove = "#21908CFF", Seagrass = "#FDE725FF")
 coast_cols <- c(East = "#39568CFF", West = "#95D840FF")
+
+# habitat centroid analysis using betadisper principal coordinate space
+# tests whether seagrass is compositionally intermediate between mangrove and coral communities
+bd_habitat_centroids <- vegan::betadisper(dist_unif, group = meta$habitat, type = "centroid")
+
+centroid_coords <- as.data.frame(bd_habitat_centroids$centroids) %>% rownames_to_column("habitat") %>%
+  filter(habitat %in% c("Coral", "Mangrove", "Seagrass")) %>% rename(PCoA1 = PCoA1, PCoA2 = PCoA2)
+
+centroid_distances <- centroid_coords %>% column_to_rownames("habitat") %>%
+  dist() %>% as.matrix() %>% as.data.frame() %>% rownames_to_column("habitat_1") %>%
+  pivot_longer(-habitat_1, names_to = "habitat_2", values_to = "unifrac_centroid_distance") %>%
+  filter(habitat_1 < habitat_2)
+
+write_csv(centroid_coords, file.path(out_dir, "habitat_unifrac_centroids.csv"))
+write_csv(centroid_distances, file.path(out_dir, "habitat_unifrac_centroid_distances.csv"))
+
+seagrass_intermediate_summary <- centroid_distances %>%
+  mutate(comparison = paste(habitat_1, habitat_2, sep = "_vs_")) %>%
+  select(comparison, unifrac_centroid_distance) %>% pivot_wider(names_from = comparison,
+              values_from = unifrac_centroid_distance) %>%
+  mutate(seagrass_closer_to_coral_than_mangrove_is =
+           Coral_vs_Seagrass < Coral_vs_Mangrove,
+         seagrass_closer_to_mangrove_than_coral_is =
+           Mangrove_vs_Seagrass < Coral_vs_Mangrove,
+         seagrass_intermediate =
+           seagrass_closer_to_coral_than_mangrove_is &
+           seagrass_closer_to_mangrove_than_coral_is)
+
+write_csv(seagrass_intermediate_summary, file.path(out_dir, "seagrass_intermediate_unifrac_summary.csv"))
+
+site_scores <- as.data.frame(bd_habitat_centroids$vectors) %>% rownames_to_column("sample_name") %>%
+  left_join(meta, by = "sample_name") %>% filter(habitat %in% c("Coral", "Mangrove", "Seagrass")) %>%
+  rename(PCoA1 = PCoA1, PCoA2 = PCoA2)
+
+p_habitat_unifrac_centroids <- ggplot(site_scores, aes(x = PCoA1, y = PCoA2)) +
+  geom_point(aes(fill = habitat), shape = 21, color = "black", size = 3, alpha = 0.6, stroke = 0.3) +
+  geom_point(data = centroid_coords, aes(x = PCoA1, y = PCoA2, fill = habitat),
+             shape = 23, color = "black", size = 5, stroke = 1) +
+  geom_text(data = centroid_coords, aes(x = PCoA1, y = PCoA2, label = habitat),
+            nudge_y = 0.04, size = 4) +
+  scale_fill_manual(values = habitat_cols) + theme_bw() +
+  labs(x = "PCoA1", y = "PCoA2", fill = "habitat")
+
+p_habitat_unifrac_centroids
+
+ggsave(file.path(fig_dir, "habitat_unifrac_centroids.pdf"), p_habitat_unifrac_centroids, width = 6, height = 5)
+ggsave(file.path(fig_dir, "habitat_unifrac_centroids.png"), p_habitat_unifrac_centroids, width = 6, height = 5, dpi = 300)
+
 # plot nmds panels
 p_habitat <- ggplot(scr, aes(x = MDS1, y = MDS2)) + geom_point(aes(fill = habitat), shape = 21, color = "black", size = 3, alpha = 0.85, stroke = 0.3) +
   stat_ellipse(aes(color = habitat), level = 0.75, linewidth = 0.7) + scale_fill_manual(values = habitat_cols) +
