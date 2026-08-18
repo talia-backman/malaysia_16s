@@ -10,6 +10,7 @@ library(tidyverse)
 library(phyloseq)
 library(vegan)
 library(ggplot2)
+library(patchwork)
 
 # set paths
 ps_path <- "./output/16s_physeq_cleaned_w_tree.RDS"
