@@ -31,9 +31,9 @@ meta_small <- meta %>% dplyr::select(physeq_sample_id, sample_id, habitat, east_
   mutate(habitat = as.factor(habitat), east_or_west = as.factor(east_or_west), site_code = as.factor(site_code),
          latitude = as.numeric(latitude), longitude = as.numeric(longitude))
 
-# calculate weighted unifrac distances
-dist_wunifrac <- phyloseq::distance(ps, method = "wunifrac")
-dist_mat <- as.matrix(dist_wunifrac)
+# calculate unweighted UniFrac distances
+dist_unifrac <- phyloseq::distance(ps, method = "unifrac")
+dist_mat <- as.matrix(dist_unifrac)
 
 # convert distance matrix to unique pairwise table
 pairwise_dist <- dist_mat %>% as.data.frame() %>% rownames_to_column("sample_1") %>%
@@ -108,7 +108,7 @@ ps_site <- merge_samples(ps, "site_code")
 sample_data(ps_site)$site_code <- sample_names(ps_site)
 
 site_meta <- meta_small %>% group_by(site_code) %>% summarise(habitat = first(habitat), east_or_west = first(east_or_west), .groups = "drop")
-site_dist <- phyloseq::distance(ps_site, method = "wunifrac")
+site_dist <- phyloseq::distance(ps_site, method = "unifrac")
 
 site_df <- as.matrix(site_dist) %>% as.data.frame() %>% rownames_to_column("site_1") %>%
   pivot_longer(-site_1, names_to = "site_2", values_to = "distance") %>% filter(site_1 != site_2) %>%
@@ -141,13 +141,13 @@ capture.output(site_wilcox, file = file.path(out_dir, "site_level_habitat_vs_geo
 
 # plot figure s4
 p_pairwise_categories_no_site <- ggplot(pairwise_df_no_site, aes(x = pair_category, y = distance)) +
-  geom_boxplot(outlier.alpha = 0.15) + labs(x = NULL, y = "Weighted UniFrac distance", title = "A") +
+  geom_boxplot(outlier.alpha = 0.15) + labs(x = NULL, y = "Unweighted UniFrac distance", title = "A") +
   theme_bw() + theme(axis.text.x = element_text(angle = 35, hjust = 1, size = 11),
                      axis.text.y = element_text(size = 12), axis.title.y = element_text(size = 13), plot.title = element_text(face = "bold", size = 16),
                      panel.grid.minor = element_blank())
 
 p_site_categories <- ggplot(site_df, aes(x = pair_category, y = distance)) +
-  geom_boxplot(outlier.alpha = 0.15) + labs(x = NULL, y = "Weighted UniFrac distance", title = "B") +
+  geom_boxplot(outlier.alpha = 0.15) + labs(x = NULL, y = "Unweighted UniFrac distance", title = "B") +
   theme_bw() + theme(axis.text.x = element_text(angle = 35, hjust = 1, size = 11),
                      axis.text.y = element_text(size = 12), axis.title.y = element_text(size = 13), plot.title = element_text(face = "bold", size = 16),
                      panel.grid.minor = element_blank())
