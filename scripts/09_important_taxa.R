@@ -140,18 +140,19 @@ shared_fill_limits <- c(0, max(heatmap_df$mean_rel_abund, coast_heatmap_df$mean_
 
 p_habitat_heatmap <- ggplot(heatmap_df, aes(x = habitat, y = taxonomy, fill = mean_rel_abund)) +
   geom_tile(color = "white") + scale_fill_viridis_c(option = "magma", trans = "sqrt", limits = shared_fill_limits) +
-  labs(x = NULL, y = NULL, fill = "mean\nrelative\nabundance") + theme_bw() +
+  labs(x = NULL, y = NULL, fill = "mean\nrelative\nabundance", tag = "A") + theme_bw() +
   theme(axis.text.y = element_text(size = 14), axis.text.x = element_text(size = 14),
         legend.text = element_text(size = 14), legend.title = element_text(size = 14), panel.grid = element_blank())
 
 p_coast_heatmap <- ggplot(coast_heatmap_df, aes(x = east_or_west, y = taxonomy, fill = mean_rel_abund)) +
   geom_tile(color = "white") + scale_fill_viridis_c(option = "magma", trans = "sqrt", limits = shared_fill_limits) +
-  labs(x = NULL, y = NULL, fill = "mean\nrelative\nabundance") + theme_bw() +
+  labs(x = NULL, y = NULL, fill = "mean\nrelative\nabundance", tag = "B") + theme_bw() +
   theme(axis.text.y = element_text(size = 14), axis.text.x = element_text(size = 14),
         legend.text = element_text(size = 14), legend.title = element_text(size = 14), panel.grid = element_blank())
 
 figure3_taxa <- (p_habitat_heatmap | p_coast_heatmap) + plot_layout(guides = "collect", widths = c(1.5, 1)) &
-  theme(legend.position = "right", panel.grid = element_blank())
+  theme(legend.position = "right", panel.grid = element_blank(),
+        plot.tag = element_text(face = "bold", size = 16))
 
 figure3_taxa
 

@@ -158,7 +158,8 @@ write_csv(pair_df, file.path(out_dir, "distance_decay_pairwise_data.csv"))
 # plot all-sample distance-decay
 p_all <- ggplot(pair_df, aes(x = ocean_distance_km, y = community_distance)) +
   geom_point(alpha = 0.35, size = 1) + geom_smooth(method = "loess", se = TRUE) +
-  facet_wrap(~ metric, scales = "free_y") + labs(x = "ocean least-cost distance (km)", y = "community distance") + theme_bw()
+  facet_wrap(~ metric, scales = "free_y") +
+  labs(x = "Ocean-connected distance (km)", y = "community distance", tag = "B") + theme_bw()
 
 ggsave(file.path(fig_dir, "distance_decay_all_samples.pdf"), p_all, width = 9, height = 4.5)
 ggsave(file.path(fig_dir, "distance_decay_all_samples.png"), p_all, width = 9, height = 4.5, dpi = 300)
@@ -168,32 +169,60 @@ pair_df_same_habitat <- pair_df %>% filter(habitat_1 == habitat_2) %>% mutate(ha
 
 p_habitat <- ggplot(pair_df_same_habitat, aes(x = ocean_distance_km, y = community_distance)) +
   geom_point(alpha = 0.35, size = 1) + geom_smooth(method = "loess", se = TRUE) +
-  facet_grid(metric ~ habitat, scales = "free_y") + labs(x = "ocean least-cost distance (km)", y = "community distance") + theme_bw()
+  facet_grid(metric ~ habitat, scales = "free_y") +
+  labs(x = "Ocean-connected distance (km)", y = "community distance", tag = "C") + theme_bw()
 
 ggsave(file.path(fig_dir, "distance_decay_by_habitat.pdf"), p_habitat, width = 12, height = 6)
 ggsave(file.path(fig_dir, "distance_decay_by_habitat.png"), p_habitat, width = 12, height = 6, dpi = 300)
+
+# inspect plotted site coordinates before adjusting map display positions
+coord_check <- pts_df %>% dplyr::select(east_or_west, habitat, lon, lat) %>%
+  dplyr::distinct() %>% dplyr::arrange(east_or_west, lon, lat)
+coord_check
+coord_counts <- pts_df %>% dplyr::count(east_or_west, habitat, lon, lat, name = "n_samples") %>%
+  dplyr::arrange(east_or_west, lon, lat)
+coord_counts
 
 # build map panel
 world_sf <- rnaturalearth::ne_countries(scale = "medium", returnclass = "sf")
 malaysia_map <- world_sf %>% filter(admin %in% c("Malaysia", "Thailand", "Indonesia", "Singapore", "Brunei", "Philippines")) %>% st_make_valid()
 habitat_cols <- c(coral = "#440154FF", mangrove = "#21908CFF", seagrass = "#FDE725FF")
-
+# habitat_cols_map <- scales::alpha(habitat_cols, 0.45)
+# limit to one point per sampling site / habitat
+pts_df <- pts_df %>% dplyr::left_join(meta_keep %>% dplyr::select(sample_name, site_code),by = "sample_name")
+pts_sites <- pts_df %>% dplyr::group_by(site_code, east_or_west, habitat) %>%
+  dplyr::summarise(lon = mean(lon, na.rm = TRUE),lat = mean(lat, na.rm = TRUE),n_samples = dplyr::n(),
+    .groups = "drop")
+# map
 p_map <- ggplot() + geom_sf(data = malaysia_map, linewidth = 0.2, fill = "grey90", color = "grey50") +
-  geom_jitter(data = pts_df, aes(x = lon, y = lat, fill = habitat), shape = 21, size = 2.5, alpha = 0.6,
-              width = 0.3, height = 0.3, color = "black", stroke = 0.3) +
-  coord_sf(xlim = range(pts_df$lon) + c(-1.5, 1.5), ylim = range(pts_df$lat) + c(-1.5, 1.5), expand = FALSE) +
+  geom_jitter(data = pts_sites, aes(x = lon, y = lat, fill = habitat), shape = 21, size = 3, alpha = 0.85,
+              height = 0.1, width = 0.1, color = "black", stroke = 0.3) +
+  coord_sf(xlim = range(pts_sites$lon) + c(-1.5, 1.5), ylim = range(pts_sites$lat) + c(-1.5, 1.5), expand = FALSE) +
   annotation_scale(location = "bl", width_hint = 0.25) +
-  scale_fill_manual(values = habitat_cols) +
-  scale_shape_manual(values = c(coral = 21, mangrove = 24, seagrass = 22)) +
-  labs(x = "longitude", y = "latitude", fill = "habitat", shape = "habitat") + theme_bw()
-
+  scale_fill_manual(values = habitat_cols, guide = guide_legend(override.aes = list(
+    fill = unname(habitat_cols), alpha = 1))) +
+  labs(x = "longitude", y = "latitude", fill = "habitat", tag = "A") + theme_bw()
+p_map
 # combine figure 2
 figure2_spatial <- p_map | (p_all / p_habitat)
-figure2_spatial <- figure2_spatial & theme(text = element_text(size = 14))
+figure2_spatial <- figure2_spatial &
+  theme(text = element_text(size = 14),
+        plot.tag = element_text(face = "bold", size = 16))
 
 figure2_spatial
 
 ggsave(file.path(fig_dir, "figure2_spatial_connectivity.pdf"), figure2_spatial, width = 11, height = 5)
 ggsave(file.path(fig_dir, "figure2_spatial_connectivity.png"), figure2_spatial, width = 11, height = 5, dpi = 300)
+
+# table S4
+table_s4 <- readr::read_tsv("./MetaData_eDNA_Malaysia_withQC.tsv",
+  show_col_types = FALSE) %>% janitor::clean_names() %>%
+  dplyr::filter(environmental_sample == "water") %>%
+  dplyr::transmute(Sample = paste0("S", sample_id), `Site name` = site_name,
+    `Site code` = site_code, `Site replicate` = site_replicate, Habitat = habitat,
+    Coast = east_or_west, `Protected area` = protected_area, Latitude = latitude,
+    Longitude = longitude, `Sampling date` = as.Date(sampling_date), `Volume (mL)` = volume_ml)
+
+readr::write_csv(table_s4, "./output/table_s4_sample_metadata.csv")
 
 message("script 8 done. outputs in: ", out_dir)

@@ -1,12 +1,5 @@
-=== Cleaning summary (minBoot50) ===
-Original ps:        120 samples; 2030 ASVs
-After drop Neg:     110 samples; 2030 ASVs
-After organelle rm: 110 samples; 1806 ASVs
-Final cleaned:      110 samples; 1806 ASVs
-
-=== Cleaning summary (minBoot50) ===
-Original ps:        120 samples; 2030 ASVs
-After drop Neg:     110 samples; 2030 ASVs
-After organelle rm: 110 samples; 1806 ASVs
-Final cleaned:      110 samples; 1806 ASVs
-
+cleaning summary
+original ps:        120 samples; 2030 ASVs
+after drop neg:     110 samples; 2030 ASVs
+after organelle rm: 110 samples; 1806 ASVs
+final cleaned:      110 samples; 1806 ASVs

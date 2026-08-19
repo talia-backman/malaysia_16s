@@ -1,0 +1,111 @@
+Sample,Site name,Site code,Site replicate,Habitat,Coast,Protected area,Latitude,Longitude,Sampling date,Volume (mL)
+S1,Kukup,Man_Kukup,1,Mangrove,West,N,1.334569,103.430838,2025-04-12,5000
+S2,Kukup,Man_Kukup,2,Mangrove,West,N,1.339308,103.417687,2025-04-12,5000
+S3,Kukup,Man_Kukup,3,Mangrove,West,N,1.32334,103.417405,2025-04-12,5000
+S4,Kukup,Man_Kukup,4,Mangrove,West,N,1.307934,103.419101,2025-04-12,5000
+S5,Kukup,Man_Kukup,5,Mangrove,West,N,1.31334,103.437827,2025-04-12,5000
+S6,Batu Pahat,Man_Batu_Pahat,1,Mangrove,West,N,1.814848,102.886778,2025-04-13,5000
+S7,Batu Pahat,Man_Batu_Pahat,2,Mangrove,West,N,1.819224,102.890102,2025-04-13,5000
+S8,Batu Pahat,Man_Batu_Pahat,3,Mangrove,West,N,1.813331,102.893828,2025-04-13,5000
+S9,Batu Pahat,Man_Batu_Pahat,4,Mangrove,West,N,1.817167,102.892885,2025-04-13,5000
+S10,Batu Pahat,Man_Batu_Pahat,5,Mangrove,West,N,1.822633,102.895415,2025-04-13,5000
+S11,Pasir Panjang,Man_PPAF,1,Mangrove,West,N,2.400972,101.954072,2025-04-14,5000
+S12,Pasir Panjang,Man_PPAF,2,Mangrove,West,N,2.404443,101.949849,2025-04-14,5000
+S13,Pasir Panjang,Man_PPAF,3,Mangrove,West,N,2.40735,101.945124,2025-04-14,5000
+S14,Pasir Panjang,Man_PPAF,4,Mangrove,West,N,2.408991,101.942416,2025-04-14,5000
+S15,Pasir Panjang,Man_PPAF,5,Mangrove,West,N,2.412531,101.939708,2025-04-14,5000
+S16,Pulau Babi,Cor_ PB_PP,1,Coral,West,Y,2.416537,101.886223,2025-04-15,5000
+S17,Pulau Babi,Cor_ PB_PP,2,Coral,West,Y,2.415967,101.889648,2025-04-15,5000
+S18,Pulau Babi,Cor_ PB_PP,3,Coral,West,Y,2.414291,101.892398,2025-04-15,5000
+S19,Pulau Babi,Cor_ PB_PP,4,Coral,West,Y,2.413761,101.895526,2025-04-15,5000
+S20,Pulau Babi,Cor_ PB_PP,5,Coral,West,Y,2.417129,101.883533,2025-04-15,5000
+S21,Pulau Tinggi,Man_Pulau_Tinggi,1,Mangrove,East,Y,2.287462,104.109177,2025-04-26,5000
+S22,Pulau Tinggi,Man_Pulau_Tinggi,2,Mangrove,East,Y,2.289198,104.110969,2025-04-26,5000
+S23,Pulau Tinggi,Man_Pulau_Tinggi,3,Mangrove,East,Y,2.290686,104.110262,2025-04-26,5000
+S24,Pulau Tinggi,Man_Pulau_Tinggi,4,Mangrove,East,Y,2.290271,104.108844,2025-04-26,5000
+S25,Pulau Tinggi,Man_Pulau_Tinggi,5,Mangrove,East,Y,2.289627,104.110053,2025-04-26,5000
+S26,Pulau Tinggi,SeG_PulauTinggi,1,Seagrass,East,Y,2.280441,104.113867,2025-04-26,5000
+S27,Pulau Tinggi,SeG_PulauTinggi,2,Seagrass,East,Y,2.279617,104.11021,2025-04-26,5000
+S28,Pulau Tinggi,SeG_PulauTinggi,3,Seagrass,East,Y,2.282247,104.106545,2025-04-26,5000
+S29,Pulau Tinggi,SeG_PulauTinggi,4,Seagrass,East,Y,2.28497,104.105134,2025-04-26,5000
+S30,Pulau Tinggi,SeG_PulauTinggi,5,Seagrass,East,Y,2.288352,104.10363,2025-04-26,5000
+S31,Pulau Tinggi,Cor_Pulau_Tinggi,1,Coral,East,Y,2.312019,104.091371,2025-04-26,5000
+S32,Pulau Tinggi,Cor_Pulau_Tinggi,2,Coral,East,Y,2.309456,104.09154,2025-04-26,5000
+S33,Pulau Tinggi,Cor_Pulau_Tinggi,3,Coral,East,Y,2.302878,104.092553,2025-04-26,5000
+S34,Pulau Tinggi,Cor_Pulau_Tinggi,4,Coral,East,Y,2.303181,104.092958,2025-04-26,5000
+S35,Pulau Tinggi,Cor_Pulau_Tinggi,5,Coral,East,Y,2.301022,104.093701,2025-04-26,5000
+S36,Nenasi,Man_Nenasi,1,Mangrove,East,N,3.109037,103.443207,2025-04-27,5000
+S37,Nenasi,Man_Nenasi,2,Mangrove,East,N,3.101512,103.446143,2025-04-27,5000
+S38,Nenasi,Man_Nenasi,3,Mangrove,East,N,3.094182,103.442717,2025-04-27,5000
+S39,Nenasi,Man_Nenasi,4,Mangrove,East,N,3.087342,103.44027,2025-04-27,5000
+S40,Nenasi,Man_Nenasi,5,Mangrove,East,N,3.078358,103.442128,2025-04-27,5000
+S41,Pulau Ular,Cor_Pulau_Ular,1,Coral,East,N,4.053491,103.404452,2025-04-28,5000
+S42,Pulau Ular,Cor_Pulau_Ular,2,Coral,East,N,4.054416,103.409527,2025-04-28,5000
+S43,Pulau Ular,Cor_Pulau_Ular,3,Coral,East,N,4.057277,103.409519,2025-04-28,5000
+S44,Pulau Ular,Cor_Pulau_Ular,4,Coral,East,N,4.058469,103.407966,2025-04-28,5000
+S45,Pulau Ular,Cor_Pulau_Ular,5,Coral,East,N,4.05599,103.405705,2025-04-28,5000
+S46,Sungai Ular,Man_Sungai_Ular,1,Mangrove,East,N,4.04739,103.39389,2025-04-28,5000
+S47,Sungai Ular,Man_Sungai_Ular,2,Mangrove,East,N,4.047681,103.395217,2025-04-28,5000
+S48,Sungai Ular,Man_Sungai_Ular,3,Mangrove,East,N,4.048489,103.395758,2025-04-28,5000
+S49,Sungai Ular,Man_Sungai_Ular,4,Mangrove,East,N,4.04984,103.395527,2025-04-28,5000
+S50,Sungai Ular,Man_Sungai_Ular,5,Mangrove,East,N,4.050552,103.395166,2025-04-28,5000
+S51,Paka,ManSeG_Paka,1,Seagrass,East,N,4.657741,103.438562,2025-04-28,5000
+S52,Paka,ManSeG_Paka,2,Seagrass,East,N,4.656438,103.436615,2025-04-28,5000
+S53,Paka,ManSeG_Paka,3,Seagrass,East,N,4.653916,103.433807,2025-04-28,5000
+S54,Paka,ManSeG_Paka,4,Seagrass,East,N,4.648234,103.435003,2025-04-28,5000
+S55,Paka,ManSeG_Paka,5,Seagrass,East,N,4.644799,103.436867,2025-04-28,5000
+S56,Pulau Intan,Cor_Pulau_Intan,1,Coral,West,N,6.231933,99.71668,2025-05-14,5000
+S57,Pulau Intan,Cor_Pulau_Intan,2,Coral,West,N,6.235042,99.713494,2025-05-14,5000
+S58,Pulau Intan,Cor_Pulau_Intan,3,Coral,West,N,6.241277,99.713092,2025-05-14,5000
+S59,Pulau Intan,Cor_Pulau_Intan,4,Coral,West,N,6.242925,99.71689,2025-05-14,5000
+S60,Pulau Intan,Cor_Pulau_Intan,5,Coral,West,N,6.239442,99.719555,2025-05-14,5000
+S61,Selat Nyior,Man_Selat_Nyior,1,Mangrove,West,N,6.217682,99.829402,2025-05-14,5000
+S62,Selat Nyior,Man_Selat_Nyior,2,Mangrove,West,N,6.220929,99.825029,2025-05-14,5000
+S63,Selat Nyior,Man_Selat_Nyior,3,Mangrove,West,N,6.224728,99.821968,2025-05-14,5000
+S64,Selat Nyior,Man_Selat_Nyior,4,Mangrove,West,N,6.228636,99.820188,2025-05-14,5000
+S65,Selat Nyior,Man_Selat_Nyior,5,Mangrove,West,N,6.235251,99.818035,2025-05-14,5000
+S66,Tanjung Rhu,SeG_Tanjung_Rhu,1,Seagrass,West,N,6.460722,99.827135,2025-05-17,5000
+S67,Tanjung Rhu,SeG_Tanjung_Rhu,2,Seagrass,West,N,6.460835,99.825327,2025-05-17,5000
+S68,Tanjung Rhu,SeG_Tanjung_Rhu,3,Seagrass,West,N,6.461043,99.823702,2025-05-17,5000
+S69,Tanjung Rhu,SeG_Tanjung_Rhu,4,Seagrass,West,N,6.461208,99.823448,2025-05-17,5000
+S70,Tanjung Rhu,SeG_Tanjung_Rhu,5,Seagrass,West,N,6.461547,99.819962,2025-05-17,5000
+S71,Pulau Redang,Cor_Pulau_Redang,1,Coral,East,Y,5.814393,103.009382,2025-05-22,5000
+S72,Pulau Redang,Cor_Pulau_Redang,2,Coral,East,Y,5.816391,103.00963,2025-05-22,5000
+S73,Pulau Redang,Cor_Pulau_Redang,3,Coral,East,Y,5.816677,103.007751,2025-05-22,5000
+S74,Pulau Redang,Cor_Pulau_Redang,4,Coral,East,Y,5.816281,103.005989,2025-05-22,5000
+S75,Pulau Redang,Cor_Pulau_Redang,5,Coral,East,Y,5.814536,103.006378,2025-05-22,5000
+S76,Pulau Bidong,Cor_Pulau_Bidong,1,Coral,East,N,5.621594,103.056428,2025-05-22,5000
+S77,Pulau Bidong,Cor_Pulau_Bidong,2,Coral,East,N,5.624215,103.056647,2025-05-22,5000
+S78,Pulau Bidong,Cor_Pulau_Bidong,3,Coral,East,N,5.625977,103.057468,2025-05-22,5000
+S79,Pulau Bidong,Cor_Pulau_Bidong,4,Coral,East,N,5.626976,103.058018,2025-05-22,5000
+S80,Pulau Bidong,Cor_Pulau_Bidong,5,Coral,East,N,5.627685,103.059864,2025-05-22,5000
+S81,Merang,Man_Merang,1,Mangrove,East,N,5.527989,102.944516,2025-05-22,5000
+S82,Merang,Man_Merang,2,Mangrove,East,N,5.526065,102.943286,2025-05-22,5000
+S83,Merang,Man_Merang,3,Mangrove,East,N,5.526248,102.941049,2025-05-22,5000
+S84,Merang,Man_Merang,4,Mangrove,East,N,5.528314,102.940522,2025-05-22,5000
+S85,Merang,Man_Merang,5,Mangrove,East,N,5.528731,102.938759,2025-05-22,5000
+S86,Penaga,Man_Penaga,1,Mangrove,West,N,5.517253,100.364968,2025-06-09,5000
+S87,Penaga,Man_Penaga,2,Mangrove,West,N,5.51815,100.366985,2025-06-09,5000
+S88,Penaga,Man_Penaga,3,Mangrove,West,N,5.519453,100.369366,2025-06-09,5000
+S89,Penaga,Man_Penaga,4,Mangrove,West,N,5.520585,100.371383,2025-06-09,5000
+S90,Penaga,Man_Penaga,5,Mangrove,West,N,5.522977,100.372478,2025-06-09,5000
+S91,Pulau Kezambo,SeG_Pulau_Kezambo,1,Seagrass,West,N,5.363009,100.324704,2025-06-09,5000
+S92,Pulau Kezambo,SeG_Pulau_Kezambo,2,Seagrass,West,N,5.364814,100.324618,2025-06-09,5000
+S93,Pulau Kezambo,SeG_Pulau_Kezambo,3,Seagrass,West,N,5.365017,100.326968,2025-06-09,5000
+S94,Pulau Kezambo,SeG_Pulau_Kezambo,4,Seagrass,West,N,5.36303,100.327461,2025-06-09,5000
+S95,Pulau Kezambo,SeG_Pulau_Kezambo,5,Seagrass,West,N,5.361535,100.325841,2025-06-09,5000
+S96,Kuala Sepetang,Man_Kuala_Sepetang,1,Mangrove,West,N,4.78359,100.607457,2025-06-11,5000
+S97,Kuala Sepetang,Man_Kuala_Sepetang,2,Mangrove,West,N,4.787012,100.612692,2025-06-11,5000
+S98,Kuala Sepetang,Man_Kuala_Sepetang,3,Mangrove,West,N,4.788979,100.618615,2025-06-11,5000
+S99,Kuala Sepetang,Man_Kuala_Sepetang,4,Mangrove,West,N,4.791801,100.624022,2025-06-11,5000
+S100,Kuala Sepetang,Man_Kuala_Sepetang,5,Mangrove,West,N,4.797275,100.62634,2025-06-11,5000
+S101,Pulau Pangkor,Cor_Pulau_Pangkor,1,Coral,West,N,4.190014,100.572274,2025-06-11,5000
+S102,Pulau Pangkor,Cor_Pulau_Pangkor,2,Coral,West,N,4.187189,100.543949,2025-06-11,5000
+S103,Pulau Pangkor,Cor_Pulau_Pangkor,3,Coral,West,N,4.192025,100.537855,2025-06-11,5000
+S104,Pulau Pangkor,Cor_Pulau_Pangkor,4,Coral,West,N,4.203476,100.545476,2025-06-11,5000
+S105,Pulau Pangkor,Cor_Pulau_Pangkor,5,Coral,West,N,4.194839,100.559803,2025-06-11,5000
+S106,Pulau Ketam,Man_Pulau_Ketam,1,Mangrove,West,N,3.024487,101.320359,2025-06-13,5000
+S107,Pulau Ketam,Man_Pulau_Ketam,2,Mangrove,West,N,3.021921,101.326184,2025-06-13,5000
+S108,Pulau Ketam,Man_Pulau_Ketam,3,Mangrove,West,N,3.014735,101.325529,2025-06-13,5000
+S109,Pulau Ketam,Man_Pulau_Ketam,4,Mangrove,West,N,3.016972,101.333548,2025-06-13,5000
+S110,Pulau Ketam,Man_Pulau_Ketam,5,Mangrove,West,N,3.01341,101.336968,2025-06-13,5000

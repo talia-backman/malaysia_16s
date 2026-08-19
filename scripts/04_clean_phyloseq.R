@@ -9,6 +9,8 @@
 library(phyloseq)
 library(tidyverse)
 library(janitor)
+library(vegan)
+library(patchwork)
 
 # set paths
 out_dir <- "./output"
@@ -62,6 +64,16 @@ ps_clean <- ps_no_org
 saveRDS(ps_no_neg, file.path(out_dir, "phyloseq_noNeg.rds"))
 saveRDS(ps_clean, file.path(out_dir, "phyloseq_cleaned_16s.rds"))
 
+# prepare non-empty environmental samples for sequencing-depth plots
+ps_plot <- prune_samples(sample_sums(ps_clean) > 0, ps_clean)
+ps_plot <- prune_taxa(taxa_sums(ps_plot) > 0, ps_plot)
+
+# summarize sequencing depth
+sequencing_depth <- sample_sums(ps_plot)
+message("sequencing depth min: ", min(sequencing_depth))
+message("sequencing depth median: ", median(sequencing_depth))
+message("sequencing depth max: ", max(sequencing_depth))
+
 # plot retained asv length distribution
 asv_lengths <- nchar(taxa_names(ps_clean))
 
@@ -71,15 +83,44 @@ p_length <- ggplot(tibble(length_bp = asv_lengths), aes(length_bp)) + geom_histo
 ggsave(file.path(fig_dir, "asv_length_distribution.pdf"), p_length, width = 7, height = 5)
 ggsave(file.path(fig_dir, "asv_length_distribution.png"), p_length, width = 7, height = 5, dpi = 300)
 
+# plot sample rarefaction curves
+otu_mat <- as(otu_table(ps_plot), "matrix")
+if (taxa_are_rows(ps_plot)) otu_mat <- t(otu_mat)
+
+rare_df <- vegan::rarecurve(otu_mat, step = 100, label = FALSE, tidy = TRUE) %>%
+  dplyr::rename(sample_name = Site, sequencing_depth = Sample, observed_asvs = Species)
+
+rare_meta <- as(sample_data(ps_plot), "data.frame") %>% rownames_to_column("sample_name") %>% janitor::clean_names()
+
+p_rarefaction <- ggplot(rare_df, aes(x = sequencing_depth, y = observed_asvs, group = sample_name)) +
+  geom_line(alpha = 0.6, linewidth = 0.5) + theme_bw() +
+  labs(x = "Sequencing depth", y = "Observed ASVs")
+
+ggsave(file.path(fig_dir, "sample_rarefaction_curves.pdf"), p_rarefaction, width = 7, height = 5)
+ggsave(file.path(fig_dir, "sample_rarefaction_curves.png"), p_rarefaction, width = 7, height = 5, dpi = 300)
+
+# plot phylum-level composition
 # plot phylum-level composition
 ps_phylum_clean <- tax_glom(ps_clean, taxrank = "Phylum")
 
+phylum_cols <- c("#332288", "#88CCEE", "#44AA99", "#117733", "#999933",
+                 "#DDCC77", "#CC6677", "#882255", "#AA4499", "#661100",
+                 "#6699CC", "#AA4466", "#4477AA", "#228833", "#EE6677",
+                 "#EE8866", "#BBBBBB")
+
 p_phylum <- plot_bar(ps_phylum_clean, fill = "Phylum") + theme_bw() +
+  scale_fill_manual(values = phylum_cols) +
   theme(axis.text.x = element_blank(), axis.ticks.x = element_blank()) +
   labs(x = NULL, y = "Read abundance")
 
 ggsave(file.path(fig_dir, "phylum_composition_cleaned.pdf"), p_phylum, width = 10, height = 5)
 ggsave(file.path(fig_dir, "phylum_composition_cleaned.png"), p_phylum, width = 10, height = 5, dpi = 300)
+
+# combine figure S1
+figure_s1 <- p_length + p_rarefaction + p_phylum + plot_annotation(tag_levels = "A")
+
+ggsave(file.path(fig_dir, "figure_s1_dataset_characteristics.pdf"), figure_s1, width = 16, height = 5)
+ggsave(file.path(fig_dir, "figure_s1_dataset_characteristics.png"), figure_s1, width = 16, height = 5, dpi = 300)
 
 # write cleaning summary
 summary_file <- file.path(out_dir, "physeq_cleaning_summary.txt")

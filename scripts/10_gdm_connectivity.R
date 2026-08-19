@@ -160,7 +160,7 @@ p_gdm_importance <- ggplot(gdm_importance_plot_tbl, aes(x = predictor, y = impor
   theme_classic(base_size = 12) + theme(plot.title = element_text(face = "bold", size = 16))
 
 p_ocean_spline <- ggplot(ocean_spline_tbl, aes(x = ocean_distance_km, y = partial_ecological_distance)) +
-  geom_line(linewidth = 1) + labs(x = "Ocean least-cost distance (km)", y = "Partial ecological distance", title = "B") +
+  geom_line(linewidth = 1) + labs(x = "Ocean-connected distance (km)", y = "Partial ecological distance", title = "B") +
   theme_classic(base_size = 12) + theme(plot.title = element_text(face = "bold", size = 16))
 
 p_mrm_compare <- ggplot(mrm_compare_tbl, aes(x = model, y = r2)) + geom_col(width = 0.7) +
@@ -173,6 +173,6 @@ figure4_gdm <- wrap_plots(p_gdm_importance, p_ocean_spline, p_mrm_compare, ncol 
 figure4_gdm
 
 ggsave(file.path(fig_dir, "figure4_gdm_connectivity.pdf"), figure4_gdm, width = 15, height = 4.5)
-ggsave(file.path(fig_dir, "figure4_gdm_connectivity.png"), figure4_gdm, width = 15, height = 4.5, dpi = 600)
-
+ggsave(file.path(fig_dir, "figure4_gdm_connectivity.png"), figure4_gdm, width = 12, height = 4.5,
+       dpi = 600, device = ragg::agg_png)
 message("script 10 done. outputs in: ", out_dir)

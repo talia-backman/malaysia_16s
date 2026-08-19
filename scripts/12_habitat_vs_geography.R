@@ -142,15 +142,15 @@ capture.output(site_wilcox, file = file.path(out_dir, "site_level_habitat_vs_geo
 
 # plot figure s4
 p_pairwise_categories_no_site <- ggplot(pairwise_df_no_site, aes(x = pair_category, y = distance)) +
-  geom_boxplot(outlier.alpha = 0.15) + labs(x = NULL, y = "Unweighted UniFrac distance", title = "A") +
+  geom_boxplot(outlier.alpha = 0.15) + labs(x = NULL, y = "Unweighted UniFrac distance", tag = "A") +
   theme_bw() + theme(axis.text.x = element_text(angle = 35, hjust = 1, size = 11),
-                     axis.text.y = element_text(size = 12), axis.title.y = element_text(size = 13), plot.title = element_text(face = "bold", size = 16),
+                     axis.text.y = element_text(size = 12), axis.title.y = element_text(size = 13), plot.tag = element_text(face = "bold", size = 16),
                      panel.grid.minor = element_blank())
 
 p_site_categories <- ggplot(site_df, aes(x = pair_category, y = distance)) +
-  geom_boxplot(outlier.alpha = 0.15) + labs(x = NULL, y = "Unweighted UniFrac distance", title = "B") +
+  geom_boxplot(outlier.alpha = 0.15) + labs(x = NULL, y = "Unweighted UniFrac distance", tag = "B") +
   theme_bw() + theme(axis.text.x = element_text(angle = 35, hjust = 1, size = 11),
-                     axis.text.y = element_text(size = 12), axis.title.y = element_text(size = 13), plot.title = element_text(face = "bold", size = 16),
+                     axis.text.y = element_text(size = 12), axis.title.y = element_text(size = 13), plot.tag = element_text(face = "bold", size = 16),
                      panel.grid.minor = element_blank())
 
 figure_s4_habitat_vs_geography <- p_pairwise_categories_no_site / p_site_categories
