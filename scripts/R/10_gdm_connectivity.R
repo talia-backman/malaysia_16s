@@ -1,7 +1,7 @@
 # 10_gdm_connectivity.R
 #
 # fit generalized dissimilarity models using presence-absence community data
-# compare euclidean geographic distance and ocean least-cost distance with mrm
+# compare euclidean geographic distance and ocean-connected distance with mrm
 # save figure 4
 
 set.seed(666)
@@ -93,7 +93,7 @@ pdf(file.path(fig_dir, "gdm_presence_absence_splines.pdf"), width = 7.3, height 
 plot(gdm_full, plot.layout = c(3, 2), rug = TRUE, ylab = "compositional turnover", xlab = "predictor gradient")
 dev.off()
 
-# compare euclidean geography and ocean least-cost distance
+# compare euclidean geography and ocean-connected distance
 ocean_dist <- readRDS(ocean_dist_path)
 ocean_dist <- as.matrix(ocean_dist)
 ocean_dist_gdm <- ocean_dist[meta_gdm$sample_id, meta_gdm$sample_id]
@@ -106,13 +106,13 @@ mrm_geo <- MRM(comm_dist_pa ~ geo_dist, nperm = 999)
 mrm_ocean <- MRM(comm_dist_pa ~ ocean_dist_as_dist, nperm = 999)
 mrm_geo_ocean <- MRM(comm_dist_pa ~ geo_dist + ocean_dist_as_dist, nperm = 999)
 
-mrm_compare_tbl <- tibble(model = c("Euclidean geographic distance", "Ocean least-cost distance", "Both predictors"),
+mrm_compare_tbl <- tibble(model = c("Euclidean geographic distance", "Ocean-connected distance", "Both predictors"),
                           r2 = c(mrm_geo$r.squared["R2"], mrm_ocean$r.squared["R2"], mrm_geo_ocean$r.squared["R2"]),
                           p_value = c(mrm_geo$r.squared["pval"], mrm_ocean$r.squared["pval"], mrm_geo_ocean$r.squared["pval"])) %>%
   mutate(model = factor(model, levels = model))
 
 mrm_coef_tbl <- bind_rows(as.data.frame(mrm_geo$coef) %>% rownames_to_column("term") %>% mutate(model = "Euclidean geographic distance"),
-                          as.data.frame(mrm_ocean$coef) %>% rownames_to_column("term") %>% mutate(model = "Ocean least-cost distance"),
+                          as.data.frame(mrm_ocean$coef) %>% rownames_to_column("term") %>% mutate(model = "Ocean-connected distance"),
                           as.data.frame(mrm_geo_ocean$coef) %>% rownames_to_column("term") %>% mutate(model = "Both predictors")) %>% relocate(model, term)
 
 write_csv(mrm_compare_tbl, file.path(out_dir, "mrm_ocean_distance_comparison.csv"))
@@ -122,30 +122,11 @@ capture.output(mrm_geo, file = file.path(out_dir, "mrm_euclidean_geography.txt")
 capture.output(mrm_ocean, file = file.path(out_dir, "mrm_ocean_least_cost.txt"))
 capture.output(mrm_geo_ocean, file = file.path(out_dir, "mrm_both_distance_predictors.txt"))
 
-# ocean least-cost gdm spline using 1d mds representation
-ocean_mds_1d <- cmdscale(as.dist(ocean_dist_gdm), k = 1)
-meta_gdm_ocean <- meta_gdm %>% mutate(fake_longitude = 0, fake_latitude = ocean_mds_1d[, 1])
+# prepare ocean-connected distance relationship
+ocean_plot_tbl <- tibble(ocean_distance_km = as.vector(ocean_dist_as_dist),
+                         community_dissimilarity = as.vector(comm_dist_pa))
 
-gdm_site_data_ocean <- meta_gdm_ocean %>% dplyr::select(sample_id, fake_longitude, fake_latitude, habitat, east_or_west, protected_area) %>%
-  mutate(habitat_coral = as.numeric(habitat == "Coral"), habitat_mangrove = as.numeric(habitat == "Mangrove"),
-         habitat_seagrass = as.numeric(habitat == "Seagrass"), coast_east = as.numeric(east_or_west == "East"),
-         protected_yes = as.numeric(protected_area == "Y")) %>%
-  dplyr::select(sample_id, fake_longitude, fake_latitude, habitat_coral, habitat_mangrove, habitat_seagrass, coast_east, protected_yes)
-
-gdm_input_ocean <- formatsitepair(bioData = gdm_comm, bioFormat = 1, XColumn = "fake_longitude", YColumn = "fake_latitude",
-                                  predData = gdm_site_data_ocean, siteColumn = "sample_id") %>%
-  mutate(distance = as.numeric(distance), weights = as.numeric(weights),
-         s1.xCoord = as.numeric(s1.xCoord), s1.yCoord = as.numeric(s1.yCoord),
-         s2.xCoord = as.numeric(s2.xCoord), s2.yCoord = as.numeric(s2.yCoord))
-
-gdm_ocean <- gdm(gdm_input_ocean, geo = TRUE)
-capture.output(summary(gdm_ocean), file = file.path(out_dir, "gdm_ocean_least_cost_1d_summary.txt"))
-
-gdm_ocean_splines <- isplineExtract(gdm_ocean)
-ocean_spline_tbl <- tibble(ocean_distance_km = gdm_ocean_splines$x[, "Geographic"],
-                           partial_ecological_distance = gdm_ocean_splines$y[, "Geographic"])
-
-write_csv(ocean_spline_tbl, file.path(out_dir, "gdm_ocean_least_cost_1d_spline.csv"))
+write_csv(ocean_plot_tbl, file.path(out_dir, "ocean_connected_distance_decay.csv"))
 
 # build figure 4 panels
 gdm_importance_plot_tbl <- gdm_importance_tbl %>% mutate(predictor = recode(predictor,
@@ -159,8 +140,9 @@ p_gdm_importance <- ggplot(gdm_importance_plot_tbl, aes(x = predictor, y = impor
   labs(x = NULL, y = "Permutation importance", title = "A") + xlim(gdm_importance_plot_tbl$predictor) +
   theme_classic(base_size = 12) + theme(plot.title = element_text(face = "bold", size = 16))
 
-p_ocean_spline <- ggplot(ocean_spline_tbl, aes(x = ocean_distance_km, y = partial_ecological_distance)) +
-  geom_line(linewidth = 1) + labs(x = "Ocean-connected distance (km)", y = "Partial ecological distance", title = "B") +
+p_ocean_distance <- ggplot(ocean_plot_tbl, aes(x = ocean_distance_km, y = community_dissimilarity)) +
+  geom_point(alpha = 0.15, size = 1) + geom_smooth(method = "loess", se = TRUE, linewidth = 1) +
+  labs(x = "Ocean-connected distance (km)", y = "Community dissimilarity", title = "B") +
   theme_classic(base_size = 12) + theme(plot.title = element_text(face = "bold", size = 16))
 
 p_mrm_compare <- ggplot(mrm_compare_tbl, aes(x = model, y = r2)) + geom_col(width = 0.7) +
@@ -168,11 +150,12 @@ p_mrm_compare <- ggplot(mrm_compare_tbl, aes(x = model, y = r2)) + geom_col(widt
   labs(x = NULL, y = expression(R^2), title = "C") + ylim(0, 0.115) + theme_classic(base_size = 12) +
   theme(axis.text.x = element_text(angle = 30, hjust = 1), plot.title = element_text(face = "bold", size = 16))
 
-figure4_gdm <- wrap_plots(p_gdm_importance, p_ocean_spline, p_mrm_compare, ncol = 3, widths = c(1.2, 1, 1))
+figure4_gdm <- wrap_plots(p_gdm_importance, p_ocean_distance, p_mrm_compare, ncol = 3, widths = c(1.2, 1, 1))
 
 figure4_gdm
 
 ggsave(file.path(fig_dir, "figure4_gdm_connectivity.pdf"), figure4_gdm, width = 15, height = 4.5)
 ggsave(file.path(fig_dir, "figure4_gdm_connectivity.png"), figure4_gdm, width = 12, height = 4.5,
        dpi = 600, device = ragg::agg_png)
+
 message("script 10 done. outputs in: ", out_dir)
