@@ -62,7 +62,7 @@ write_csv(centroid_distances, file.path(out_dir, "habitat_unifrac_centroid_dista
 
 seagrass_intermediate_summary <- centroid_distances %>%
   mutate(comparison = paste(habitat_1, habitat_2, sep = "_vs_")) %>%
-  select(comparison, unifrac_centroid_distance) %>% pivot_wider(names_from = comparison,
+  dplyr::select(comparison, unifrac_centroid_distance) %>% pivot_wider(names_from = comparison,
               values_from = unifrac_centroid_distance) %>%
   mutate(seagrass_closer_to_coral_than_mangrove_is =
            Coral_vs_Seagrass < Coral_vs_Mangrove,
@@ -112,6 +112,18 @@ figure1_beta
 ggsave(file.path(fig_dir, "figure1_beta_diversity.pdf"), figure1_beta, width = 10, height = 8)
 ggsave(file.path(fig_dir, "figure1_beta_diversity.png"), figure1_beta, width = 10, height = 8, dpi = 300)
 
+# fit latitude and longitude vectors to nmds ordination
+geo_vars <- meta %>%
+  transmute(longitude = as.numeric(as.character(longitude)),
+            latitude = as.numeric(as.character(latitude)))
+stopifnot(!anyNA(geo_vars$longitude), !anyNA(geo_vars$latitude))
+geo_envfit <- envfit(ord_nmds, geo_vars, permutations = 999)
+geo_envfit_tbl <- tibble(variable = rownames(geo_envfit$vectors$arrows),
+                         r2 = geo_envfit$vectors$r,
+                         p_value = geo_envfit$vectors$pvals)
+write_csv(geo_envfit_tbl, file.path(out_dir, "geographic_envfit_summary.csv"))
+geo_envfit_tbl
+
 # permanova models
 adon_eastwest <- adonis2(dist_unif ~ east_or_west, data = meta, permutations = 999)
 adon_habitat <- adonis2(dist_unif ~ habitat, data = meta, permutations = 999)
@@ -158,5 +170,20 @@ betadisp_distances <- bind_rows(bd_eastwest$distances, bd_habitat$distances, bd_
 
 write_csv(betadisp_summary, file.path(out_dir, "betadisper_unifrac_summary.csv"))
 write_csv(betadisp_distances, file.path(out_dir, "betadisper_unifrac_distances.csv"))
+
+# build table S3 community structure statistics
+table_s3_permanova <- perm_tbl %>% filter(model %in% c("site_code", "habitat", "east_or_west", "protected_area"), term != "Residual", term != "Total") %>%
+  transmute(analysis = "PERMANOVA", predictor = recode(model, site_code = "site identity", habitat = "habitat identity",
+                                                       east_or_west = "east-west coast identity", protected_area = "protected-area status"),
+            df, r2, statistic, p_value = p.value)
+table_s3_envfit <- geo_envfit_tbl %>% transmute(analysis = "geographic envfit", predictor = variable, df = NA_real_,
+                                                r2, statistic = NA_real_, p_value)
+table_s3_betadisper <- betadisp_summary %>% filter(model %in% c("east_or_west", "habitat", "protected_area")) %>%
+  transmute(analysis = "betadisper", predictor = recode(model, east_or_west = "east-west coast identity",
+                                                        habitat = "habitat identity", protected_area = "protected-area status"),
+            df = NA_real_, r2 = NA_real_, statistic = F, p_value = p)
+table_s3 <- bind_rows(table_s3_permanova, table_s3_envfit, table_s3_betadisper)
+write_csv(table_s3, file.path(out_dir, "table_s3_community_structure_statistics.csv"))
+table_s3
 
 message("script 7 done. outputs in: ", out_dir)
