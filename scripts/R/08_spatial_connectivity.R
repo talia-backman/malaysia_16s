@@ -188,12 +188,19 @@ world_sf <- rnaturalearth::ne_countries(scale = "medium", returnclass = "sf")
 malaysia_map <- world_sf %>% filter(admin %in% c("Malaysia", "Thailand", "Indonesia", "Singapore", "Brunei", "Philippines")) %>% st_make_valid()
 habitat_cols <- c(coral = "#440154FF", mangrove = "#21908CFF", seagrass = "#FDE725FF")
 # habitat_cols_map <- scales::alpha(habitat_cols, 0.45)
-
+pts_df <- pts_df %>% dplyr::left_join(
+  meta_keep %>% dplyr::select(sample_name, site_code, site_replicate),
+  by = "sample_name"
+)
+# use one actual sampling coordinate per site for map display
+pts_sites <- pts_df %>% dplyr::group_by(site_code, east_or_west, habitat) %>%
+  dplyr::slice_min(site_replicate, n = 1, with_ties = FALSE) %>%
+  dplyr::ungroup()
 # map
 p_map <- ggplot() + geom_sf(data = malaysia_map, linewidth = 0.2, fill = "grey90", color = "grey50") +
-  geom_jitter(data = pts_df, aes(x = lon, y = lat, fill = habitat), shape = 21, size = 3, alpha = 0.85,
-              height = 0.05, width = 0.05, color = "black", stroke = 0.3) +
-  coord_sf(xlim = range(pts_df$lon) + c(-1.5, 1.5), ylim = range(pts_df$lat) + c(-1.5, 1.5), expand = FALSE) +
+  geom_jitter(data = pts_sites, aes(x = lon, y = lat, fill = habitat), shape = 21, size = 3, alpha = 0.85,
+              height = 0.1, width = 0.1, color = "black", stroke = 0.3) +
+  coord_sf(xlim = range(pts_sites$lon) + c(-1.5, 1.5), ylim = range(pts_sites$lat) + c(-1.5, 1.5), expand = FALSE) +
   annotation_scale(location = "bl", width_hint = 0.25) +
   scale_fill_manual(values = habitat_cols, guide = guide_legend(override.aes = list(
     fill = unname(habitat_cols), alpha = 1))) +
