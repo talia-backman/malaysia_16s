@@ -217,15 +217,6 @@ figure2_spatial
 ggsave(file.path(fig_dir, "figure2_spatial_connectivity.pdf"), figure2_spatial, width = 11, height = 5)
 ggsave(file.path(fig_dir, "figure2_spatial_connectivity.png"), figure2_spatial, width = 11, height = 5, dpi = 300)
 
-# table S4
-table_s4 <- readr::read_tsv("./MetaData_eDNA_Malaysia_withQC.tsv",
-  show_col_types = FALSE) %>% janitor::clean_names() %>%
-  dplyr::filter(environmental_sample == "water") %>%
-  dplyr::transmute(Sample = paste0("S", sample_id), `Site name` = site_name,
-    `Site code` = site_code, `Site replicate` = site_replicate, Habitat = habitat,
-    Coast = east_or_west, `Protected area` = protected_area, Latitude = latitude,
-    Longitude = longitude, `Sampling date` = as.Date(sampling_date), `Volume (mL)` = volume_ml)
-
 readr::write_csv(table_s4, "./output/table_s4_sample_metadata.csv")
 
 message("script 8 done. outputs in: ", out_dir)
