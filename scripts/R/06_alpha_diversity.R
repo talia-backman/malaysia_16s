@@ -72,6 +72,35 @@ alpha2 <- alpha %>% filter(!is.na(east_west), !is.na(habitat), !is.na(site_name)
 mod_rich <- lmer(Observed ~ east_west * habitat + (1 | site_name), data = alpha2)
 mod_shan <- lmer(Shannon ~ east_west * habitat + (1 | site_name), data = alpha2)
 
+# export alpha diversity mixed model statistics for table S2
+
+# fixed effects
+rich_anova <- anova(mod_rich, type = 3) %>% as.data.frame() %>% rownames_to_column("effect") %>%
+  transmute(metric = "observed ASV richness", effect, numerator_df = NumDF, denominator_df = DenDF, f_value = `F value`, p_value = `Pr(>F)`)
+
+shan_anova <- anova(mod_shan, type = 3) %>% as.data.frame() %>% rownames_to_column("effect") %>%
+  transmute(metric = "shannon diversity", effect, numerator_df = NumDF, denominator_df = DenDF, f_value = `F value`, p_value = `Pr(>F)`)
+
+alpha_fixed <- bind_rows(rich_anova, shan_anova)
+
+# random effects
+get_random_variance <- function(model, metric_name) {
+  vc <- as.data.frame(VarCorr(model))
+  site_variance <- vc %>% filter(grp == "site_name") %>% pull(vcov)
+  residual_variance <- vc %>% filter(grp == "Residual") %>% pull(vcov)
+  tibble(metric = metric_name, random_effect = "site identity", site_variance = site_variance, residual_variance = residual_variance,
+         site_variance_proportion = site_variance / (site_variance + residual_variance))
+}
+
+alpha_random <- bind_rows(get_random_variance(mod_rich, "observed ASV richness"), get_random_variance(mod_shan, "shannon diversity"))
+
+# save table S2 outputs
+write_csv(alpha_fixed, file.path(out_dir, "table_s2_alpha_fixed_effects.csv"))
+write_csv(alpha_random, file.path(out_dir, "table_s2_alpha_random_effects.csv"))
+
+alpha_fixed
+alpha_random
+
 sink(file.path(out_dir, "alpha_models_summary.txt"))
 cat("alpha diversity mixed models\n\n")
 cat("\nrichness observed\n")

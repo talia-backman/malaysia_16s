@@ -1,0 +1,3 @@
+metric,random_effect,site_variance,residual_variance,site_variance_proportion
+observed ASV richness,site identity,8264.977959807678,1377.7938183726928,0.857116413198707
+shannon diversity,site identity,1.6686460868608288,0.3783736441781606,0.8151587703621632
