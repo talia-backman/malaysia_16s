@@ -94,15 +94,15 @@ ggsave(file.path(fig_dir, "habitat_unifrac_centroids.png"), p_habitat_unifrac_ce
 
 # plot nmds panels
 p_habitat <- ggplot(scr, aes(x = MDS1, y = MDS2)) + geom_point(aes(fill = habitat), shape = 21, color = "black", size = 3, alpha = 0.85, stroke = 0.3) +
-  stat_ellipse(aes(color = habitat), level = 0.75, linewidth = 0.7) + scale_fill_manual(values = habitat_cols) +
+  stat_ellipse(aes(color = habitat), level = 0.95, linewidth = 0.7) + scale_fill_manual(values = habitat_cols) +
   scale_color_manual(values = habitat_cols) + theme_bw() + labs(title = "A", x = "NMDS1", y = "NMDS2", fill = "habitat", color = "habitat")
 
 p_coast <- ggplot(scr, aes(x = MDS1, y = MDS2)) + geom_point(aes(fill = east_or_west), shape = 21, color = "black", size = 3, alpha = 0.85, stroke = 0.3) +
-  stat_ellipse(aes(color = east_or_west), level = 0.75, linewidth = 0.7) + scale_fill_manual(values = coast_cols) +
+  stat_ellipse(aes(color = east_or_west), level = 0.95, linewidth = 0.7) + scale_fill_manual(values = coast_cols) +
   scale_color_manual(values = coast_cols) + theme_bw() + labs(title = "B", x = "NMDS1", y = "NMDS2", fill = "coast", color = "coast")
 
 p_habitat_by_coast <- ggplot(scr, aes(x = MDS1, y = MDS2)) + geom_point(aes(fill = habitat), shape = 21, color = "black", size = 3, alpha = 0.85, stroke = 0.3) +
-  stat_ellipse(aes(color = habitat, group = habitat), level = 0.75, linewidth = 0.7) + facet_wrap(~ east_or_west) +
+  stat_ellipse(aes(color = habitat, group = habitat), level = 0.95, linewidth = 0.7) + facet_wrap(~ east_or_west) +
   scale_fill_manual(values = habitat_cols) + scale_color_manual(values = habitat_cols) + theme_bw() +
   labs(title = "C", x = "NMDS1", y = "NMDS2", fill = "habitat", color = "habitat")
 
