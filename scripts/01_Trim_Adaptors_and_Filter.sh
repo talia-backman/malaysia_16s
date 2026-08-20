@@ -25,4 +25,4 @@ export R_LIBS_SITE=""
 which Rscript
 Rscript --version
 
-Rscript scripts/R/01_Trim_Adaptors_and_Filter.R
+Rscript scripts/R/01_trim_filter_reads.R

@@ -1,6 +1,6 @@
 # Malaysia Marine 16S
 
-Analysis of PacBio HiFi 16S rRNA sequencing data from Malaysian coastal marine habitats (coral, mangrove, seagrass).
+Analysis of PacBio HiFi 16S rRNA sequencing data from Malaysian coastal marine habitats (coral, mangrove, and seagrass).
 
 ## Dataset
 
@@ -8,21 +8,22 @@ Final dataset:
 
 * 107 biological samples
 * 1,806 ASVs
-* Environmental metadata from Bio-ORACLE
+* Environmental data from Bio-ORACLE
 * Sample metadata in `MetaData_eDNA_Malaysia_withQC.tsv`
 
 ## Repository structure
 
 * `data/` – external datasets and Bio-ORACLE data
-* `scripts/` – analysis scripts
+* `scripts/` – bash scripts for computationally intensive processing steps
+* `scripts/R/` – R processing and analysis scripts
 * `output/` – intermediate and statistical outputs
 * `figures/` – manuscript figures
 
 ## Analysis workflow
 
-Run scripts in order:
+R scripts are located in `scripts/R/` and are numbered in approximate workflow order:
 
-```r
+```text
 01_trim_filter_reads.R
 02_dada2_asv_inference.R
 03_build_phyloseq_objects.R
@@ -37,7 +38,12 @@ Run scripts in order:
 12_habitat_vs_geography.R
 13_nestedness_turnover.R
 14_core_microbiome_comparison.R
+15_habitat_core_overlap.R
 ```
+
+Shared R functions are stored in `scripts/R/functions.R`.
+
+The first two computationally intensive processing steps can be run on a SLURM-based computing cluster using the corresponding bash scripts in `scripts/`.
 
 ## Figure outputs
 
@@ -46,4 +52,7 @@ Run scripts in order:
 * Figure 3: Habitat- and coast-associated taxa
 * Figure 4: GDM and connectivity analyses
 * Figure 5: Environmental analyses
-* Supplemental figures: Alpha diversity, environmental PCA, habitat vs geography
+* Figure S1: Sequencing characteristics and taxonomic composition
+* Figure S2: Alpha diversity
+* Figure S3: Environmental PCA
+* Figure S4: Habitat versus geographic effects

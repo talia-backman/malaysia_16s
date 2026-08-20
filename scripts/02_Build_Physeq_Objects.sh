@@ -27,4 +27,4 @@ export R_LIBS_SITE=""
 which Rscript
 Rscript --version
 
-Rscript scripts/R/02_Build_Physeq_Objects.R
+Rscript scripts/R/02_dada2_asv_inference.R
