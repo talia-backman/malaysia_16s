@@ -1,5 +1,0 @@
-cleaning summary
-original ps:        120 samples; 2030 ASVs
-after drop neg:     110 samples; 2030 ASVs
-after organelle rm: 110 samples; 1806 ASVs
-final cleaned:      110 samples; 1806 ASVs

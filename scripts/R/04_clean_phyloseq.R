@@ -48,6 +48,90 @@ keep_taxa <- keep_phy & keep_fam & keep_ord
 ps_no_org <- prune_taxa(keep_taxa, ps_no_neg)
 ps_no_org <- prune_taxa(taxa_sums(ps_no_org) > 0, ps_no_org)
 
+# build table S1 sample metadata and post-filtering read counts
+# apply the final retained bacterial taxon set to the original object so that
+# environmental samples and negative controls are summarized consistently
+
+final_bacterial_taxa <- taxa_names(ps_no_org)
+
+ps_qc_all <- prune_taxa(final_bacterial_taxa, ps)
+
+# retained bacterial reads after quality control and taxonomic filtering
+retained_reads <- sample_sums(ps_qc_all)
+
+table_s1 <- as(sample_data(ps_qc_all), "data.frame") %>%
+  tibble::rownames_to_column("phyloseq_sample_name") %>%
+  janitor::clean_names() %>%
+  mutate(
+    retained_reads = as.numeric(retained_reads[phyloseq_sample_name]),
+    
+    sample_type = case_when(
+      control == "Neg" ~ "Negative control",
+      environmental_sample == "water" ~ "Environmental sample",
+      TRUE ~ as.character(environmental_sample)
+    ),
+    
+    final_analysis_status = case_when(
+      control == "Neg" ~ "Negative control",
+      environmental_sample == "water" & retained_reads == 0 ~
+        "Excluded: zero bacterial reads after QC/taxonomic filtering",
+      environmental_sample == "water" & retained_reads > 0 ~ "Retained",
+      TRUE ~ NA_character_
+    ),
+    
+    sample = case_when(
+      environmental_sample == "water" ~ paste0("S", sample_id),
+      TRUE ~ phyloseq_sample_name
+    )
+  ) %>%
+  transmute(
+    Sample = sample,
+    `Sample type` = sample_type,
+    `Site name` = site_name,
+    `Site code` = site_code,
+    `Site replicate` = site_replicate,
+    Habitat = habitat,
+    Coast = east_or_west,
+    `Protected area` = protected_area,
+    Latitude = latitude,
+    Longitude = longitude,
+    `Sampling date` = as.Date(sampling_date),
+    `Volume (mL)` = volume_ml,
+    `Retained reads` = retained_reads,
+    `Final analysis status` = final_analysis_status
+  )
+
+write_csv(
+  table_s1,
+  file.path(out_dir, "table_s1_sample_metadata_qc.csv")
+)
+
+# print checks used in manuscript
+env_qc <- table_s1 %>%
+  filter(`Sample type` == "Environmental sample")
+
+neg_qc <- table_s1 %>%
+  filter(`Sample type` == "Negative control")
+
+message("environmental samples total: ", nrow(env_qc))
+message("environmental samples retained: ",
+        sum(env_qc$`Final analysis status` == "Retained", na.rm = TRUE))
+message("environmental samples excluded: ",
+        sum(str_detect(env_qc$`Final analysis status`, "^Excluded"), na.rm = TRUE))
+
+message(
+  "retained environmental sequencing depth min/median/max: ",
+  min(env_qc$`Retained reads`[env_qc$`Retained reads` > 0]), " / ",
+  median(env_qc$`Retained reads`[env_qc$`Retained reads` > 0]), " / ",
+  max(env_qc$`Retained reads`[env_qc$`Retained reads` > 0])
+)
+
+message("negative controls: ", nrow(neg_qc))
+message(
+  "negative-control retained reads: ",
+  paste(neg_qc$`Retained reads`, collapse = ", ")
+)
+
 # tidy species labels
 tax_df_clean <- as.data.frame(tax_table(ps_no_org))
 
