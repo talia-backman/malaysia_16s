@@ -19,21 +19,23 @@ Random effects:
 Number of obs: 110, groups:  site_name, 20
 
 Fixed effects:
-                              Estimate Std. Error      df t value Pr(>|t|)
-(Intercept)                     55.539     34.660  19.598   1.602    0.125
-east_westwest                   72.128     63.625  16.848   1.134    0.273
-habitatmangrove                 20.019     22.416 100.749   0.893    0.374
-habitatseagrass                 -8.659     22.845  96.495  -0.379    0.706
-east_westwest:habitatmangrove  -19.942     67.597  19.535  -0.295    0.771
-east_westwest:habitatseagrass  -30.808     87.401  18.103  -0.352    0.729
+                               Estimate Std. Error        df t value Pr(>|t|)  
+(Intercept)                   127.66667   53.35584  15.84792   2.393   0.0295 *
+east_westeast                 -72.12790   63.62527  16.84762  -1.134   0.2728  
+habitatmangrove                 0.07619   63.77243  15.84792   0.001   0.9991  
+habitatseagrass               -39.46667   84.36299  15.84792  -0.468   0.6463  
+east_westeast:habitatmangrove  19.94245   67.59736  19.53512   0.295   0.7711  
+east_westeast:habitatseagrass  30.80783   87.40145  18.10295   0.352   0.7285  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Correlation of Fixed Effects:
-                 (Intr) est_ws hbttmn hbttsg est_wstwst:hbttm
-east_wstwst      -0.545                                      
-habittmngrv      -0.323  0.176                               
-habittsgrss      -0.242  0.132  0.491                        
-est_wstwst:hbttm  0.107 -0.720 -0.332 -0.163                 
-est_wstwst:hbtts  0.063 -0.546 -0.128 -0.261  0.524          
+                (Intr) est_ws hbttmn hbttsg est_wstst:hbttm
+east_westst     -0.839                                     
+habittmngrv     -0.837  0.702                              
+habittsgrss     -0.632  0.530  0.529                       
+est_wstst:hbttm  0.789 -0.720 -0.943 -0.499                
+est_wstst:hbtts  0.610 -0.546 -0.511 -0.965  0.524         
 
 anova type iii
 Type III Analysis of Variance Table with Satterthwaite's method
@@ -60,23 +62,23 @@ Random effects:
 Number of obs: 110, groups:  site_name, 20
 
 Fixed effects:
-                              Estimate Std. Error       df t value Pr(>|t|)    
-(Intercept)                     2.8383     0.5037  19.7561   5.635  1.7e-05 ***
-east_westwest                   1.1363     0.9139  16.3760   1.243    0.231    
-habitatmangrove                 0.2333     0.3660 102.8322   0.637    0.525    
-habitatseagrass                -0.5078     0.3752  98.4225  -1.353    0.179    
-east_westwest:habitatmangrove  -0.1212     0.9821  19.6715  -0.123    0.903    
-east_westwest:habitatseagrass   0.4920     1.2627  17.9888   0.390    0.701    
+                              Estimate Std. Error      df t value Pr(>|t|)    
+(Intercept)                     3.9746     0.7625 15.1526   5.212 0.000102 ***
+east_westeast                  -1.1363     0.9139 16.3760  -1.243 0.231242    
+habitatmangrove                 0.1120     0.9114 15.1526   0.123 0.903788    
+habitatseagrass                -0.0158     1.2057 15.1526  -0.013 0.989714    
+east_westeast:habitatmangrove   0.1212     0.9821 19.6715   0.123 0.903008    
+east_westeast:habitatseagrass  -0.4920     1.2627 17.9888  -0.390 0.701358    
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 Correlation of Fixed Effects:
-                 (Intr) est_ws hbttmn hbttsg est_wstwst:hbttm
-east_wstwst      -0.551                                      
-habittmngrv      -0.363  0.200                               
-habittsgrss      -0.272  0.150  0.488                        
-est_wstwst:hbttm  0.135 -0.722 -0.373 -0.182                 
-est_wstwst:hbtts  0.081 -0.548 -0.145 -0.297  0.523          
+                (Intr) est_ws hbttmn hbttsg est_wstst:hbttm
+east_westst     -0.834                                     
+habittmngrv     -0.837  0.698                              
+habittsgrss     -0.632  0.528  0.529                       
+est_wstst:hbttm  0.776 -0.722 -0.928 -0.491                
+est_wstst:hbtts  0.604 -0.548 -0.505 -0.955  0.523         
 
 anova type iii
 Type III Analysis of Variance Table with Satterthwaite's method

@@ -29,7 +29,8 @@ ps <- readRDS(ps_path)
 
 # prepare metadata
 meta <- as(sample_data(ps), "data.frame") %>% tibble::rownames_to_column("sample_name") %>% janitor::clean_names() %>%
-  mutate(east_west = str_to_lower(trimws(east_or_west)), habitat = str_to_lower(trimws(habitat)), site_name = trimws(site_name))
+  mutate(east_west = factor(str_to_lower(trimws(east_or_west)), levels = c("west", "east")),
+         habitat = str_to_lower(trimws(habitat)), site_name = trimws(site_name))
 
 message("samples in ps: ", nsamples(ps), " | asvs: ", ntaxa(ps))
 print(meta %>% count(east_west, habitat, name = "n") %>% arrange(desc(n)))
