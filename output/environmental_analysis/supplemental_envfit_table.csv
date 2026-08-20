@@ -3,10 +3,10 @@ Sea surface temperature (mean),0.153,0.001
 Chlorophyll concentration (mean),0.267,0.001
 Chlorophyll concentration (range),0.244,0.001
 Dissolved oxygen (mean),0.125,0.002
-Sea surface salinity (mean),0.084,0.008
-Nitrate concentration (mean),0.097,0.009
-Sea surface temperature (range),0.067,0.022
-Photosynthetically available radiation,0.047,0.077
-Phosphate concentration (mean),0.03,0.181
-pH,0.02,0.359
-Sea surface salinity (range),0.001,0.957
+Nitrate concentration (mean),0.097,0.008
+Sea surface salinity (mean),0.084,0.013
+Sea surface temperature (range),0.067,0.025
+Photosynthetically available radiation,0.047,0.083
+Phosphate concentration (mean),0.03,0.203
+pH,0.02,0.348
+Sea surface salinity (range),0.001,0.953
