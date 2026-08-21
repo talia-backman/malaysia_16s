@@ -1,10 +1,9 @@
 # 04_clean_phyloseq.R
 #
-# clean phyloseq object
-# remove negative controls
-# remove organelles
-# tidy taxonomy labels
+# clean phyloseq object and remove negative controls and organelles
+# summarize final sequencing depth and sample qc for table s1
 # save cleaned phyloseq objects
+# save figure s1
 
 library(phyloseq)
 library(tidyverse)

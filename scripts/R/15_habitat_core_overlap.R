@@ -1,7 +1,9 @@
 # 15_habitat_core_overlap.R
 #
-# define within-study habitat core ASVs
-# test whether seagrass contains core ASVs from both mangrove and coral communities
+# define within-study habitat core asvs using a 50% prevalence threshold
+# quantify core asv overlap among coral, mangrove, and seagrass habitats
+# test whether the seagrass core contains coral and mangrove core asvs
+# provide habitat core overlap results for table s4e
 
 set.seed(666)
 

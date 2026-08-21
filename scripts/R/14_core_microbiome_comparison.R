@@ -1,7 +1,9 @@
 # 14_core_microbiome_comparison.R
 #
-# compare taxa from the published core mangrove microbiome to taxa identified in this study
-# focus on overlap with habitat-associated, coast-associated, and combined significant taxa
+# compare significant taxa from this study with the published core mangrove microbiome
+# summarize overlap across habitat, coast, and combined differential abundance models
+# summarize published mangrove host structures for overlapping genera
+# provide the core microbiome comparison for table s9
 
 set.seed(666)
 

@@ -2,6 +2,7 @@
 #
 # fit generalized dissimilarity models using presence-absence community data
 # compare euclidean geographic distance and ocean-connected distance with mrm
+# summarize gdm and mrm results for table s6
 # save figure 4
 
 set.seed(666)

@@ -1,7 +1,8 @@
 # 09_important_taxa.R
 #
-# identify habitat-associated and coast-associated genera
-# run corncob differential abundance models
+# identify habitat-associated and coast-associated genera using corncob
+# summarize significant taxa, relative abundance, prevalence, and model overlap
+# provide habitat- and coast-associated taxa data for table s8
 # save figure 3
 
 set.seed(666)

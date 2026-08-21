@@ -1,7 +1,8 @@
 # 13_nestedness_turnover.R
 #
-# sort presence-absence beta diversity into turnover and nestedness components
-# test whether community differences reflect taxon replacement or subset structure
+# partition presence-absence beta diversity into turnover and nestedness components
+# compare sorensen dissimilarity, turnover, and nestedness among habitat pairs
+# provide habitat-pair beta diversity results for table s4d
 
 set.seed(666)
 

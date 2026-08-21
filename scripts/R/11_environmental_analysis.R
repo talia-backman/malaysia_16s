@@ -1,8 +1,8 @@
 # 11_environmental_analysis.R
 #
-# extract bio-oracle environmental variables
-# compare broad-scale environmental structure among sites
+# extract bio-oracle environmental variables and summarize environmental structure
 # fit environmental vectors onto microbial nmds ordination
+# summarize environmental envfit statistics for table s7
 # save figure 5 and figure s3
 
 set.seed(666)

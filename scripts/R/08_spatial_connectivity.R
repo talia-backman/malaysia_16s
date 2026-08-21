@@ -1,7 +1,8 @@
 # 08_spatial_connectivity.R
 #
 # calculate ocean least-cost distances
-# test distance-decay with mantel tests
+# test distance-decay with mantel tests across all samples and within habitats
+# summarize mantel results for table s5
 # save figure 2
 
 set.seed(666)

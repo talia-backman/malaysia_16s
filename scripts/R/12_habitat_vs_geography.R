@@ -1,7 +1,8 @@
 # 12_habitat_vs_geography.R
 #
 # directly compare habitat identity and coast identity as predictors of community similarity
-# test whether different habitats on the same coast are as similar as the same habitat on opposite coasts
+# repeat comparisons after excluding within-site pairs and at the site level
+# provide sample- and site-level comparisons for tables s4a and s4b
 # save figure s4
 
 set.seed(666)

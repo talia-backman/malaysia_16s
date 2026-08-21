@@ -2,6 +2,7 @@
 #
 # calculate alpha diversity
 # test habitat, coast, and habitat-by-coast effects using site as a random effect
+# summarize fixed and random effects for table s2
 # save figure s2
 
 set.seed(666)

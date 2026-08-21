@@ -1,7 +1,9 @@
 # 07_beta_diversity.R
 #
 # test microbial community differences by habitat, coast, site, and protection
-# assess whether permanova results reflect centroid shifts or dispersion differences
+# assess geographic envfit and multivariate dispersion
+# test whether seagrass is intermediate using habitat centroid distances
+# summarize community structure statistics for table s3 and centroid distances for table s4c
 # save figure 1
 
 set.seed(666)
