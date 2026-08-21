@@ -51,6 +51,14 @@ coast_overlap <- coast_sig_clean %>% filter(!is.na(genus_clean), genus_clean %in
 combined_overlap <- model_overlap_clean %>% filter(!is.na(genus_clean), genus_clean %in% mangrove_core_genera$genus_clean) %>%
   mutate(overlap_set = "any significant taxa")
 
+# summarize host structures where overlapping genera were detected in the published mangrove core dataset
+core_structure_summary <- mangrove_core_raw %>%
+  mutate(genus_clean = clean_genus(genus)) %>%
+  filter(abundance > 0, genus_clean %in% combined_overlap$genus_clean) %>%
+  distinct(genus_clean, host_structure) %>%
+  group_by(genus_clean) %>%
+  summarise(published_host_structures = paste(sort(unique(host_structure)), collapse = ", "), .groups = "drop")
+
 all_overlap <- bind_rows(habitat_overlap %>% dplyr::select(overlap_set, taxon_id, phylum, class, order, 
                                                            family, genus, genus_clean, taxonomy, everything()),
   coast_overlap %>% dplyr::select(overlap_set, taxon_id, phylum, class, order, family, genus, genus_clean, 
@@ -71,10 +79,10 @@ overlap_summary <- tibble(comparison = c("mangrove core genera", "habitat-associ
 write_csv(overlap_summary, file.path(out_dir, "mangrove_core_overlap_summary.csv"))
 
 # make publication overlap table
-overlap_table <- combined_overlap %>% dplyr::select(taxon_id, phylum, class, order, family, genus, taxonomy, 
-                                                    category, sig_habitat, sig_coast, sig_combined) %>%
-  arrange(category, genus)
-
+overlap_table <- combined_overlap %>%
+  left_join(core_structure_summary, by = "genus_clean") %>%
+  dplyr::select(genus, phylum, sig_habitat, sig_coast, sig_combined, published_host_structures) %>%
+  arrange(genus)
 write_csv(overlap_table, file.path(out_dir, "mangrove_core_overlap_publication_table.csv"))
 
 message("script 14 done. outputs in: ", out_dir)

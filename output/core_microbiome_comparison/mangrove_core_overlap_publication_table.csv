@@ -1,5 +1,5 @@
-taxon_id,phylum,class,order,family,genus,taxonomy,category,sig_habitat,sig_coast,sig_combined
-Taxon_42,Actinomycetota,Acidimicrobiia,Microtrichales,Ilumatobacteraceae,Ilumatobacter,Ilumatobacteraceae: Ilumatobacter,coast_only,FALSE,TRUE,TRUE
-Taxon_13,Planctomycetota,Planctomycetes,Pirellulales,Pirellulaceae,Rubripirellula,Pirellulaceae: Rubripirellula,combined_only,FALSE,FALSE,TRUE
-Taxon_132,Pseudomonadota,Gammaproteobacteria,Pseudomonadales,Nitrincolaceae,Marinobacterium,Nitrincolaceae: Marinobacterium,habitat_only,TRUE,FALSE,TRUE
-Taxon_11,Planctomycetota,Planctomycetes,Pirellulales,Pirellulaceae,Pirellula,Pirellulaceae: Pirellula,habitat_only,TRUE,FALSE,FALSE
+genus,phylum,sig_habitat,sig_coast,sig_combined,published_host_structures
+Ilumatobacter,Actinomycetota,FALSE,TRUE,TRUE,"Avicennia alba_Leaf, Avicennia alba_Pneumatophore, Avicennia alba_Sediment, Sonneratia alba_Pneumatophore, Sonneratia alba_Sediment"
+Marinobacterium,Pseudomonadota,TRUE,FALSE,TRUE,"Avicennia alba_Pneumatophore, Avicennia alba_Sediment, Sonneratia alba_Pneumatophore, Sonneratia alba_Sediment"
+Pirellula,Planctomycetota,TRUE,FALSE,FALSE,"Avicennia alba_Pneumatophore, Avicennia alba_Sediment, Sonneratia alba_Pneumatophore, Sonneratia alba_Sediment"
+Rubripirellula,Planctomycetota,FALSE,FALSE,TRUE,"Avicennia alba_Pneumatophore, Avicennia alba_Sediment, Sonneratia alba_Pneumatophore, Sonneratia alba_Sediment"
