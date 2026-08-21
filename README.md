@@ -89,4 +89,4 @@ Analyses were conducted in R 4.4.3. Major packages include DADA2, phyloseq, vega
 
 The repository version associated with the manuscript is permanently archived on Zenodo:
 
-**DOI:** https://doi.org/10.5281/zenodo.22032741
+**DOI:** https://doi.org/10.5281/zenodo.22032740
