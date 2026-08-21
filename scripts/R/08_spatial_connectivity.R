@@ -217,6 +217,4 @@ figure2_spatial
 ggsave(file.path(fig_dir, "figure2_spatial_connectivity.pdf"), figure2_spatial, width = 11, height = 5)
 ggsave(file.path(fig_dir, "figure2_spatial_connectivity.png"), figure2_spatial, width = 11, height = 5, dpi = 300)
 
-readr::write_csv(table_s4, "./output/table_s4_sample_metadata.csv")
-
 message("script 8 done. outputs in: ", out_dir)
