@@ -153,10 +153,13 @@ p_site_categories <- ggplot(site_df, aes(x = pair_category, y = distance)) +
                      axis.text.y = element_text(size = 12), axis.title.y = element_text(size = 13), plot.tag = element_text(face = "bold", size = 16),
                      panel.grid.minor = element_blank())
 
-figure_s4_habitat_vs_geography <- p_pairwise_categories_no_site / p_site_categories
+# save figure s4
+figure_s4_habitat_vs_geography <- p_pairwise_categories_no_site +
+  labs(tag = NULL)
+
 figure_s4_habitat_vs_geography
 
-ggsave(file.path(fig_dir, "figure_s4_habitat_vs_geography.pdf"), figure_s4_habitat_vs_geography, width = 8, height = 9)
-ggsave(file.path(fig_dir, "figure_s4_habitat_vs_geography.png"), figure_s4_habitat_vs_geography, width = 8, height = 9, dpi = 300)
+ggsave(file.path(fig_dir, "figure_s4_habitat_vs_geography.pdf"), figure_s4_habitat_vs_geography, width = 7, height = 5)
+ggsave(file.path(fig_dir, "figure_s4_habitat_vs_geography.png"), figure_s4_habitat_vs_geography, width = 7, height = 5, dpi = 600)
 
 message("script 12 done. outputs in: ", out_dir)
