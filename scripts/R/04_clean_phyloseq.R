@@ -47,6 +47,34 @@ keep_taxa <- keep_phy & keep_fam & keep_ord
 ps_no_org <- prune_taxa(keep_taxa, ps_no_neg)
 ps_no_org <- prune_taxa(taxa_sums(ps_no_org) > 0, ps_no_org)
 
+# apply minimum read depth threshold
+depth_threshold <- 500
+
+sample_depths <- sample_sums(ps_no_org)
+samples_above_threshold <- names(sample_depths[sample_depths >= depth_threshold])
+ps_depth_filtered <- prune_samples(samples_above_threshold, ps_no_org)
+ps_depth_filtered <- prune_taxa(taxa_sums(ps_depth_filtered) > 0, ps_depth_filtered)
+
+n_removed <- nsamples(ps_no_org) - nsamples(ps_depth_filtered)
+message("samples removed by depth threshold (< ", depth_threshold, " reads): ", n_removed)
+message("samples retained after depth threshold: ", nsamples(ps_depth_filtered))
+
+# check balance across coasts
+depth_check <- data.frame(
+  reads = sample_sums(ps_depth_filtered),
+  coast = sample_data(ps_depth_filtered)$east_or_west
+) %>%
+  group_by(coast) %>%
+  summarise(
+    n = n(),
+    min = min(reads),
+    median = median(reads),
+    max = max(reads),
+    .groups = "drop"
+  )
+message("depth distribution by coast after filtering:")
+print(depth_check)
+
 # build table S1 sample metadata and post-filtering read counts
 # apply the final retained bacterial taxon set to the original object so that
 # environmental samples and negative controls are summarized consistently
@@ -74,7 +102,9 @@ table_s1 <- as(sample_data(ps_qc_all), "data.frame") %>%
       control == "Neg" ~ "Negative control",
       environmental_sample == "water" & retained_reads == 0 ~
         "Excluded: zero bacterial reads after QC/taxonomic filtering",
-      environmental_sample == "water" & retained_reads > 0 ~ "Retained",
+      environmental_sample == "water" & retained_reads > 0 & retained_reads < depth_threshold ~
+        paste0("Excluded: below minimum read depth (", depth_threshold, " reads)"),
+      environmental_sample == "water" & retained_reads >= depth_threshold ~ "Retained",
       TRUE ~ NA_character_
     ),
     
@@ -115,14 +145,17 @@ neg_qc <- table_s1 %>%
 message("environmental samples total: ", nrow(env_qc))
 message("environmental samples retained: ",
         sum(env_qc$`Final analysis status` == "Retained", na.rm = TRUE))
-message("environmental samples excluded: ",
-        sum(str_detect(env_qc$`Final analysis status`, "^Excluded"), na.rm = TRUE))
+message("environmental samples excluded (zero reads): ",
+        sum(str_detect(env_qc$`Final analysis status`, "zero bacterial"), na.rm = TRUE))
+message("environmental samples excluded (below depth threshold): ",
+        sum(str_detect(env_qc$`Final analysis status`, "below minimum"), na.rm = TRUE))
 
+message("environmental samples retained after depth filter: ", nsamples(ps_clean))
 message(
   "retained environmental sequencing depth min/median/max: ",
-  min(env_qc$`Retained reads`[env_qc$`Retained reads` > 0]), " / ",
-  median(env_qc$`Retained reads`[env_qc$`Retained reads` > 0]), " / ",
-  max(env_qc$`Retained reads`[env_qc$`Retained reads` > 0])
+  min(sample_sums(ps_clean)), " / ",
+  median(sample_sums(ps_clean)), " / ",
+  max(sample_sums(ps_clean))
 )
 
 message("negative controls: ", nrow(neg_qc))
@@ -142,7 +175,7 @@ if ("Species" %in% colnames(tax_df_clean)) {
 }
 
 # save cleaned objects
-ps_clean <- ps_no_org
+ps_clean <- ps_depth_filtered
 
 saveRDS(ps_no_neg, file.path(out_dir, "phyloseq_noNeg.rds"))
 saveRDS(ps_clean, file.path(out_dir, "phyloseq_cleaned_16s.rds"))
@@ -173,11 +206,19 @@ if (taxa_are_rows(ps_plot)) otu_mat <- t(otu_mat)
 rare_df <- vegan::rarecurve(otu_mat, step = 100, label = FALSE, tidy = TRUE) %>%
   dplyr::rename(sample_name = Site, sequencing_depth = Sample, observed_asvs = Species)
 
-rare_meta <- as(sample_data(ps_plot), "data.frame") %>% rownames_to_column("sample_name") %>% janitor::clean_names()
+rare_meta <- as(sample_data(ps_plot), "data.frame") %>%
+  rownames_to_column("sample_name") %>%
+  janitor::clean_names()
 
-p_rarefaction <- ggplot(rare_df, aes(x = sequencing_depth, y = observed_asvs, group = sample_name)) +
-  geom_line(alpha = 0.6, linewidth = 0.5) + theme_bw() +
-  labs(x = "Sequencing depth", y = "Observed ASVs")
+rare_df <- rare_df %>%
+  left_join(rare_meta %>% select(sample_name, east_or_west), by = "sample_name")
+
+p_rarefaction <- ggplot(rare_df, aes(x = sequencing_depth, y = observed_asvs,
+                                     group = sample_name, color = east_or_west)) +
+  geom_line(alpha = 0.6, linewidth = 0.5) +
+  scale_color_viridis_d(option = "D", begin = 0.2, end = 0.8) +
+  theme_bw() +
+  labs(x = "Sequencing depth", y = "Observed ASVs", color = "Coast")
 
 ggsave(file.path(fig_dir, "sample_rarefaction_curves.pdf"), p_rarefaction, width = 7, height = 5)
 ggsave(file.path(fig_dir, "sample_rarefaction_curves.png"), p_rarefaction, width = 7, height = 5, dpi = 300)

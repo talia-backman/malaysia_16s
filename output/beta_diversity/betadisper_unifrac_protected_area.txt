@@ -4,6 +4,8 @@ Permutation: free
 Number of permutations: 999
 
 Response: Distances
-           Df  Sum Sq   Mean Sq      F N.Perm Pr(>F)
-Groups      1 0.00834 0.0083443 0.7587    999  0.397
-Residuals 105 1.15476 0.0109977                     
+          Df  Sum Sq  Mean Sq      F N.Perm Pr(>F)   
+Groups     1 0.08501 0.085011 9.6346    999  0.005 **
+Residuals 72 0.63529 0.008823                        
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

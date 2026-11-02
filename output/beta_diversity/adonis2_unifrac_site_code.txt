@@ -3,9 +3,9 @@ Permutation: free
 Number of permutations: 999
 
 adonis2(formula = dist_unif ~ site_code, data = meta, permutations = 999)
-          Df SumOfSqs      R2      F Pr(>F)    
-Model     21   21.481 0.63807 7.1357  0.001 ***
-Residual  85   12.185 0.36193                  
-Total    106   33.666 1.00000                  
+         Df SumOfSqs      R2      F Pr(>F)    
+Model    18  13.8235 0.72034 7.8703  0.001 ***
+Residual 55   5.3668 0.27966                  
+Total    73  19.1903 1.00000                  
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
