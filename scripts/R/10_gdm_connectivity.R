@@ -148,7 +148,7 @@ p_ocean_distance <- ggplot(ocean_plot_tbl, aes(x = ocean_distance_km, y = commun
 
 p_mrm_compare <- ggplot(mrm_compare_tbl, aes(x = model, y = r2)) + geom_col(width = 0.7) +
   geom_text(aes(label = paste0("R² = ", round(r2, 3))), vjust = -0.4, size = 4) +
-  labs(x = NULL, y = expression(R^2), title = "C") + ylim(0, 0.115) + theme_classic(base_size = 12) +
+  labs(x = NULL, y = expression(R^2), title = "C") + ylim(0, 0.14) + theme_classic(base_size = 12) +
   theme(axis.text.x = element_text(angle = 30, hjust = 1), plot.title = element_text(face = "bold", size = 16))
 
 figure4_gdm <- wrap_plots(p_gdm_importance, p_ocean_distance, p_mrm_compare, ncol = 3, widths = c(1.2, 1, 1))

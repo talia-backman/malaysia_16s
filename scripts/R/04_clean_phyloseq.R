@@ -150,12 +150,12 @@ message("environmental samples excluded (zero reads): ",
 message("environmental samples excluded (below depth threshold): ",
         sum(str_detect(env_qc$`Final analysis status`, "below minimum"), na.rm = TRUE))
 
-message("environmental samples retained after depth filter: ", nsamples(ps_clean))
+message("environmental samples retained after depth filter: ", nsamples(ps_depth_filtered))
 message(
   "retained environmental sequencing depth min/median/max: ",
-  min(sample_sums(ps_clean)), " / ",
-  median(sample_sums(ps_clean)), " / ",
-  max(sample_sums(ps_clean))
+  min(sample_sums(ps_depth_filtered)), " / ",
+  median(sample_sums(ps_depth_filtered)), " / ",
+  max(sample_sums(ps_depth_filtered))
 )
 
 message("negative controls: ", nrow(neg_qc))
