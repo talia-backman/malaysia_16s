@@ -25,7 +25,7 @@ ps <- prune_taxa(taxa_sums(ps) > 0, ps)
 meta <- as(sample_data(ps), "data.frame") %>% janitor::clean_names() %>% rownames_to_column("sample_name") %>%
   mutate(east_or_west = factor(east_or_west), habitat = factor(habitat), site_code = factor(site_code), protected_area = factor(protected_area))
 
-meta <- meta %>% slice(match(sample_names(ps), sample_name))
+meta <- meta %>% dplyr::slice(match(sample_names(ps), sample_name))
 stopifnot(identical(meta$sample_name, sample_names(ps)))
 
 # convert otu table to presence-absence matrix
@@ -43,7 +43,7 @@ tax <- tax %>% tibble::rownames_to_column("asv")
 # define habitat cores by prevalence
 core_prevalence_cutoff <- 0.5
 habitat_core_asvs <- otu_pa %>%
-  left_join(meta %>% select(sample_name, habitat), by = "sample_name") %>%
+  left_join(meta %>% dplyr::select(sample_name, habitat), by = "sample_name") %>%
   filter(habitat %in% c("Coral", "Mangrove", "Seagrass")) %>%
   pivot_longer(cols = -c(sample_name, habitat), names_to = "asv", values_to = "present") %>%
   group_by(habitat, asv) %>%
@@ -54,7 +54,7 @@ write_csv(habitat_core_asvs, file.path(out_dir, "within_study_habitat_asv_preval
 
 # summarize habitat core sizes
 habitat_core_summary <- habitat_core_asvs %>% group_by(habitat) %>%
-  summarize(n_samples = first(n_samples_habitat), n_core_asvs = sum(is_core), .groups = "drop")
+  summarize(n_samples = dplyr::first(n_samples_habitat), n_core_asvs = sum(is_core), .groups = "drop")
 write_csv(habitat_core_summary, file.path(out_dir, "within_study_habitat_core_summary.csv"))
 
 # extract core ASV sets

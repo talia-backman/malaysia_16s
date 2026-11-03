@@ -2,5 +2,5 @@
 	Kruskal-Wallis rank sum test
 
 data:  beta_sim_turnover by habitat_pair
-Kruskal-Wallis chi-squared = 217.14, df = 2, p-value < 2.2e-16
+Kruskal-Wallis chi-squared = 97.194, df = 2, p-value < 2.2e-16
 

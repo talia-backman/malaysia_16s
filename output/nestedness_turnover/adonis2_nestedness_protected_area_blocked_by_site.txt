@@ -4,7 +4,7 @@ Permutation: free
 Number of permutations: 999
 
 adonis2(formula = dist_nestedness ~ protected_area, data = meta, permutations = 999, strata = meta$site_code)
-          Df SumOfSqs       R2       F Pr(>F)
-Model      1 -0.29986 -0.15684 -14.235      1
-Residual 105  2.21179  1.15684               
-Total    106  1.91192  1.00000               
+         Df SumOfSqs      R2       F Pr(>F)
+Model     1 -0.05243 -0.1104 -7.1585      1
+Residual 72  0.52739  1.1104               
+Total    73  0.47495  1.0000               

@@ -3,7 +3,7 @@ Permutation: free
 Number of permutations: 999
 
 adonis2(formula = dist_nestedness ~ east_or_west, data = meta, permutations = 999)
-          Df SumOfSqs       R2       F Pr(>F)
-Model      1 -0.52058 -0.27228 -22.471      1
-Residual 105  2.43250  1.27228               
-Total    106  1.91192  1.00000               
+         Df SumOfSqs       R2       F Pr(>F)
+Model     1 -0.16766 -0.35301 -18.785      1
+Residual 72  0.64262  1.35301               
+Total    73  0.47495  1.00000               

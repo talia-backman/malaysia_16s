@@ -4,7 +4,7 @@
 data:  pairwise_beta_df$beta_sne_nestedness and pairwise_beta_df$habitat_pair 
 
                      Coral_vs_Mangrove Coral_vs_Seagrass
-Coral_vs_Seagrass    < 2e-16           -                
-Mangrove_vs_Seagrass 9.1e-11           5.2e-14          
+Coral_vs_Seagrass    7.8e-13           -                
+Mangrove_vs_Seagrass 0.082             5.0e-10          
 
 P value adjustment method: BH 

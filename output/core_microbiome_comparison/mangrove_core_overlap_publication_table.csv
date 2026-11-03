@@ -1,5 +1,6 @@
 genus,phylum,sig_habitat,sig_coast,sig_combined,published_host_structures
 Ilumatobacter,Actinomycetota,FALSE,TRUE,TRUE,"Avicennia alba_Leaf, Avicennia alba_Pneumatophore, Avicennia alba_Sediment, Sonneratia alba_Pneumatophore, Sonneratia alba_Sediment"
-Marinobacterium,Pseudomonadota,TRUE,FALSE,TRUE,"Avicennia alba_Pneumatophore, Avicennia alba_Sediment, Sonneratia alba_Pneumatophore, Sonneratia alba_Sediment"
+Marinobacterium,Pseudomonadota,TRUE,TRUE,TRUE,"Avicennia alba_Pneumatophore, Avicennia alba_Sediment, Sonneratia alba_Pneumatophore, Sonneratia alba_Sediment"
 Pirellula,Planctomycetota,TRUE,FALSE,FALSE,"Avicennia alba_Pneumatophore, Avicennia alba_Sediment, Sonneratia alba_Pneumatophore, Sonneratia alba_Sediment"
-Rubripirellula,Planctomycetota,FALSE,FALSE,TRUE,"Avicennia alba_Pneumatophore, Avicennia alba_Sediment, Sonneratia alba_Pneumatophore, Sonneratia alba_Sediment"
+Robiginitalea,Bacteroidota,FALSE,TRUE,FALSE,"Avicennia alba_Pneumatophore, Avicennia alba_Sediment, Sonneratia alba_Pneumatophore, Sonneratia alba_Sediment"
+Rubripirellula,Planctomycetota,TRUE,FALSE,TRUE,"Avicennia alba_Pneumatophore, Avicennia alba_Sediment, Sonneratia alba_Pneumatophore, Sonneratia alba_Sediment"

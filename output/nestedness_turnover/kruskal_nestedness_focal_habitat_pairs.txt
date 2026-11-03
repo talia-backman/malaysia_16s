@@ -2,5 +2,5 @@
 	Kruskal-Wallis rank sum test
 
 data:  beta_sne_nestedness by habitat_pair
-Kruskal-Wallis chi-squared = 170.24, df = 2, p-value < 2.2e-16
+Kruskal-Wallis chi-squared = 56.235, df = 2, p-value = 6.148e-13
 

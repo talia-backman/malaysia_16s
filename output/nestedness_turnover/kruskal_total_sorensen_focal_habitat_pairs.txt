@@ -2,5 +2,5 @@
 	Kruskal-Wallis rank sum test
 
 data:  beta_sor by habitat_pair
-Kruskal-Wallis chi-squared = 253.42, df = 2, p-value < 2.2e-16
+Kruskal-Wallis chi-squared = 104.73, df = 2, p-value < 2.2e-16
 

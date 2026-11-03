@@ -1,5 +1,7 @@
 core_pattern,n_asvs
-core in seagrass only,5
-"core in coral, mangrove, and seagrass",3
-core in coral and seagrass,1
-core in coral only,1
+core in coral only,40
+core in seagrass only,8
+core in coral and seagrass,7
+"core in coral, mangrove, and seagrass",6
+core in mangrove and seagrass,2
+core in coral and mangrove,1

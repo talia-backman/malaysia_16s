@@ -5,6 +5,6 @@ data:  pairwise_beta_df$beta_sor and pairwise_beta_df$habitat_pair
 
                      Coral_vs_Mangrove Coral_vs_Seagrass
 Coral_vs_Seagrass    < 2e-16           -                
-Mangrove_vs_Seagrass < 2e-16           1.9e-06          
+Mangrove_vs_Seagrass 0.00065           < 2e-16          
 
 P value adjustment method: BH 

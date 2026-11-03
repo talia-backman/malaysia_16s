@@ -29,7 +29,7 @@ ps <- prune_taxa(taxa_sums(ps) > 0, ps)
 meta <- as(sample_data(ps), "data.frame") %>% janitor::clean_names() %>% rownames_to_column("sample_name") %>%
   mutate(east_or_west = factor(east_or_west), habitat = factor(habitat), site_code = factor(site_code), protected_area = factor(protected_area))
 
-meta <- meta %>% slice(match(sample_names(ps), sample_name))
+meta <- meta %>% dplyr::slice(match(sample_names(ps), sample_name))
 stopifnot(identical(meta$sample_name, sample_names(ps)))
 
 # convert otu table to presence-absence matrix
@@ -91,10 +91,10 @@ pairwise_beta_df <- tibble(
   beta_sor = as.matrix(dist_total_sor)[lower.tri(as.matrix(dist_total_sor))],
   beta_sim_turnover = as.matrix(dist_turnover)[lower.tri(as.matrix(dist_turnover))],
   beta_sne_nestedness = as.matrix(dist_nestedness)[lower.tri(as.matrix(dist_nestedness))]) %>%
-  left_join(meta %>% select(sample_name, habitat, east_or_west), by = c("sample_1" = "sample_name")) %>%
-  rename(habitat_1 = habitat, coast_1 = east_or_west) %>%
-  left_join(meta %>% select(sample_name, habitat, east_or_west), by = c("sample_2" = "sample_name")) %>%
-  rename(habitat_2 = habitat, coast_2 = east_or_west) %>%
+  left_join(meta %>% dplyr::select(sample_name, habitat, east_or_west), by = c("sample_1" = "sample_name")) %>%
+  dplyr::rename(habitat_1 = habitat, coast_1 = east_or_west) %>%
+  left_join(meta %>% dplyr::select(sample_name, habitat, east_or_west), by = c("sample_2" = "sample_name")) %>%
+  dplyr::rename(habitat_2 = habitat, coast_2 = east_or_west) %>%
   filter(habitat_1 %in% c("Coral", "Mangrove", "Seagrass"), habitat_2 %in% c("Coral", "Mangrove", "Seagrass"),
          habitat_1 != habitat_2) %>% mutate(habitat_pair = map2_chr(habitat_1, habitat_2,
                             ~ paste(sort(c(as.character(.x), as.character(.y))), collapse = "_vs_")),
@@ -137,7 +137,7 @@ pairwise_beta_stats <- tibble(metric = c("total_sorensen", "turnover", "nestedne
 write_csv(pairwise_beta_stats,file.path(out_dir, "pairwise_beta_component_statistics.csv"))
 
 seagrass_bridge_beta_summary <- pairwise_beta_summary %>%
-  select(habitat_pair, mean_total_sorensen, mean_turnover, mean_nestedness) %>%
+  dplyr::select(habitat_pair, mean_total_sorensen, mean_turnover, mean_nestedness) %>%
   pivot_wider(names_from = habitat_pair, values_from = c(mean_total_sorensen, mean_turnover, mean_nestedness)) %>%
   mutate(seagrass_lower_total_dissimilarity_than_coral_mangrove =
       mean_total_sorensen_Coral_vs_Seagrass < mean_total_sorensen_Coral_vs_Mangrove &
