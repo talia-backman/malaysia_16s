@@ -121,7 +121,10 @@ ggsave(file.path(fig_supp_dir, "figure_s3_environment_pca.pdf"), p_env_pca, widt
 ggsave(file.path(fig_supp_dir, "figure_s3_environment_pca.png"), p_env_pca, width = 7, height = 5, dpi = 300)
 
 # fit environmental vectors to microbial nmds
-envfit_meta <- env_data_fixed %>% mutate(sample_id = paste0("S", sample_id)) %>% slice(match(sample_names(ps), sample_id))
+ps_sample_names <- as.character(sample_names(ps))
+envfit_meta <- env_data_fixed %>% 
+  mutate(sample_id = paste0("S", sample_id))
+envfit_meta <- envfit_meta[match(ps_sample_names, envfit_meta$sample_id), ]
 stopifnot(all(sample_names(ps) == envfit_meta$sample_id))
 
 envfit_matrix <- envfit_meta %>% dplyr::select(all_of(env_cols))
@@ -136,14 +139,25 @@ envfit_stats <- data.frame(variable = names(envfit_res$vectors$r), r2 = envfit_r
 
 write_csv(envfit_stats, file.path(out_dir, "envfit_statistics.csv"))
 
-envfit_table <- envfit_stats %>% mutate(variable = recode(variable,
-                                                          BO22_tempmean_ss = "Sea surface temperature (mean)", BO22_temprange_ss = "Sea surface temperature (range)",
-                                                          BO22_salinitymean_ss = "Sea surface salinity (mean)", BO22_salinityrange_ss = "Sea surface salinity (range)",
-                                                          BO22_chlomean_ss = "Chlorophyll concentration (mean)", BO22_chlorange_ss = "Chlorophyll concentration (range)",
-                                                          BO22_nitratemean_ss = "Nitrate concentration (mean)", BO22_phosphatemean_ss = "Phosphate concentration (mean)",
-                                                          BO22_dissoxmean_ss = "Dissolved oxygen (mean)", BO22_ph = "pH", BO22_parmean = "Photosynthetically available radiation"),
-                                        r2 = round(r2, 3), p_value = round(p_value, 3)) %>%
-  rename(environmental_variable = variable, effect_size_r2 = r2)
+envfit_table <- envfit_stats %>%
+  mutate(var_label = case_when(
+    variable == "BO22_tempmean_ss"      ~ "Sea surface temperature (mean)",
+    variable == "BO22_temprange_ss"     ~ "Sea surface temperature (range)",
+    variable == "BO22_salinitymean_ss"  ~ "Sea surface salinity (mean)",
+    variable == "BO22_salinityrange_ss" ~ "Sea surface salinity (range)",
+    variable == "BO22_chlomean_ss"      ~ "Chlorophyll concentration (mean)",
+    variable == "BO22_chlorange_ss"     ~ "Chlorophyll concentration (range)",
+    variable == "BO22_nitratemean_ss"   ~ "Nitrate concentration (mean)",
+    variable == "BO22_phosphatemean_ss" ~ "Phosphate concentration (mean)",
+    variable == "BO22_dissoxmean_ss"    ~ "Dissolved oxygen (mean)",
+    variable == "BO22_ph"               ~ "pH",
+    variable == "BO22_parmean"          ~ "Photosynthetically available radiation",
+    TRUE ~ variable
+  ),
+  r2 = round(r2, 3),
+  p_value = round(p_value, 3)) %>%
+  dplyr::select(-variable) %>%
+  dplyr::rename(environmental_variable = var_label, effect_size_r2 = r2)
 
 write_csv(envfit_table, file.path(out_dir, "supplemental_envfit_table.csv"))
 

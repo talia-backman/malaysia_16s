@@ -1,232 +1,172 @@
 site_1,site_2,distance,pair_id,habitat_1,coast_1,habitat_2,coast_2,same_habitat,same_coast,pair_category
-Cor_ PB_PP,Cor_Pulau_Bidong,0.8174733940315128,Cor_ PB_PP__Cor_Pulau_Bidong,Coral,West,Coral,East,TRUE,FALSE,Same habitat / different coast
-Cor_ PB_PP,Cor_Pulau_Intan,0.4658819055094056,Cor_ PB_PP__Cor_Pulau_Intan,Coral,West,Coral,West,TRUE,TRUE,Same habitat / same coast
-Cor_ PB_PP,Cor_Pulau_Pangkor,0.7948888489540826,Cor_ PB_PP__Cor_Pulau_Pangkor,Coral,West,Coral,West,TRUE,TRUE,Same habitat / same coast
-Cor_ PB_PP,Cor_Pulau_Redang,0.9174069859706717,Cor_ PB_PP__Cor_Pulau_Redang,Coral,West,Coral,East,TRUE,FALSE,Same habitat / different coast
-Cor_ PB_PP,Cor_Pulau_Tinggi,0.6500837119277851,Cor_ PB_PP__Cor_Pulau_Tinggi,Coral,West,Coral,East,TRUE,FALSE,Same habitat / different coast
-Cor_ PB_PP,Cor_Pulau_Ular,0.6661786015856846,Cor_ PB_PP__Cor_Pulau_Ular,Coral,West,Coral,East,TRUE,FALSE,Same habitat / different coast
-Cor_ PB_PP,Man_Batu_Pahat,0.88697167478339,Cor_ PB_PP__Man_Batu_Pahat,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
-Cor_ PB_PP,Man_Kuala_Sepetang,0.7986610741863374,Cor_ PB_PP__Man_Kuala_Sepetang,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
-Cor_ PB_PP,Man_Kukup,0.5013315324990953,Cor_ PB_PP__Man_Kukup,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
-Cor_ PB_PP,Man_Merang,0.6914881864793793,Cor_ PB_PP__Man_Merang,Coral,West,Mangrove,East,FALSE,FALSE,Different habitat / different coast
-Cor_ PB_PP,Man_Nenasi,0.9446460271468067,Cor_ PB_PP__Man_Nenasi,Coral,West,Mangrove,East,FALSE,FALSE,Different habitat / different coast
-Cor_ PB_PP,Man_Penaga,0.7352809085779989,Cor_ PB_PP__Man_Penaga,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
-Cor_ PB_PP,Man_PPAF,0.5840819211128373,Cor_ PB_PP__Man_PPAF,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
-Cor_ PB_PP,Man_Pulau_Ketam,0.6465032172705728,Cor_ PB_PP__Man_Pulau_Ketam,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
-Cor_ PB_PP,Man_Pulau_Tinggi,0.6467204931712031,Cor_ PB_PP__Man_Pulau_Tinggi,Coral,West,Mangrove,East,FALSE,FALSE,Different habitat / different coast
-Cor_ PB_PP,Man_Selat_Nyior,0.5489807699797417,Cor_ PB_PP__Man_Selat_Nyior,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
-Cor_ PB_PP,Man_Sungai_Ular,0.7095755031215991,Cor_ PB_PP__Man_Sungai_Ular,Coral,West,Mangrove,East,FALSE,FALSE,Different habitat / different coast
-Cor_ PB_PP,ManSeG_Paka,0.6506295481719004,Cor_ PB_PP__ManSeG_Paka,Coral,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
-Cor_ PB_PP,SeG_Pulau_Kezambo,0.5777829071332918,Cor_ PB_PP__SeG_Pulau_Kezambo,Coral,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
-Cor_ PB_PP,SeG_PulauTinggi,0.8413477423182055,Cor_ PB_PP__SeG_PulauTinggi,Coral,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
-Cor_ PB_PP,SeG_Tanjung_Rhu,0.4992878192719061,Cor_ PB_PP__SeG_Tanjung_Rhu,Coral,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Bidong,Cor_Pulau_Intan,0.810157930549721,Cor_Pulau_Bidong__Cor_Pulau_Intan,Coral,East,Coral,West,TRUE,FALSE,Same habitat / different coast
-Cor_Pulau_Bidong,Cor_Pulau_Pangkor,0.7328792364455234,Cor_Pulau_Bidong__Cor_Pulau_Pangkor,Coral,East,Coral,West,TRUE,FALSE,Same habitat / different coast
-Cor_Pulau_Bidong,Cor_Pulau_Redang,0.609719271000125,Cor_Pulau_Bidong__Cor_Pulau_Redang,Coral,East,Coral,East,TRUE,TRUE,Same habitat / same coast
-Cor_Pulau_Bidong,Cor_Pulau_Tinggi,0.5712630269125246,Cor_Pulau_Bidong__Cor_Pulau_Tinggi,Coral,East,Coral,East,TRUE,TRUE,Same habitat / same coast
-Cor_Pulau_Bidong,Cor_Pulau_Ular,0.6330318101724893,Cor_Pulau_Bidong__Cor_Pulau_Ular,Coral,East,Coral,East,TRUE,TRUE,Same habitat / same coast
-Cor_Pulau_Bidong,Man_Batu_Pahat,0.872342972841248,Cor_Pulau_Bidong__Man_Batu_Pahat,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Bidong,Man_Kuala_Sepetang,0.8650596906918632,Cor_Pulau_Bidong__Man_Kuala_Sepetang,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Bidong,Man_Kukup,0.8023144707811675,Cor_Pulau_Bidong__Man_Kukup,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Bidong,Man_Merang,0.831549662291531,Cor_Pulau_Bidong__Man_Merang,Coral,East,Mangrove,East,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Bidong,Man_Nenasi,0.8998243865531376,Cor_Pulau_Bidong__Man_Nenasi,Coral,East,Mangrove,East,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Bidong,Man_Penaga,0.8364678705851968,Cor_Pulau_Bidong__Man_Penaga,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Bidong,Man_PPAF,0.8767286977553561,Cor_Pulau_Bidong__Man_PPAF,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Bidong,Man_Pulau_Ketam,0.7659140260856991,Cor_Pulau_Bidong__Man_Pulau_Ketam,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Bidong,Man_Pulau_Tinggi,0.6134714263123796,Cor_Pulau_Bidong__Man_Pulau_Tinggi,Coral,East,Mangrove,East,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Bidong,Man_Selat_Nyior,0.8079623460969334,Cor_Pulau_Bidong__Man_Selat_Nyior,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Bidong,Man_Sungai_Ular,0.8030049539824025,Cor_Pulau_Bidong__Man_Sungai_Ular,Coral,East,Mangrove,East,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Bidong,ManSeG_Paka,0.8151562106453918,Cor_Pulau_Bidong__ManSeG_Paka,Coral,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Bidong,SeG_Pulau_Kezambo,0.745159651095694,Cor_Pulau_Bidong__SeG_Pulau_Kezambo,Coral,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Bidong,SeG_PulauTinggi,0.6771095849927504,Cor_Pulau_Bidong__SeG_PulauTinggi,Coral,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Bidong,SeG_Tanjung_Rhu,0.8047175787700842,Cor_Pulau_Bidong__SeG_Tanjung_Rhu,Coral,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Intan,Cor_Pulau_Pangkor,0.7884112804768493,Cor_Pulau_Intan__Cor_Pulau_Pangkor,Coral,West,Coral,West,TRUE,TRUE,Same habitat / same coast
-Cor_Pulau_Intan,Cor_Pulau_Redang,0.9133495861264039,Cor_Pulau_Intan__Cor_Pulau_Redang,Coral,West,Coral,East,TRUE,FALSE,Same habitat / different coast
-Cor_Pulau_Intan,Cor_Pulau_Tinggi,0.6558466232264946,Cor_Pulau_Intan__Cor_Pulau_Tinggi,Coral,West,Coral,East,TRUE,FALSE,Same habitat / different coast
-Cor_Pulau_Intan,Cor_Pulau_Ular,0.6479690114143395,Cor_Pulau_Intan__Cor_Pulau_Ular,Coral,West,Coral,East,TRUE,FALSE,Same habitat / different coast
-Cor_Pulau_Intan,Man_Batu_Pahat,0.902351730884181,Cor_Pulau_Intan__Man_Batu_Pahat,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Intan,Man_Kuala_Sepetang,0.7953355136304416,Cor_Pulau_Intan__Man_Kuala_Sepetang,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Intan,Man_Kukup,0.5409332138032228,Cor_Pulau_Intan__Man_Kukup,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Intan,Man_Merang,0.7091274331423577,Cor_Pulau_Intan__Man_Merang,Coral,West,Mangrove,East,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Intan,Man_Nenasi,0.947285762401205,Cor_Pulau_Intan__Man_Nenasi,Coral,West,Mangrove,East,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Intan,Man_Penaga,0.7232994895171108,Cor_Pulau_Intan__Man_Penaga,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Intan,Man_PPAF,0.6902160718917582,Cor_Pulau_Intan__Man_PPAF,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Intan,Man_Pulau_Ketam,0.6113154651520722,Cor_Pulau_Intan__Man_Pulau_Ketam,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Intan,Man_Pulau_Tinggi,0.6429561336262102,Cor_Pulau_Intan__Man_Pulau_Tinggi,Coral,West,Mangrove,East,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Intan,Man_Selat_Nyior,0.4165828770943069,Cor_Pulau_Intan__Man_Selat_Nyior,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Intan,Man_Sungai_Ular,0.7496172046129624,Cor_Pulau_Intan__Man_Sungai_Ular,Coral,West,Mangrove,East,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Intan,ManSeG_Paka,0.6939119884621031,Cor_Pulau_Intan__ManSeG_Paka,Coral,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Intan,SeG_Pulau_Kezambo,0.5137873566843588,Cor_Pulau_Intan__SeG_Pulau_Kezambo,Coral,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Intan,SeG_PulauTinggi,0.8450069983822174,Cor_Pulau_Intan__SeG_PulauTinggi,Coral,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Intan,SeG_Tanjung_Rhu,0.3899773073761121,Cor_Pulau_Intan__SeG_Tanjung_Rhu,Coral,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Pangkor,Cor_Pulau_Redang,0.7976346009614016,Cor_Pulau_Pangkor__Cor_Pulau_Redang,Coral,West,Coral,East,TRUE,FALSE,Same habitat / different coast
-Cor_Pulau_Pangkor,Cor_Pulau_Tinggi,0.6930713914729708,Cor_Pulau_Pangkor__Cor_Pulau_Tinggi,Coral,West,Coral,East,TRUE,FALSE,Same habitat / different coast
-Cor_Pulau_Pangkor,Cor_Pulau_Ular,0.7330527368992197,Cor_Pulau_Pangkor__Cor_Pulau_Ular,Coral,West,Coral,East,TRUE,FALSE,Same habitat / different coast
-Cor_Pulau_Pangkor,Man_Batu_Pahat,0.8866315955560258,Cor_Pulau_Pangkor__Man_Batu_Pahat,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Pangkor,Man_Kuala_Sepetang,0.8658347117392874,Cor_Pulau_Pangkor__Man_Kuala_Sepetang,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Pangkor,Man_Kukup,0.8337135276944272,Cor_Pulau_Pangkor__Man_Kukup,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Pangkor,Man_Merang,0.873994029244435,Cor_Pulau_Pangkor__Man_Merang,Coral,West,Mangrove,East,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Pangkor,Man_Nenasi,0.8935209241683683,Cor_Pulau_Pangkor__Man_Nenasi,Coral,West,Mangrove,East,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Pangkor,Man_Penaga,0.8727928147927029,Cor_Pulau_Pangkor__Man_Penaga,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Pangkor,Man_PPAF,0.8869350609095409,Cor_Pulau_Pangkor__Man_PPAF,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Pangkor,Man_Pulau_Ketam,0.7425213378436112,Cor_Pulau_Pangkor__Man_Pulau_Ketam,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Pangkor,Man_Pulau_Tinggi,0.722499086618773,Cor_Pulau_Pangkor__Man_Pulau_Tinggi,Coral,West,Mangrove,East,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Pangkor,Man_Selat_Nyior,0.7840846639812679,Cor_Pulau_Pangkor__Man_Selat_Nyior,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Pangkor,Man_Sungai_Ular,0.877890813932776,Cor_Pulau_Pangkor__Man_Sungai_Ular,Coral,West,Mangrove,East,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Pangkor,ManSeG_Paka,0.8570130207000204,Cor_Pulau_Pangkor__ManSeG_Paka,Coral,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Pangkor,SeG_Pulau_Kezambo,0.7587783813866162,Cor_Pulau_Pangkor__SeG_Pulau_Kezambo,Coral,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Pangkor,SeG_PulauTinggi,0.6957621497380606,Cor_Pulau_Pangkor__SeG_PulauTinggi,Coral,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Pangkor,SeG_Tanjung_Rhu,0.8019267478378744,Cor_Pulau_Pangkor__SeG_Tanjung_Rhu,Coral,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Redang,Cor_Pulau_Tinggi,0.736102491011163,Cor_Pulau_Redang__Cor_Pulau_Tinggi,Coral,East,Coral,East,TRUE,TRUE,Same habitat / same coast
-Cor_Pulau_Redang,Cor_Pulau_Ular,0.7815297413059566,Cor_Pulau_Redang__Cor_Pulau_Ular,Coral,East,Coral,East,TRUE,TRUE,Same habitat / same coast
-Cor_Pulau_Redang,Man_Batu_Pahat,0.9585507235331129,Cor_Pulau_Redang__Man_Batu_Pahat,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Redang,Man_Kuala_Sepetang,0.9182659262115663,Cor_Pulau_Redang__Man_Kuala_Sepetang,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Redang,Man_Kukup,0.9147403620821871,Cor_Pulau_Redang__Man_Kukup,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Redang,Man_Merang,0.908809075110152,Cor_Pulau_Redang__Man_Merang,Coral,East,Mangrove,East,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Redang,Man_Nenasi,0.9341524795305723,Cor_Pulau_Redang__Man_Nenasi,Coral,East,Mangrove,East,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Redang,Man_Penaga,0.926468606952149,Cor_Pulau_Redang__Man_Penaga,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Redang,Man_PPAF,0.9444088010197568,Cor_Pulau_Redang__Man_PPAF,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Redang,Man_Pulau_Ketam,0.9231778514377981,Cor_Pulau_Redang__Man_Pulau_Ketam,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Redang,Man_Pulau_Tinggi,0.7515286492308498,Cor_Pulau_Redang__Man_Pulau_Tinggi,Coral,East,Mangrove,East,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Redang,Man_Selat_Nyior,0.9181567910460537,Cor_Pulau_Redang__Man_Selat_Nyior,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Redang,Man_Sungai_Ular,0.9245524769876716,Cor_Pulau_Redang__Man_Sungai_Ular,Coral,East,Mangrove,East,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Redang,ManSeG_Paka,0.9146798169923896,Cor_Pulau_Redang__ManSeG_Paka,Coral,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Redang,SeG_Pulau_Kezambo,0.8995420220332025,Cor_Pulau_Redang__SeG_Pulau_Kezambo,Coral,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Redang,SeG_PulauTinggi,0.6001141421106754,Cor_Pulau_Redang__SeG_PulauTinggi,Coral,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Redang,SeG_Tanjung_Rhu,0.9085672006899876,Cor_Pulau_Redang__SeG_Tanjung_Rhu,Coral,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Tinggi,Cor_Pulau_Ular,0.4237490036665571,Cor_Pulau_Tinggi__Cor_Pulau_Ular,Coral,East,Coral,East,TRUE,TRUE,Same habitat / same coast
-Cor_Pulau_Tinggi,Man_Batu_Pahat,0.8842649986204297,Cor_Pulau_Tinggi__Man_Batu_Pahat,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Tinggi,Man_Kuala_Sepetang,0.8377156928564014,Cor_Pulau_Tinggi__Man_Kuala_Sepetang,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Tinggi,Man_Kukup,0.7133246387507461,Cor_Pulau_Tinggi__Man_Kukup,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Tinggi,Man_Merang,0.7470414895622786,Cor_Pulau_Tinggi__Man_Merang,Coral,East,Mangrove,East,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Tinggi,Man_Nenasi,0.92926847808359625,Cor_Pulau_Tinggi__Man_Nenasi,Coral,East,Mangrove,East,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Tinggi,Man_Penaga,0.8023098424142184,Cor_Pulau_Tinggi__Man_Penaga,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Tinggi,Man_PPAF,0.8127794845155507,Cor_Pulau_Tinggi__Man_PPAF,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Tinggi,Man_Pulau_Ketam,0.7031798486057836,Cor_Pulau_Tinggi__Man_Pulau_Ketam,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Tinggi,Man_Pulau_Tinggi,0.29394814912666806,Cor_Pulau_Tinggi__Man_Pulau_Tinggi,Coral,East,Mangrove,East,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Tinggi,Man_Selat_Nyior,0.7242425265686937,Cor_Pulau_Tinggi__Man_Selat_Nyior,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Tinggi,Man_Sungai_Ular,0.7498231207455568,Cor_Pulau_Tinggi__Man_Sungai_Ular,Coral,East,Mangrove,East,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Tinggi,ManSeG_Paka,0.7244494154353313,Cor_Pulau_Tinggi__ManSeG_Paka,Coral,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Tinggi,SeG_Pulau_Kezambo,0.6473724214437152,Cor_Pulau_Tinggi__SeG_Pulau_Kezambo,Coral,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Tinggi,SeG_PulauTinggi,0.5231168254021114,Cor_Pulau_Tinggi__SeG_PulauTinggi,Coral,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Tinggi,SeG_Tanjung_Rhu,0.6823472469171514,Cor_Pulau_Tinggi__SeG_Tanjung_Rhu,Coral,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Ular,Man_Batu_Pahat,0.8953428397485053,Cor_Pulau_Ular__Man_Batu_Pahat,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Ular,Man_Kuala_Sepetang,0.8328791442074587,Cor_Pulau_Ular__Man_Kuala_Sepetang,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Ular,Man_Kukup,0.7101021683389979,Cor_Pulau_Ular__Man_Kukup,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Ular,Man_Merang,0.682748127136802,Cor_Pulau_Ular__Man_Merang,Coral,East,Mangrove,East,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Ular,Man_Nenasi,0.9352844097217851,Cor_Pulau_Ular__Man_Nenasi,Coral,East,Mangrove,East,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Ular,Man_Penaga,0.7871278020382424,Cor_Pulau_Ular__Man_Penaga,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Ular,Man_PPAF,0.7914973013688954,Cor_Pulau_Ular__Man_PPAF,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Ular,Man_Pulau_Ketam,0.7071924045715455,Cor_Pulau_Ular__Man_Pulau_Ketam,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Ular,Man_Pulau_Tinggi,0.35324046846314516,Cor_Pulau_Ular__Man_Pulau_Tinggi,Coral,East,Mangrove,East,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Ular,Man_Selat_Nyior,0.698805710251087,Cor_Pulau_Ular__Man_Selat_Nyior,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Ular,Man_Sungai_Ular,0.7517691305234885,Cor_Pulau_Ular__Man_Sungai_Ular,Coral,East,Mangrove,East,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Ular,ManSeG_Paka,0.6988883558254524,Cor_Pulau_Ular__ManSeG_Paka,Coral,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Ular,SeG_Pulau_Kezambo,0.6428987610986903,Cor_Pulau_Ular__SeG_Pulau_Kezambo,Coral,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
-Cor_Pulau_Ular,SeG_PulauTinggi,0.6661063462818503,Cor_Pulau_Ular__SeG_PulauTinggi,Coral,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
-Cor_Pulau_Ular,SeG_Tanjung_Rhu,0.6893952622843673,Cor_Pulau_Ular__SeG_Tanjung_Rhu,Coral,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
-Man_Batu_Pahat,Man_Kuala_Sepetang,0.8500874345510556,Man_Batu_Pahat__Man_Kuala_Sepetang,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
-Man_Batu_Pahat,Man_Kukup,0.8614682408734702,Man_Batu_Pahat__Man_Kukup,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
-Man_Batu_Pahat,Man_Merang,0.8150370534850271,Man_Batu_Pahat__Man_Merang,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
-Man_Batu_Pahat,Man_Nenasi,0.6433549291308426,Man_Batu_Pahat__Man_Nenasi,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
-Man_Batu_Pahat,Man_Penaga,0.810385074948806,Man_Batu_Pahat__Man_Penaga,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
-Man_Batu_Pahat,Man_PPAF,0.8479334698282727,Man_Batu_Pahat__Man_PPAF,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
-Man_Batu_Pahat,Man_Pulau_Ketam,0.8373315790381084,Man_Batu_Pahat__Man_Pulau_Ketam,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
-Man_Batu_Pahat,Man_Pulau_Tinggi,0.8811928111326659,Man_Batu_Pahat__Man_Pulau_Tinggi,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
-Man_Batu_Pahat,Man_Selat_Nyior,0.864866077194457,Man_Batu_Pahat__Man_Selat_Nyior,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
-Man_Batu_Pahat,Man_Sungai_Ular,0.741498269872508,Man_Batu_Pahat__Man_Sungai_Ular,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
-Man_Batu_Pahat,ManSeG_Paka,0.8147266073121446,Man_Batu_Pahat__ManSeG_Paka,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
-Man_Batu_Pahat,SeG_Pulau_Kezambo,0.8527387912358454,Man_Batu_Pahat__SeG_Pulau_Kezambo,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
-Man_Batu_Pahat,SeG_PulauTinggi,0.9402924527349368,Man_Batu_Pahat__SeG_PulauTinggi,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
-Man_Batu_Pahat,SeG_Tanjung_Rhu,0.8737397349307574,Man_Batu_Pahat__SeG_Tanjung_Rhu,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
-Man_Kuala_Sepetang,Man_Kukup,0.7573239905310515,Man_Kuala_Sepetang__Man_Kukup,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
-Man_Kuala_Sepetang,Man_Merang,0.6984731774778059,Man_Kuala_Sepetang__Man_Merang,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
-Man_Kuala_Sepetang,Man_Nenasi,0.9323766296185924,Man_Kuala_Sepetang__Man_Nenasi,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
-Man_Kuala_Sepetang,Man_Penaga,0.6655851855726997,Man_Kuala_Sepetang__Man_Penaga,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
-Man_Kuala_Sepetang,Man_PPAF,0.6953379740022441,Man_Kuala_Sepetang__Man_PPAF,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
-Man_Kuala_Sepetang,Man_Pulau_Ketam,0.7205419691047473,Man_Kuala_Sepetang__Man_Pulau_Ketam,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
-Man_Kuala_Sepetang,Man_Pulau_Tinggi,0.8141227948839991,Man_Kuala_Sepetang__Man_Pulau_Tinggi,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
-Man_Kuala_Sepetang,Man_Selat_Nyior,0.702396887845706,Man_Kuala_Sepetang__Man_Selat_Nyior,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
-Man_Kuala_Sepetang,Man_Sungai_Ular,0.6839918242051526,Man_Kuala_Sepetang__Man_Sungai_Ular,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
-Man_Kuala_Sepetang,ManSeG_Paka,0.6675543746415117,Man_Kuala_Sepetang__ManSeG_Paka,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
-Man_Kuala_Sepetang,SeG_Pulau_Kezambo,0.7145351188633511,Man_Kuala_Sepetang__SeG_Pulau_Kezambo,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
-Man_Kuala_Sepetang,SeG_PulauTinggi,0.9055763665281912,Man_Kuala_Sepetang__SeG_PulauTinggi,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
-Man_Kuala_Sepetang,SeG_Tanjung_Rhu,0.7086475491845089,Man_Kuala_Sepetang__SeG_Tanjung_Rhu,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
-Man_Kukup,Man_Merang,0.6792075677712669,Man_Kukup__Man_Merang,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
-Man_Kukup,Man_Nenasi,0.9366068059762394,Man_Kukup__Man_Nenasi,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
-Man_Kukup,Man_Penaga,0.6997368593314933,Man_Kukup__Man_Penaga,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
-Man_Kukup,Man_PPAF,0.6304233045558721,Man_Kukup__Man_PPAF,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
-Man_Kukup,Man_Pulau_Ketam,0.5904088937317189,Man_Kukup__Man_Pulau_Ketam,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
-Man_Kukup,Man_Pulau_Tinggi,0.6960222065408906,Man_Kukup__Man_Pulau_Tinggi,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
-Man_Kukup,Man_Selat_Nyior,0.5149589663076636,Man_Kukup__Man_Selat_Nyior,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
-Man_Kukup,Man_Sungai_Ular,0.7136609164911754,Man_Kukup__Man_Sungai_Ular,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
-Man_Kukup,ManSeG_Paka,0.6654981483541832,Man_Kukup__ManSeG_Paka,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
-Man_Kukup,SeG_Pulau_Kezambo,0.5754694813169429,Man_Kukup__SeG_Pulau_Kezambo,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
-Man_Kukup,SeG_PulauTinggi,0.8536501847811295,Man_Kukup__SeG_PulauTinggi,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
-Man_Kukup,SeG_Tanjung_Rhu,0.5573079451493793,Man_Kukup__SeG_Tanjung_Rhu,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
-Man_Merang,Man_Nenasi,0.9173883730395096,Man_Merang__Man_Nenasi,Mangrove,East,Mangrove,East,TRUE,TRUE,Same habitat / same coast
-Man_Merang,Man_Penaga,0.715293701407398,Man_Merang__Man_Penaga,Mangrove,East,Mangrove,West,TRUE,FALSE,Same habitat / different coast
-Man_Merang,Man_PPAF,0.6693535696787214,Man_Merang__Man_PPAF,Mangrove,East,Mangrove,West,TRUE,FALSE,Same habitat / different coast
-Man_Merang,Man_Pulau_Ketam,0.7417131301672192,Man_Merang__Man_Pulau_Ketam,Mangrove,East,Mangrove,West,TRUE,FALSE,Same habitat / different coast
-Man_Merang,Man_Pulau_Tinggi,0.7194077818542275,Man_Merang__Man_Pulau_Tinggi,Mangrove,East,Mangrove,East,TRUE,TRUE,Same habitat / same coast
-Man_Merang,Man_Selat_Nyior,0.658826705931631,Man_Merang__Man_Selat_Nyior,Mangrove,East,Mangrove,West,TRUE,FALSE,Same habitat / different coast
-Man_Merang,Man_Sungai_Ular,0.573198099419542,Man_Merang__Man_Sungai_Ular,Mangrove,East,Mangrove,East,TRUE,TRUE,Same habitat / same coast
-Man_Merang,ManSeG_Paka,0.5452467074158007,Man_Merang__ManSeG_Paka,Mangrove,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
-Man_Merang,SeG_Pulau_Kezambo,0.6787709709148851,Man_Merang__SeG_Pulau_Kezambo,Mangrove,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
-Man_Merang,SeG_PulauTinggi,0.8621550235288411,Man_Merang__SeG_PulauTinggi,Mangrove,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
-Man_Merang,SeG_Tanjung_Rhu,0.6831610990381464,Man_Merang__SeG_Tanjung_Rhu,Mangrove,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
-Man_Nenasi,Man_Penaga,0.9334411624723734,Man_Nenasi__Man_Penaga,Mangrove,East,Mangrove,West,TRUE,FALSE,Same habitat / different coast
-Man_Nenasi,Man_PPAF,0.9451794831980386,Man_Nenasi__Man_PPAF,Mangrove,East,Mangrove,West,TRUE,FALSE,Same habitat / different coast
-Man_Nenasi,Man_Pulau_Ketam,0.9134390945780638,Man_Nenasi__Man_Pulau_Ketam,Mangrove,East,Mangrove,West,TRUE,FALSE,Same habitat / different coast
-Man_Nenasi,Man_Pulau_Tinggi,0.9335498374320941,Man_Nenasi__Man_Pulau_Tinggi,Mangrove,East,Mangrove,East,TRUE,TRUE,Same habitat / same coast
-Man_Nenasi,Man_Selat_Nyior,0.9362004746429909,Man_Nenasi__Man_Selat_Nyior,Mangrove,East,Mangrove,West,TRUE,FALSE,Same habitat / different coast
-Man_Nenasi,Man_Sungai_Ular,0.8522899625665711,Man_Nenasi__Man_Sungai_Ular,Mangrove,East,Mangrove,East,TRUE,TRUE,Same habitat / same coast
-Man_Nenasi,ManSeG_Paka,0.9123862340793268,Man_Nenasi__ManSeG_Paka,Mangrove,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
-Man_Nenasi,SeG_Pulau_Kezambo,0.9268502515508518,Man_Nenasi__SeG_Pulau_Kezambo,Mangrove,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
-Man_Nenasi,SeG_PulauTinggi,0.9534482775334321,Man_Nenasi__SeG_PulauTinggi,Mangrove,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
-Man_Nenasi,SeG_Tanjung_Rhu,0.9405567692152444,Man_Nenasi__SeG_Tanjung_Rhu,Mangrove,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
-Man_Penaga,Man_PPAF,0.5823703653850745,Man_Penaga__Man_PPAF,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
-Man_Penaga,Man_Pulau_Ketam,0.7200201069693308,Man_Penaga__Man_Pulau_Ketam,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
-Man_Penaga,Man_Pulau_Tinggi,0.7859830909694229,Man_Penaga__Man_Pulau_Tinggi,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
-Man_Penaga,Man_Selat_Nyior,0.6668724282277709,Man_Penaga__Man_Selat_Nyior,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
-Man_Penaga,Man_Sungai_Ular,0.6695357563055455,Man_Penaga__Man_Sungai_Ular,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
-Man_Penaga,ManSeG_Paka,0.6359387309764268,Man_Penaga__ManSeG_Paka,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
-Man_Penaga,SeG_Pulau_Kezambo,0.6514249987663684,Man_Penaga__SeG_Pulau_Kezambo,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
-Man_Penaga,SeG_PulauTinggi,0.9057171268999119,Man_Penaga__SeG_PulauTinggi,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
-Man_Penaga,SeG_Tanjung_Rhu,0.6971952180676394,Man_Penaga__SeG_Tanjung_Rhu,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
-Man_PPAF,Man_Pulau_Ketam,0.7362429213069017,Man_PPAF__Man_Pulau_Ketam,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
-Man_PPAF,Man_Pulau_Tinggi,0.7883243706651657,Man_PPAF__Man_Pulau_Tinggi,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
-Man_PPAF,Man_Selat_Nyior,0.6373374240206381,Man_PPAF__Man_Selat_Nyior,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
-Man_PPAF,Man_Sungai_Ular,0.6671901855596949,Man_PPAF__Man_Sungai_Ular,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
-Man_PPAF,ManSeG_Paka,0.5369582114222814,Man_PPAF__ManSeG_Paka,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
-Man_PPAF,SeG_Pulau_Kezambo,0.682205437796844,Man_PPAF__SeG_Pulau_Kezambo,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
-Man_PPAF,SeG_PulauTinggi,0.912702299910403,Man_PPAF__SeG_PulauTinggi,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
-Man_PPAF,SeG_Tanjung_Rhu,0.6782428513532326,Man_PPAF__SeG_Tanjung_Rhu,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
-Man_Pulau_Ketam,Man_Pulau_Tinggi,0.6830790754530662,Man_Pulau_Ketam__Man_Pulau_Tinggi,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
-Man_Pulau_Ketam,Man_Selat_Nyior,0.48926894018734596,Man_Pulau_Ketam__Man_Selat_Nyior,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
-Man_Pulau_Ketam,Man_Sungai_Ular,0.7330968021797234,Man_Pulau_Ketam__Man_Sungai_Ular,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
-Man_Pulau_Ketam,ManSeG_Paka,0.7016560648658161,Man_Pulau_Ketam__ManSeG_Paka,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
-Man_Pulau_Ketam,SeG_Pulau_Kezambo,0.5151266350344493,Man_Pulau_Ketam__SeG_Pulau_Kezambo,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
-Man_Pulau_Ketam,SeG_PulauTinggi,0.8716744663737463,Man_Pulau_Ketam__SeG_PulauTinggi,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
-Man_Pulau_Ketam,SeG_Tanjung_Rhu,0.5650695589431245,Man_Pulau_Ketam__SeG_Tanjung_Rhu,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
-Man_Pulau_Tinggi,Man_Selat_Nyior,0.6878666903262038,Man_Pulau_Tinggi__Man_Selat_Nyior,Mangrove,East,Mangrove,West,TRUE,FALSE,Same habitat / different coast
-Man_Pulau_Tinggi,Man_Sungai_Ular,0.7380828616564898,Man_Pulau_Tinggi__Man_Sungai_Ular,Mangrove,East,Mangrove,East,TRUE,TRUE,Same habitat / same coast
-Man_Pulau_Tinggi,ManSeG_Paka,0.7026816977404333,Man_Pulau_Tinggi__ManSeG_Paka,Mangrove,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
-Man_Pulau_Tinggi,SeG_Pulau_Kezambo,0.628693336954605,Man_Pulau_Tinggi__SeG_Pulau_Kezambo,Mangrove,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
-Man_Pulau_Tinggi,SeG_PulauTinggi,0.562893121240578,Man_Pulau_Tinggi__SeG_PulauTinggi,Mangrove,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
-Man_Pulau_Tinggi,SeG_Tanjung_Rhu,0.6678618450630888,Man_Pulau_Tinggi__SeG_Tanjung_Rhu,Mangrove,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
-Man_Selat_Nyior,Man_Sungai_Ular,0.6740127122420516,Man_Selat_Nyior__Man_Sungai_Ular,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
-Man_Selat_Nyior,ManSeG_Paka,0.6317199122608328,Man_Selat_Nyior__ManSeG_Paka,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
-Man_Selat_Nyior,SeG_Pulau_Kezambo,0.43936162096659775,Man_Selat_Nyior__SeG_Pulau_Kezambo,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
-Man_Selat_Nyior,SeG_PulauTinggi,0.8649310957527198,Man_Selat_Nyior__SeG_PulauTinggi,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
-Man_Selat_Nyior,SeG_Tanjung_Rhu,0.3891588695750641,Man_Selat_Nyior__SeG_Tanjung_Rhu,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
-Man_Sungai_Ular,ManSeG_Paka,0.4942935397105264,Man_Sungai_Ular__ManSeG_Paka,Mangrove,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
-Man_Sungai_Ular,SeG_Pulau_Kezambo,0.6382864954880137,Man_Sungai_Ular__SeG_Pulau_Kezambo,Mangrove,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
-Man_Sungai_Ular,SeG_PulauTinggi,0.8847784258283123,Man_Sungai_Ular__SeG_PulauTinggi,Mangrove,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
-Man_Sungai_Ular,SeG_Tanjung_Rhu,0.6863094383562831,Man_Sungai_Ular__SeG_Tanjung_Rhu,Mangrove,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
-ManSeG_Paka,SeG_Pulau_Kezambo,0.6185244627651735,ManSeG_Paka__SeG_Pulau_Kezambo,Seagrass,East,Seagrass,West,TRUE,FALSE,Same habitat / different coast
-ManSeG_Paka,SeG_PulauTinggi,0.8504847627486,ManSeG_Paka__SeG_PulauTinggi,Seagrass,East,Seagrass,East,TRUE,TRUE,Same habitat / same coast
-ManSeG_Paka,SeG_Tanjung_Rhu,0.6395676845051634,ManSeG_Paka__SeG_Tanjung_Rhu,Seagrass,East,Seagrass,West,TRUE,FALSE,Same habitat / different coast
-SeG_Pulau_Kezambo,SeG_PulauTinggi,0.8235015695422828,SeG_Pulau_Kezambo__SeG_PulauTinggi,Seagrass,West,Seagrass,East,TRUE,FALSE,Same habitat / different coast
-SeG_Pulau_Kezambo,SeG_Tanjung_Rhu,0.5261358479482247,SeG_Pulau_Kezambo__SeG_Tanjung_Rhu,Seagrass,West,Seagrass,West,TRUE,TRUE,Same habitat / same coast
-SeG_PulauTinggi,SeG_Tanjung_Rhu,0.8459504356880836,SeG_PulauTinggi__SeG_Tanjung_Rhu,Seagrass,East,Seagrass,West,TRUE,FALSE,Same habitat / different coast
+Cor_ PB_PP,Cor_Pulau_Intan,0.45949260978583034,Cor_ PB_PP__Cor_Pulau_Intan,Coral,West,Coral,West,TRUE,TRUE,Same habitat / same coast
+Cor_ PB_PP,Cor_Pulau_Tinggi,0.6417747035821948,Cor_ PB_PP__Cor_Pulau_Tinggi,Coral,West,Coral,East,TRUE,FALSE,Same habitat / different coast
+Cor_ PB_PP,Cor_Pulau_Ular,0.6322694209807157,Cor_ PB_PP__Cor_Pulau_Ular,Coral,West,Coral,East,TRUE,FALSE,Same habitat / different coast
+Cor_ PB_PP,Man_Batu_Pahat,0.8983583950200333,Cor_ PB_PP__Man_Batu_Pahat,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
+Cor_ PB_PP,Man_Kuala_Sepetang,0.8022646170002713,Cor_ PB_PP__Man_Kuala_Sepetang,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
+Cor_ PB_PP,Man_Kukup,0.5243954188323786,Cor_ PB_PP__Man_Kukup,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
+Cor_ PB_PP,Man_Merang,0.6871167329239759,Cor_ PB_PP__Man_Merang,Coral,West,Mangrove,East,FALSE,FALSE,Different habitat / different coast
+Cor_ PB_PP,Man_Nenasi,0.9445314677401941,Cor_ PB_PP__Man_Nenasi,Coral,West,Mangrove,East,FALSE,FALSE,Different habitat / different coast
+Cor_ PB_PP,Man_Penaga,0.7375918484179242,Cor_ PB_PP__Man_Penaga,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
+Cor_ PB_PP,Man_PPAF,0.6231431736331661,Cor_ PB_PP__Man_PPAF,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
+Cor_ PB_PP,Man_Pulau_Ketam,0.7030854585850367,Cor_ PB_PP__Man_Pulau_Ketam,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
+Cor_ PB_PP,Man_Pulau_Tinggi,0.5984048421135479,Cor_ PB_PP__Man_Pulau_Tinggi,Coral,West,Mangrove,East,FALSE,FALSE,Different habitat / different coast
+Cor_ PB_PP,Man_Selat_Nyior,0.5838308167369075,Cor_ PB_PP__Man_Selat_Nyior,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
+Cor_ PB_PP,Man_Sungai_Ular,0.7017570623484467,Cor_ PB_PP__Man_Sungai_Ular,Coral,West,Mangrove,East,FALSE,FALSE,Different habitat / different coast
+Cor_ PB_PP,ManSeG_Paka,0.6259313063472247,Cor_ PB_PP__ManSeG_Paka,Coral,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
+Cor_ PB_PP,SeG_Pulau_Kezambo,0.5360515676042581,Cor_ PB_PP__SeG_Pulau_Kezambo,Coral,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
+Cor_ PB_PP,SeG_PulauTinggi,0.8292192031250342,Cor_ PB_PP__SeG_PulauTinggi,Coral,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
+Cor_ PB_PP,SeG_Tanjung_Rhu,0.5148265930370127,Cor_ PB_PP__SeG_Tanjung_Rhu,Coral,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
+Cor_Pulau_Intan,Cor_Pulau_Tinggi,0.6517946586859409,Cor_Pulau_Intan__Cor_Pulau_Tinggi,Coral,West,Coral,East,TRUE,FALSE,Same habitat / different coast
+Cor_Pulau_Intan,Cor_Pulau_Ular,0.6505768139043334,Cor_Pulau_Intan__Cor_Pulau_Ular,Coral,West,Coral,East,TRUE,FALSE,Same habitat / different coast
+Cor_Pulau_Intan,Man_Batu_Pahat,0.9029891185837735,Cor_Pulau_Intan__Man_Batu_Pahat,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
+Cor_Pulau_Intan,Man_Kuala_Sepetang,0.7979297893906456,Cor_Pulau_Intan__Man_Kuala_Sepetang,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
+Cor_Pulau_Intan,Man_Kukup,0.5225888498949888,Cor_Pulau_Intan__Man_Kukup,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
+Cor_Pulau_Intan,Man_Merang,0.7007735265355428,Cor_Pulau_Intan__Man_Merang,Coral,West,Mangrove,East,FALSE,FALSE,Different habitat / different coast
+Cor_Pulau_Intan,Man_Nenasi,0.9397555963035398,Cor_Pulau_Intan__Man_Nenasi,Coral,West,Mangrove,East,FALSE,FALSE,Different habitat / different coast
+Cor_Pulau_Intan,Man_Penaga,0.7273612179786496,Cor_Pulau_Intan__Man_Penaga,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
+Cor_Pulau_Intan,Man_PPAF,0.7036748302113606,Cor_Pulau_Intan__Man_PPAF,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
+Cor_Pulau_Intan,Man_Pulau_Ketam,0.7090047928458195,Cor_Pulau_Intan__Man_Pulau_Ketam,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
+Cor_Pulau_Intan,Man_Pulau_Tinggi,0.6230481724869248,Cor_Pulau_Intan__Man_Pulau_Tinggi,Coral,West,Mangrove,East,FALSE,FALSE,Different habitat / different coast
+Cor_Pulau_Intan,Man_Selat_Nyior,0.4646634140168907,Cor_Pulau_Intan__Man_Selat_Nyior,Coral,West,Mangrove,West,FALSE,TRUE,Different habitat / same coast
+Cor_Pulau_Intan,Man_Sungai_Ular,0.7404941562965666,Cor_Pulau_Intan__Man_Sungai_Ular,Coral,West,Mangrove,East,FALSE,FALSE,Different habitat / different coast
+Cor_Pulau_Intan,ManSeG_Paka,0.6853799848990297,Cor_Pulau_Intan__ManSeG_Paka,Coral,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
+Cor_Pulau_Intan,SeG_Pulau_Kezambo,0.4981206173035632,Cor_Pulau_Intan__SeG_Pulau_Kezambo,Coral,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
+Cor_Pulau_Intan,SeG_PulauTinggi,0.8451189631997282,Cor_Pulau_Intan__SeG_PulauTinggi,Coral,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
+Cor_Pulau_Intan,SeG_Tanjung_Rhu,0.37094501316844813,Cor_Pulau_Intan__SeG_Tanjung_Rhu,Coral,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
+Cor_Pulau_Tinggi,Cor_Pulau_Ular,0.48704908454711704,Cor_Pulau_Tinggi__Cor_Pulau_Ular,Coral,East,Coral,East,TRUE,TRUE,Same habitat / same coast
+Cor_Pulau_Tinggi,Man_Batu_Pahat,0.8783974031298615,Cor_Pulau_Tinggi__Man_Batu_Pahat,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
+Cor_Pulau_Tinggi,Man_Kuala_Sepetang,0.8480175758856574,Cor_Pulau_Tinggi__Man_Kuala_Sepetang,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
+Cor_Pulau_Tinggi,Man_Kukup,0.7142922263285049,Cor_Pulau_Tinggi__Man_Kukup,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
+Cor_Pulau_Tinggi,Man_Merang,0.7619154926718985,Cor_Pulau_Tinggi__Man_Merang,Coral,East,Mangrove,East,FALSE,TRUE,Different habitat / same coast
+Cor_Pulau_Tinggi,Man_Nenasi,0.9239145752436732,Cor_Pulau_Tinggi__Man_Nenasi,Coral,East,Mangrove,East,FALSE,TRUE,Different habitat / same coast
+Cor_Pulau_Tinggi,Man_Penaga,0.8139712118757272,Cor_Pulau_Tinggi__Man_Penaga,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
+Cor_Pulau_Tinggi,Man_PPAF,0.7932253593066587,Cor_Pulau_Tinggi__Man_PPAF,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
+Cor_Pulau_Tinggi,Man_Pulau_Ketam,0.7068815663119278,Cor_Pulau_Tinggi__Man_Pulau_Ketam,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
+Cor_Pulau_Tinggi,Man_Pulau_Tinggi,0.324220894698834,Cor_Pulau_Tinggi__Man_Pulau_Tinggi,Coral,East,Mangrove,East,FALSE,TRUE,Different habitat / same coast
+Cor_Pulau_Tinggi,Man_Selat_Nyior,0.7094877240526454,Cor_Pulau_Tinggi__Man_Selat_Nyior,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
+Cor_Pulau_Tinggi,Man_Sungai_Ular,0.7470116919219089,Cor_Pulau_Tinggi__Man_Sungai_Ular,Coral,East,Mangrove,East,FALSE,TRUE,Different habitat / same coast
+Cor_Pulau_Tinggi,ManSeG_Paka,0.7014218692829426,Cor_Pulau_Tinggi__ManSeG_Paka,Coral,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
+Cor_Pulau_Tinggi,SeG_Pulau_Kezambo,0.6504157374540345,Cor_Pulau_Tinggi__SeG_Pulau_Kezambo,Coral,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
+Cor_Pulau_Tinggi,SeG_PulauTinggi,0.5417212838314113,Cor_Pulau_Tinggi__SeG_PulauTinggi,Coral,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
+Cor_Pulau_Tinggi,SeG_Tanjung_Rhu,0.684363190279826,Cor_Pulau_Tinggi__SeG_Tanjung_Rhu,Coral,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
+Cor_Pulau_Ular,Man_Batu_Pahat,0.8970096332186371,Cor_Pulau_Ular__Man_Batu_Pahat,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
+Cor_Pulau_Ular,Man_Kuala_Sepetang,0.8310488019499335,Cor_Pulau_Ular__Man_Kuala_Sepetang,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
+Cor_Pulau_Ular,Man_Kukup,0.7010226826247128,Cor_Pulau_Ular__Man_Kukup,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
+Cor_Pulau_Ular,Man_Merang,0.6706545763716683,Cor_Pulau_Ular__Man_Merang,Coral,East,Mangrove,East,FALSE,TRUE,Different habitat / same coast
+Cor_Pulau_Ular,Man_Nenasi,0.9306394544472429,Cor_Pulau_Ular__Man_Nenasi,Coral,East,Mangrove,East,FALSE,TRUE,Different habitat / same coast
+Cor_Pulau_Ular,Man_Penaga,0.7886974615174276,Cor_Pulau_Ular__Man_Penaga,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
+Cor_Pulau_Ular,Man_PPAF,0.7752131597157297,Cor_Pulau_Ular__Man_PPAF,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
+Cor_Pulau_Ular,Man_Pulau_Ketam,0.7494669120377044,Cor_Pulau_Ular__Man_Pulau_Ketam,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
+Cor_Pulau_Ular,Man_Pulau_Tinggi,0.40069927305319064,Cor_Pulau_Ular__Man_Pulau_Tinggi,Coral,East,Mangrove,East,FALSE,TRUE,Different habitat / same coast
+Cor_Pulau_Ular,Man_Selat_Nyior,0.7031429868324436,Cor_Pulau_Ular__Man_Selat_Nyior,Coral,East,Mangrove,West,FALSE,FALSE,Different habitat / different coast
+Cor_Pulau_Ular,Man_Sungai_Ular,0.7488769581068435,Cor_Pulau_Ular__Man_Sungai_Ular,Coral,East,Mangrove,East,FALSE,TRUE,Different habitat / same coast
+Cor_Pulau_Ular,ManSeG_Paka,0.6777112212511714,Cor_Pulau_Ular__ManSeG_Paka,Coral,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
+Cor_Pulau_Ular,SeG_Pulau_Kezambo,0.6642999754673428,Cor_Pulau_Ular__SeG_Pulau_Kezambo,Coral,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
+Cor_Pulau_Ular,SeG_PulauTinggi,0.6796929505482805,Cor_Pulau_Ular__SeG_PulauTinggi,Coral,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
+Cor_Pulau_Ular,SeG_Tanjung_Rhu,0.6969880463026237,Cor_Pulau_Ular__SeG_Tanjung_Rhu,Coral,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
+Man_Batu_Pahat,Man_Kuala_Sepetang,0.8482572964913417,Man_Batu_Pahat__Man_Kuala_Sepetang,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
+Man_Batu_Pahat,Man_Kukup,0.877327621627742,Man_Batu_Pahat__Man_Kukup,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
+Man_Batu_Pahat,Man_Merang,0.8395759765182803,Man_Batu_Pahat__Man_Merang,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
+Man_Batu_Pahat,Man_Nenasi,0.6616193461160997,Man_Batu_Pahat__Man_Nenasi,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
+Man_Batu_Pahat,Man_Penaga,0.8167769115607464,Man_Batu_Pahat__Man_Penaga,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
+Man_Batu_Pahat,Man_PPAF,0.8281938053508144,Man_Batu_Pahat__Man_PPAF,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
+Man_Batu_Pahat,Man_Pulau_Ketam,0.7940560164553623,Man_Batu_Pahat__Man_Pulau_Ketam,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
+Man_Batu_Pahat,Man_Pulau_Tinggi,0.8704746931399455,Man_Batu_Pahat__Man_Pulau_Tinggi,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
+Man_Batu_Pahat,Man_Selat_Nyior,0.8588638549298695,Man_Batu_Pahat__Man_Selat_Nyior,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
+Man_Batu_Pahat,Man_Sungai_Ular,0.7378281424068893,Man_Batu_Pahat__Man_Sungai_Ular,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
+Man_Batu_Pahat,ManSeG_Paka,0.8093166567036025,Man_Batu_Pahat__ManSeG_Paka,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
+Man_Batu_Pahat,SeG_Pulau_Kezambo,0.8523303296690391,Man_Batu_Pahat__SeG_Pulau_Kezambo,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
+Man_Batu_Pahat,SeG_PulauTinggi,0.9327849024486465,Man_Batu_Pahat__SeG_PulauTinggi,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
+Man_Batu_Pahat,SeG_Tanjung_Rhu,0.8722210613262116,Man_Batu_Pahat__SeG_Tanjung_Rhu,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
+Man_Kuala_Sepetang,Man_Kukup,0.7429519956902788,Man_Kuala_Sepetang__Man_Kukup,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
+Man_Kuala_Sepetang,Man_Merang,0.6995882632215243,Man_Kuala_Sepetang__Man_Merang,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
+Man_Kuala_Sepetang,Man_Nenasi,0.9318441706772691,Man_Kuala_Sepetang__Man_Nenasi,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
+Man_Kuala_Sepetang,Man_Penaga,0.6602431624607548,Man_Kuala_Sepetang__Man_Penaga,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
+Man_Kuala_Sepetang,Man_PPAF,0.7057644644724904,Man_Kuala_Sepetang__Man_PPAF,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
+Man_Kuala_Sepetang,Man_Pulau_Ketam,0.7139548978776322,Man_Kuala_Sepetang__Man_Pulau_Ketam,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
+Man_Kuala_Sepetang,Man_Pulau_Tinggi,0.8156688987289898,Man_Kuala_Sepetang__Man_Pulau_Tinggi,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
+Man_Kuala_Sepetang,Man_Selat_Nyior,0.6798212746545974,Man_Kuala_Sepetang__Man_Selat_Nyior,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
+Man_Kuala_Sepetang,Man_Sungai_Ular,0.6899078004696012,Man_Kuala_Sepetang__Man_Sungai_Ular,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
+Man_Kuala_Sepetang,ManSeG_Paka,0.6933143811795713,Man_Kuala_Sepetang__ManSeG_Paka,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
+Man_Kuala_Sepetang,SeG_Pulau_Kezambo,0.7113041338687536,Man_Kuala_Sepetang__SeG_Pulau_Kezambo,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
+Man_Kuala_Sepetang,SeG_PulauTinggi,0.9082852405706354,Man_Kuala_Sepetang__SeG_PulauTinggi,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
+Man_Kuala_Sepetang,SeG_Tanjung_Rhu,0.7016067409127402,Man_Kuala_Sepetang__SeG_Tanjung_Rhu,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
+Man_Kukup,Man_Merang,0.6674880171356504,Man_Kukup__Man_Merang,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
+Man_Kukup,Man_Nenasi,0.9374866450749664,Man_Kukup__Man_Nenasi,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
+Man_Kukup,Man_Penaga,0.6851451866256841,Man_Kukup__Man_Penaga,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
+Man_Kukup,Man_PPAF,0.6470681008182378,Man_Kukup__Man_PPAF,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
+Man_Kukup,Man_Pulau_Ketam,0.6718750564075474,Man_Kukup__Man_Pulau_Ketam,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
+Man_Kukup,Man_Pulau_Tinggi,0.685338674391044,Man_Kukup__Man_Pulau_Tinggi,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
+Man_Kukup,Man_Selat_Nyior,0.5080610873853125,Man_Kukup__Man_Selat_Nyior,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
+Man_Kukup,Man_Sungai_Ular,0.6975873510598702,Man_Kukup__Man_Sungai_Ular,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
+Man_Kukup,ManSeG_Paka,0.6122710525284876,Man_Kukup__ManSeG_Paka,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
+Man_Kukup,SeG_Pulau_Kezambo,0.5581451348948184,Man_Kukup__SeG_Pulau_Kezambo,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
+Man_Kukup,SeG_PulauTinggi,0.8491720125305081,Man_Kukup__SeG_PulauTinggi,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
+Man_Kukup,SeG_Tanjung_Rhu,0.5426745302048669,Man_Kukup__SeG_Tanjung_Rhu,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
+Man_Merang,Man_Nenasi,0.9318237289477513,Man_Merang__Man_Nenasi,Mangrove,East,Mangrove,East,TRUE,TRUE,Same habitat / same coast
+Man_Merang,Man_Penaga,0.7128696811003148,Man_Merang__Man_Penaga,Mangrove,East,Mangrove,West,TRUE,FALSE,Same habitat / different coast
+Man_Merang,Man_PPAF,0.6590359997401094,Man_Merang__Man_PPAF,Mangrove,East,Mangrove,West,TRUE,FALSE,Same habitat / different coast
+Man_Merang,Man_Pulau_Ketam,0.7915215562665296,Man_Merang__Man_Pulau_Ketam,Mangrove,East,Mangrove,West,TRUE,FALSE,Same habitat / different coast
+Man_Merang,Man_Pulau_Tinggi,0.7261143887245931,Man_Merang__Man_Pulau_Tinggi,Mangrove,East,Mangrove,East,TRUE,TRUE,Same habitat / same coast
+Man_Merang,Man_Selat_Nyior,0.6331286846150014,Man_Merang__Man_Selat_Nyior,Mangrove,East,Mangrove,West,TRUE,FALSE,Same habitat / different coast
+Man_Merang,Man_Sungai_Ular,0.5847579240436163,Man_Merang__Man_Sungai_Ular,Mangrove,East,Mangrove,East,TRUE,TRUE,Same habitat / same coast
+Man_Merang,ManSeG_Paka,0.5337267910590563,Man_Merang__ManSeG_Paka,Mangrove,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
+Man_Merang,SeG_Pulau_Kezambo,0.666554085015974,Man_Merang__SeG_Pulau_Kezambo,Mangrove,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
+Man_Merang,SeG_PulauTinggi,0.8770164811030039,Man_Merang__SeG_PulauTinggi,Mangrove,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
+Man_Merang,SeG_Tanjung_Rhu,0.6705229459034715,Man_Merang__SeG_Tanjung_Rhu,Mangrove,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
+Man_Nenasi,Man_Penaga,0.9346024398866363,Man_Nenasi__Man_Penaga,Mangrove,East,Mangrove,West,TRUE,FALSE,Same habitat / different coast
+Man_Nenasi,Man_PPAF,0.9407508623029803,Man_Nenasi__Man_PPAF,Mangrove,East,Mangrove,West,TRUE,FALSE,Same habitat / different coast
+Man_Nenasi,Man_Pulau_Ketam,0.8616133731249027,Man_Nenasi__Man_Pulau_Ketam,Mangrove,East,Mangrove,West,TRUE,FALSE,Same habitat / different coast
+Man_Nenasi,Man_Pulau_Tinggi,0.9249235879391999,Man_Nenasi__Man_Pulau_Tinggi,Mangrove,East,Mangrove,East,TRUE,TRUE,Same habitat / same coast
+Man_Nenasi,Man_Selat_Nyior,0.9330348921771054,Man_Nenasi__Man_Selat_Nyior,Mangrove,East,Mangrove,West,TRUE,FALSE,Same habitat / different coast
+Man_Nenasi,Man_Sungai_Ular,0.8536914471143418,Man_Nenasi__Man_Sungai_Ular,Mangrove,East,Mangrove,East,TRUE,TRUE,Same habitat / same coast
+Man_Nenasi,ManSeG_Paka,0.9115706583290061,Man_Nenasi__ManSeG_Paka,Mangrove,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
+Man_Nenasi,SeG_Pulau_Kezambo,0.9173652314548827,Man_Nenasi__SeG_Pulau_Kezambo,Mangrove,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
+Man_Nenasi,SeG_PulauTinggi,0.9413969703915893,Man_Nenasi__SeG_PulauTinggi,Mangrove,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
+Man_Nenasi,SeG_Tanjung_Rhu,0.9383985154505446,Man_Nenasi__SeG_Tanjung_Rhu,Mangrove,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
+Man_Penaga,Man_PPAF,0.5827423432389031,Man_Penaga__Man_PPAF,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
+Man_Penaga,Man_Pulau_Ketam,0.7573569193489817,Man_Penaga__Man_Pulau_Ketam,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
+Man_Penaga,Man_Pulau_Tinggi,0.7885349655405521,Man_Penaga__Man_Pulau_Tinggi,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
+Man_Penaga,Man_Selat_Nyior,0.6566553977579013,Man_Penaga__Man_Selat_Nyior,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
+Man_Penaga,Man_Sungai_Ular,0.6644784751149893,Man_Penaga__Man_Sungai_Ular,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
+Man_Penaga,ManSeG_Paka,0.643960610759169,Man_Penaga__ManSeG_Paka,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
+Man_Penaga,SeG_Pulau_Kezambo,0.6462635768984684,Man_Penaga__SeG_Pulau_Kezambo,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
+Man_Penaga,SeG_PulauTinggi,0.9101858565413581,Man_Penaga__SeG_PulauTinggi,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
+Man_Penaga,SeG_Tanjung_Rhu,0.709933352547315,Man_Penaga__SeG_Tanjung_Rhu,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
+Man_PPAF,Man_Pulau_Ketam,0.7719129132292394,Man_PPAF__Man_Pulau_Ketam,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
+Man_PPAF,Man_Pulau_Tinggi,0.7685248538026572,Man_PPAF__Man_Pulau_Tinggi,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
+Man_PPAF,Man_Selat_Nyior,0.6458002723376437,Man_PPAF__Man_Selat_Nyior,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
+Man_PPAF,Man_Sungai_Ular,0.6200335661732082,Man_PPAF__Man_Sungai_Ular,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
+Man_PPAF,ManSeG_Paka,0.549244531302802,Man_PPAF__ManSeG_Paka,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
+Man_PPAF,SeG_Pulau_Kezambo,0.6610434362112972,Man_PPAF__SeG_Pulau_Kezambo,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
+Man_PPAF,SeG_PulauTinggi,0.9105988745478274,Man_PPAF__SeG_PulauTinggi,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
+Man_PPAF,SeG_Tanjung_Rhu,0.688229532146988,Man_PPAF__SeG_Tanjung_Rhu,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
+Man_Pulau_Ketam,Man_Pulau_Tinggi,0.6587340185518993,Man_Pulau_Ketam__Man_Pulau_Tinggi,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
+Man_Pulau_Ketam,Man_Selat_Nyior,0.5713389610905458,Man_Pulau_Ketam__Man_Selat_Nyior,Mangrove,West,Mangrove,West,TRUE,TRUE,Same habitat / same coast
+Man_Pulau_Ketam,Man_Sungai_Ular,0.714933798824132,Man_Pulau_Ketam__Man_Sungai_Ular,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
+Man_Pulau_Ketam,ManSeG_Paka,0.7210056925474194,Man_Pulau_Ketam__ManSeG_Paka,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
+Man_Pulau_Ketam,SeG_Pulau_Kezambo,0.5955046413574199,Man_Pulau_Ketam__SeG_Pulau_Kezambo,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
+Man_Pulau_Ketam,SeG_PulauTinggi,0.863207513535987,Man_Pulau_Ketam__SeG_PulauTinggi,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
+Man_Pulau_Ketam,SeG_Tanjung_Rhu,0.6198022111804473,Man_Pulau_Ketam__SeG_Tanjung_Rhu,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
+Man_Pulau_Tinggi,Man_Selat_Nyior,0.6631570128620827,Man_Pulau_Tinggi__Man_Selat_Nyior,Mangrove,East,Mangrove,West,TRUE,FALSE,Same habitat / different coast
+Man_Pulau_Tinggi,Man_Sungai_Ular,0.7309113370847871,Man_Pulau_Tinggi__Man_Sungai_Ular,Mangrove,East,Mangrove,East,TRUE,TRUE,Same habitat / same coast
+Man_Pulau_Tinggi,ManSeG_Paka,0.683797755379461,Man_Pulau_Tinggi__ManSeG_Paka,Mangrove,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
+Man_Pulau_Tinggi,SeG_Pulau_Kezambo,0.6260291245726827,Man_Pulau_Tinggi__SeG_Pulau_Kezambo,Mangrove,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
+Man_Pulau_Tinggi,SeG_PulauTinggi,0.5791442285708513,Man_Pulau_Tinggi__SeG_PulauTinggi,Mangrove,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
+Man_Pulau_Tinggi,SeG_Tanjung_Rhu,0.64537442958415,Man_Pulau_Tinggi__SeG_Tanjung_Rhu,Mangrove,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
+Man_Selat_Nyior,Man_Sungai_Ular,0.6502111225019199,Man_Selat_Nyior__Man_Sungai_Ular,Mangrove,West,Mangrove,East,TRUE,FALSE,Same habitat / different coast
+Man_Selat_Nyior,ManSeG_Paka,0.6026645271293463,Man_Selat_Nyior__ManSeG_Paka,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
+Man_Selat_Nyior,SeG_Pulau_Kezambo,0.4405350559374071,Man_Selat_Nyior__SeG_Pulau_Kezambo,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
+Man_Selat_Nyior,SeG_PulauTinggi,0.8592978114813766,Man_Selat_Nyior__SeG_PulauTinggi,Mangrove,West,Seagrass,East,FALSE,FALSE,Different habitat / different coast
+Man_Selat_Nyior,SeG_Tanjung_Rhu,0.3881129607503719,Man_Selat_Nyior__SeG_Tanjung_Rhu,Mangrove,West,Seagrass,West,FALSE,TRUE,Different habitat / same coast
+Man_Sungai_Ular,ManSeG_Paka,0.49718291317398633,Man_Sungai_Ular__ManSeG_Paka,Mangrove,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
+Man_Sungai_Ular,SeG_Pulau_Kezambo,0.6262265157489197,Man_Sungai_Ular__SeG_Pulau_Kezambo,Mangrove,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
+Man_Sungai_Ular,SeG_PulauTinggi,0.893617455869235,Man_Sungai_Ular__SeG_PulauTinggi,Mangrove,East,Seagrass,East,FALSE,TRUE,Different habitat / same coast
+Man_Sungai_Ular,SeG_Tanjung_Rhu,0.6751394286929143,Man_Sungai_Ular__SeG_Tanjung_Rhu,Mangrove,East,Seagrass,West,FALSE,FALSE,Different habitat / different coast
+ManSeG_Paka,SeG_Pulau_Kezambo,0.5922749188749618,ManSeG_Paka__SeG_Pulau_Kezambo,Seagrass,East,Seagrass,West,TRUE,FALSE,Same habitat / different coast
+ManSeG_Paka,SeG_PulauTinggi,0.8456009629195043,ManSeG_Paka__SeG_PulauTinggi,Seagrass,East,Seagrass,East,TRUE,TRUE,Same habitat / same coast
+ManSeG_Paka,SeG_Tanjung_Rhu,0.6316892029009752,ManSeG_Paka__SeG_Tanjung_Rhu,Seagrass,East,Seagrass,West,TRUE,FALSE,Same habitat / different coast
+SeG_Pulau_Kezambo,SeG_PulauTinggi,0.8283941529105145,SeG_Pulau_Kezambo__SeG_PulauTinggi,Seagrass,West,Seagrass,East,TRUE,FALSE,Same habitat / different coast
+SeG_Pulau_Kezambo,SeG_Tanjung_Rhu,0.5289850222796416,SeG_Pulau_Kezambo__SeG_Tanjung_Rhu,Seagrass,West,Seagrass,West,TRUE,TRUE,Same habitat / same coast
+SeG_PulauTinggi,SeG_Tanjung_Rhu,0.8496503671116681,SeG_PulauTinggi__SeG_Tanjung_Rhu,Seagrass,East,Seagrass,West,TRUE,FALSE,Same habitat / different coast

@@ -1,10 +1,10 @@
 analysis,predictor,df,r2,statistic,p_value
-PERMANOVA,east-west coast identity,1,0.08313711653691293,6.528645120902336,1
-PERMANOVA,habitat identity,2,0.11499340234828259,4.612695311194225,1
+PERMANOVA,east-west coast identity,1,0.08313711653691293,6.528645120902336,0.001
+PERMANOVA,habitat identity,2,0.11499340234828259,4.612695311194225,0.001
 PERMANOVA,site identity,18,0.7203373223489852,7.8703054896873885,0.001
-PERMANOVA,protected-area status,1,0.07257913362259301,5.634656077168895,1
+PERMANOVA,protected-area status,1,0.07257913362259301,5.634656077168895,0.001
 geographic envfit,longitude,NA,0.5381514579487866,NA,0.001
 geographic envfit,latitude,NA,0.233441716484186,NA,0.001
-betadisper,east-west coast identity,NA,NA,0.0066617730378009605,0.945
+betadisper,east-west coast identity,NA,NA,0.0066617730378009605,0.947
 betadisper,habitat identity,NA,NA,11.522856970077129,0.001
-betadisper,protected-area status,NA,NA,9.634644902380364,0.005
+betadisper,protected-area status,NA,NA,9.634644902380364,0.002

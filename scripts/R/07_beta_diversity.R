@@ -26,17 +26,30 @@ fig_dir <- "./figures/figure1_beta_diversity"
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 dir.create(fig_dir, recursive = TRUE, showWarnings = FALSE)
 
-# load phyloseq object
-ps <- readRDS(ps_path)
+# load rarefied object and add phylogenetic tree
+# tree was built from the filtered ASV set in script 05
+ps_rare <- readRDS(file.path("./output", "phyloseq_rarefied_16s.rds"))
+ps_tree <- readRDS(file.path("./output", "16s_physeq_cleaned_w_tree.RDS"))
+
+# add tree to rarefied object -- subset tree tips to rarefied ASV set
+shared_taxa <- intersect(taxa_names(ps_rare), taxa_names(ps_tree))
+ps <- merge_phyloseq(ps_rare, phy_tree(ps_tree))
+ps <- prune_taxa(taxa_names(ps) %in% shared_taxa, ps)
 ps <- prune_samples(sample_sums(ps) > 0, ps)
 ps <- prune_taxa(taxa_sums(ps) > 0, ps)
 
+message("samples after merging tree: ", nsamples(ps))
+message("taxa after merging tree: ", ntaxa(ps))
+
 # prepare metadata
-meta <- as(sample_data(ps), "data.frame") %>% janitor::clean_names() %>% rownames_to_column("sample_name") %>%
+meta_raw <- as(sample_data(ps), "data.frame")
+meta_raw[] <- lapply(meta_raw, function(x) if (is.list(x)) unlist(x) else x)
+meta <- meta_raw %>% janitor::clean_names() %>% rownames_to_column("sample_name") %>%
   mutate(east_or_west = factor(east_or_west), habitat = factor(habitat), site_code = factor(site_code), protected_area = factor(protected_area))
 
-meta <- meta %>% slice(match(sample_names(ps), sample_name))
-stopifnot(identical(meta$sample_name, sample_names(ps)))
+ps_sample_names <- as.character(sample_names(ps))
+meta <- meta[match(ps_sample_names, meta$sample_name), ]
+stopifnot(identical(meta$sample_name, ps_sample_names))
 
 # calculate unifrac distance and nmds
 dist_unif <- phyloseq::distance(ps, method = "unifrac")
@@ -52,7 +65,7 @@ coast_cols <- c(East = "#39568CFF", West = "#95D840FF")
 bd_habitat_centroids <- vegan::betadisper(dist_unif, group = meta$habitat, type = "centroid")
 
 centroid_coords <- as.data.frame(bd_habitat_centroids$centroids) %>% rownames_to_column("habitat") %>%
-  filter(habitat %in% c("Coral", "Mangrove", "Seagrass")) %>% rename(PCoA1 = PCoA1, PCoA2 = PCoA2)
+  filter(habitat %in% c("Coral", "Mangrove", "Seagrass"))
 
 centroid_distances <- centroid_coords %>% column_to_rownames("habitat") %>%
   dist() %>% as.matrix() %>% as.data.frame() %>% rownames_to_column("habitat_1") %>%
@@ -77,8 +90,7 @@ seagrass_intermediate_summary <- centroid_distances %>%
 write_csv(seagrass_intermediate_summary, file.path(out_dir, "seagrass_intermediate_unifrac_summary.csv"))
 
 site_scores <- as.data.frame(bd_habitat_centroids$vectors) %>% rownames_to_column("sample_name") %>%
-  left_join(meta, by = "sample_name") %>% filter(habitat %in% c("Coral", "Mangrove", "Seagrass")) %>%
-  rename(PCoA1 = PCoA1, PCoA2 = PCoA2)
+  left_join(meta, by = "sample_name") %>% filter(habitat %in% c("Coral", "Mangrove", "Seagrass"))
 
 p_habitat_unifrac_centroids <- ggplot(site_scores, aes(x = PCoA1, y = PCoA2)) +
   geom_point(aes(fill = habitat), shape = 21, color = "black", size = 3, alpha = 0.6, stroke = 0.3) +
@@ -126,7 +138,7 @@ geo_envfit_tbl <- tibble(variable = rownames(geo_envfit$vectors$arrows),
 write_csv(geo_envfit_tbl, file.path(out_dir, "geographic_envfit_summary.csv"))
 geo_envfit_tbl
 
-# permanova models
+# sample-level PERMANOVA (reported alongside site-level as sensitivity check)
 adon_eastwest <- adonis2(dist_unif ~ east_or_west, data = meta, permutations = 999)
 adon_habitat <- adonis2(dist_unif ~ habitat, data = meta, permutations = 999)
 adon_site <- adonis2(dist_unif ~ site_code, data = meta, permutations = 999)
@@ -136,7 +148,6 @@ adon_interaction <- adonis2(dist_unif ~ east_or_west * habitat, data = meta, per
 adon_full_additive <- adonis2(dist_unif ~ east_or_west + habitat + protected_area, data = meta, permutations = 999)
 adon_spatial_prot <- adonis2(dist_unif ~ east_or_west * habitat + protected_area, data = meta, permutations = 999)
 adon_prot_siteblock <- adonis2(dist_unif ~ protected_area, data = meta, permutations = 999, strata = meta$site_code)
-
 capture.output(adon_eastwest, file = file.path(out_dir, "adonis2_unifrac_east_or_west.txt"))
 capture.output(adon_habitat, file = file.path(out_dir, "adonis2_unifrac_habitat.txt"))
 capture.output(adon_site, file = file.path(out_dir, "adonis2_unifrac_site_code.txt"))
@@ -146,6 +157,43 @@ capture.output(adon_interaction, file = file.path(out_dir, "adonis2_unifrac_east
 capture.output(adon_full_additive, file = file.path(out_dir, "adonis2_unifrac_east_or_west_plus_habitat_plus_protected_area.txt"))
 capture.output(adon_spatial_prot, file = file.path(out_dir, "adonis2_unifrac_east_or_west_by_habitat_plus_protected_area.txt"))
 capture.output(adon_prot_siteblock, file = file.path(out_dir, "adonis2_unifrac_protected_area_blocked_by_site.txt"))
+
+# site-level PERMANOVA
+# aggregate samples to site-level mean relative abundance profiles
+ps_rel <- transform_sample_counts(ps, function(x) x / sum(x))
+
+site_meta <- as(sample_data(ps_rel), "data.frame") %>%
+  janitor::clean_names() %>%
+  rownames_to_column("sample_name") %>%
+  distinct(site_code, east_or_west, habitat, protected_area)
+
+otu_site <- as.data.frame(as(otu_table(ps_rel), "matrix"))
+if (taxa_are_rows(ps_rel)) otu_site <- t(otu_site)
+
+otu_site <- as.data.frame(otu_site) %>% rownames_to_column("sample_name") %>%
+  left_join(as(sample_data(ps_rel), "data.frame") %>% rownames_to_column("sample_name") %>% 
+              select(sample_name, site_code), by = "sample_name") %>%
+  group_by(site_code) %>%
+  summarise(across(where(is.numeric), mean), .groups = "drop") %>%
+  column_to_rownames("site_code")
+
+site_meta <- site_meta[match(rownames(otu_site), site_meta$site_code), ]
+stopifnot(identical(rownames(otu_site), site_meta$site_code))
+
+dist_site <- vegdist(otu_site, method = "bray")
+
+adon_site_coast <- adonis2(dist_site ~ east_or_west, data = site_meta, permutations = 999)
+adon_site_habitat <- adonis2(dist_site ~ habitat, data = site_meta, permutations = 999)
+adon_site_additive <- adonis2(dist_site ~ east_or_west + habitat, data = site_meta, permutations = 999)
+
+message("site-level PERMANOVA results:")
+print(adon_site_coast)
+print(adon_site_habitat)
+print(adon_site_additive)
+
+write_csv(bind_rows(tidy_adonis(adon_site_coast, "site_level_coast"),
+    tidy_adonis(adon_site_habitat, "site_level_habitat"), tidy_adonis(adon_site_additive, "site_level_additive")),
+  file.path(out_dir, "permanova_site_level_summary.csv"))
 
 perm_tbl <- bind_rows(tidy_adonis(adon_eastwest, "east_or_west"), tidy_adonis(adon_habitat, "habitat"),
                       tidy_adonis(adon_site, "site_code"), tidy_adonis(adon_protected, "protected_area"),

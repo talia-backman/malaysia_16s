@@ -1,22 +1,27 @@
 taxon_id,Phylum,Class,Order,Family,Genus,taxonomy
-Taxon_56,Actinomycetota,Acidimicrobiia,Actinomarinales,Actinomarinaceae,Candidatus Actinomarina,Actinomarinaceae: Candidatus Actinomarina
-Taxon_42,Actinomycetota,Acidimicrobiia,Microtrichales,Ilumatobacteraceae,Ilumatobacter,Ilumatobacteraceae: Ilumatobacter
-Taxon_98,Bacillota,Bacilli,Acholeplasmatales,Acholeplasmataceae,Acholeplasma,Acholeplasmataceae: Acholeplasma
+Taxon_22,Actinomycetota,Acidimicrobiia,Actinomarinales,Actinomarinaceae,Candidatus Actinomarina,Actinomarinaceae: Candidatus Actinomarina
+Taxon_8,Actinomycetota,Acidimicrobiia,Microtrichales,Ilumatobacteraceae,Ilumatobacter,Ilumatobacteraceae: Ilumatobacter
+Taxon_56,Bacillota,Bacilli,Acholeplasmatales,Acholeplasmataceae,Acholeplasma,Acholeplasmataceae: Acholeplasma
 Taxon_95,Bacteroidota,Bacteroidia,Flavobacteriales,Crocinitomicaceae,Fluviicola,Crocinitomicaceae: Fluviicola
 Taxon_93,Bacteroidota,Bacteroidia,Flavobacteriales,Crocinitomicaceae,Salinirepens,Crocinitomicaceae: Salinirepens
+Taxon_97,Bacteroidota,Bacteroidia,Flavobacteriales,Cryomorphaceae,NA,Cryomorphaceae
 Taxon_82,Bacteroidota,Bacteroidia,Flavobacteriales,Flavobacteriaceae,NS2b marine group,Flavobacteriaceae: NS2b marine group
-Taxon_85,Bacteroidota,Bacteroidia,Flavobacteriales,Flavobacteriaceae,NS5 marine group,Flavobacteriaceae: NS5 marine group
-Taxon_84,Bacteroidota,Bacteroidia,Flavobacteriales,Flavobacteriaceae,NA,Flavobacteriaceae
-Taxon_88,Bacteroidota,Bacteroidia,Sphingobacteriales,NS11-12 marine group,NA,NS11-12 marine group
+Taxon_87,Bacteroidota,Bacteroidia,Flavobacteriales,Flavobacteriaceae,NS5 marine group,Flavobacteriaceae: NS5 marine group
+Taxon_78,Bacteroidota,Bacteroidia,Flavobacteriales,Flavobacteriaceae,Robiginitalea,Flavobacteriaceae: Robiginitalea
+Taxon_85,Bacteroidota,Bacteroidia,Flavobacteriales,Flavobacteriaceae,NA,Flavobacteriaceae
+Taxon_73,Bacteroidota,Bacteroidia,Sphingobacteriales,NS11-12 marine group,NA,NS11-12 marine group
 Taxon_96,Bacteroidota,Bacteroidia,Flavobacteriales,NS9 marine group,NA,NS9 marine group
+Taxon_69,Bacteroidota,Bacteroidia,Cytophagales,Spirosomataceae,Sandaracinomonas,Spirosomataceae: Sandaracinomonas
 Taxon_61,Bacteroidota,Bacteroidia,Chitinophagales,NA,NA,Chitinophagales
-Taxon_99,Cyanobacteriota,Cyanobacteriia,Synechococcales,Cyanobiaceae,Cyanobium PCC-6307,Cyanobiaceae: Cyanobium PCC-6307
-Taxon_18,Planctomycetota,Phycisphaerae,Phycisphaerales,Phycisphaeraceae,CL500-3,Phycisphaeraceae: CL500-3
-Taxon_166,Pseudomonadota,Alphaproteobacteria,Rhodospirillales,AEGEAN-169 marine group,NA,AEGEAN-169 marine group
-Taxon_203,Pseudomonadota,Alphaproteobacteria,Hyphomicrobiales,Beijerinckiaceae,NA,Beijerinckiaceae
-Taxon_170,Pseudomonadota,Alphaproteobacteria,Pelagibacterales,Clade I,Clade Ia,Clade I: Clade Ia
-Taxon_162,Pseudomonadota,Gammaproteobacteria,Burkholderiales,Ferrovaceae,Ferrovum,Ferrovaceae: Ferrovum
-Taxon_142,Pseudomonadota,Gammaproteobacteria,Burkholderiales,Nitrosomonadaceae,IS-44,Nitrosomonadaceae: IS-44
-Taxon_129,Pseudomonadota,Gammaproteobacteria,Pseudomonadales,OM182 clade,NA,OM182 clade
-Taxon_137,Pseudomonadota,Gammaproteobacteria,Pseudomonadales,SAR86 clade,NA,SAR86 clade
-Taxon_24,Verrucomicrobiota,Verrucomicrobiia,Pedosphaerales,Pedosphaeraceae,SCGC AAA164-E04,Pedosphaeraceae: SCGC AAA164-E04
+Taxon_98,Cyanobacteriota,Cyanobacteriia,Synechococcales,Cyanobiaceae,Cyanobium PCC-6307,Cyanobiaceae: Cyanobium PCC-6307
+Taxon_35,Planctomycetota,Phycisphaerae,Phycisphaerales,Phycisphaeraceae,CL500-3,Phycisphaeraceae: CL500-3
+Taxon_33,Planctomycetota,Planctomycetes,Pirellulales,Pirellulaceae,NA,Pirellulaceae
+Taxon_174,Pseudomonadota,Alphaproteobacteria,Rhodospirillales,AEGEAN-169 marine group,NA,AEGEAN-169 marine group
+Taxon_190,Pseudomonadota,Alphaproteobacteria,Hyphomicrobiales,Beijerinckiaceae,NA,Beijerinckiaceae
+Taxon_152,Pseudomonadota,Gammaproteobacteria,Burkholderiales,Comamonadaceae,Candidatus Symbiobacter,Comamonadaceae: Candidatus Symbiobacter
+Taxon_147,Pseudomonadota,Gammaproteobacteria,Burkholderiales,Comamonadaceae,RS62 marine group,Comamonadaceae: RS62 marine group
+Taxon_155,Pseudomonadota,Gammaproteobacteria,Burkholderiales,Ferrovaceae,Ferrovum,Ferrovaceae: Ferrovum
+Taxon_139,Pseudomonadota,Gammaproteobacteria,Burkholderiales,Hydrogenophilaceae,NA,Hydrogenophilaceae
+Taxon_117,Pseudomonadota,Gammaproteobacteria,Pseudomonadales,Nitrincolaceae,Marinobacterium,Nitrincolaceae: Marinobacterium
+Taxon_119,Pseudomonadota,Gammaproteobacteria,Pseudomonadales,OM182 clade,NA,OM182 clade
+Taxon_41,Verrucomicrobiota,Verrucomicrobiia,Pedosphaerales,Pedosphaeraceae,SCGC AAA164-E04,Pedosphaeraceae: SCGC AAA164-E04

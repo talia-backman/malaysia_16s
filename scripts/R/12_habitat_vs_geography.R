@@ -12,6 +12,7 @@ library(phyloseq)
 library(vegan)
 library(ggplot2)
 library(patchwork)
+library(ecodist)
 
 # set paths
 ps_path <- "./output/16s_physeq_cleaned_w_tree.RDS"
@@ -21,13 +22,19 @@ fig_dir <- "./figures/supplemental/figure_s4_habitat_vs_geography"
 dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
 dir.create(fig_dir, showWarnings = FALSE, recursive = TRUE)
 
-# load phyloseq object
-ps <- readRDS(ps_path)
+# load rarefied object with tree for unweighted UniFrac
+ps_rare <- readRDS(file.path("./output", "phyloseq_rarefied_16s.rds"))
+ps_tree <- readRDS(ps_path)
+shared_taxa <- intersect(taxa_names(ps_rare), taxa_names(ps_tree))
+ps <- merge_phyloseq(ps_rare, phy_tree(ps_tree))
+ps <- prune_taxa(taxa_names(ps) %in% shared_taxa, ps)
 ps <- prune_samples(sample_sums(ps) > 0, ps)
 ps <- prune_taxa(taxa_sums(ps) > 0, ps)
 
 # extract metadata
-meta <- sample_data(ps) %>% data.frame() %>% rownames_to_column("physeq_sample_id") %>% as_tibble()
+meta_raw <- as(sample_data(ps), "data.frame")
+meta_raw[] <- lapply(meta_raw, function(x) if (is.list(x)) unlist(x) else x)
+meta <- meta_raw %>% rownames_to_column("physeq_sample_id") %>% as_tibble()
 
 meta_small <- meta %>% dplyr::select(physeq_sample_id, sample_id, habitat, east_or_west, site_code, latitude, longitude) %>%
   mutate(habitat = as.factor(habitat), east_or_west = as.factor(east_or_west), site_code = as.factor(site_code),
@@ -44,11 +51,11 @@ pairwise_dist <- dist_mat %>% as.data.frame() %>% rownames_to_column("sample_1")
 
 # add metadata for both samples in each pair
 pairwise_df <- pairwise_dist %>% left_join(meta_small, by = c("sample_1" = "physeq_sample_id")) %>%
-  rename(habitat_1 = habitat, coast_1 = east_or_west, site_1 = site_code, latitude_1 = latitude,
-         longitude_1 = longitude, original_sample_id_1 = sample_id) %>%
+  dplyr::rename(habitat_1 = habitat, coast_1 = east_or_west, site_1 = site_code, latitude_1 = latitude,
+                longitude_1 = longitude, original_sample_id_1 = sample_id) %>%
   left_join(meta_small, by = c("sample_2" = "physeq_sample_id")) %>%
-  rename(habitat_2 = habitat, coast_2 = east_or_west, site_2 = site_code, latitude_2 = latitude,
-         longitude_2 = longitude, original_sample_id_2 = sample_id) %>%
+  dplyr::rename(habitat_2 = habitat, coast_2 = east_or_west, site_2 = site_code, latitude_2 = latitude,
+                longitude_2 = longitude, original_sample_id_2 = sample_id) %>%
   filter(!is.na(distance))
 
 # classify pair types
@@ -109,14 +116,17 @@ capture.output(wilcox_direct_contrast_no_site, file = file.path(out_dir, "direct
 ps_site <- merge_samples(ps, "site_code")
 sample_data(ps_site)$site_code <- sample_names(ps_site)
 
-site_meta <- meta_small %>% group_by(site_code) %>% summarise(habitat = first(habitat), east_or_west = first(east_or_west), .groups = "drop")
+site_meta <- meta_small %>% 
+  mutate(habitat = as.character(habitat), east_or_west = as.character(east_or_west)) %>%
+  group_by(site_code) %>% 
+  summarise(habitat = dplyr::first(habitat), east_or_west = dplyr::first(east_or_west), .groups = "drop")
 site_dist <- phyloseq::distance(ps_site, method = "unifrac")
 
 site_df <- as.matrix(site_dist) %>% as.data.frame() %>% rownames_to_column("site_1") %>%
   pivot_longer(-site_1, names_to = "site_2", values_to = "distance") %>% filter(site_1 != site_2) %>%
   mutate(pair_id = map2_chr(site_1, site_2, ~ paste(sort(c(.x, .y)), collapse = "__"))) %>% distinct(pair_id, .keep_all = TRUE) %>%
-  left_join(site_meta, by = c("site_1" = "site_code")) %>% rename(habitat_1 = habitat, coast_1 = east_or_west) %>%
-  left_join(site_meta, by = c("site_2" = "site_code")) %>% rename(habitat_2 = habitat, coast_2 = east_or_west) %>%
+  left_join(site_meta, by = c("site_1" = "site_code")) %>% dplyr::rename(habitat_1 = habitat, coast_1 = east_or_west) %>%
+  left_join(site_meta, by = c("site_2" = "site_code")) %>% dplyr::rename(habitat_2 = habitat, coast_2 = east_or_west) %>%
   mutate(same_habitat = habitat_1 == habitat_2, same_coast = coast_1 == coast_2,
          pair_category = case_when(same_habitat & same_coast ~ "Same habitat / same coast",
                                    !same_habitat & same_coast ~ "Different habitat / same coast",
@@ -140,6 +150,35 @@ write_csv(site_df, file.path(out_dir, "site_level_habitat_geography_distances.cs
 write_csv(site_summary, file.path(out_dir, "site_level_habitat_geography_summary.csv"))
 write_csv(site_contrast_summary, file.path(out_dir, "site_level_habitat_vs_geography_contrast_summary.csv"))
 capture.output(site_wilcox, file = file.path(out_dir, "site_level_habitat_vs_geography_wilcox.txt"))
+
+# MRM to test habitat vs coast effect on community distances
+# accounts for non-independence of pairwise distances
+# prepare binary predictor matrices from sample-level data (no within-site pairs)
+sample_ids <- rownames(dist_mat)
+
+same_habitat_mat <- outer(meta_small$habitat, meta_small$habitat, "==") * 1
+same_coast_mat <- outer(meta_small$east_or_west, meta_small$east_or_west, "==") * 1
+rownames(same_habitat_mat) <- colnames(same_habitat_mat) <- meta_small$physeq_sample_id
+rownames(same_coast_mat) <- colnames(same_coast_mat) <- meta_small$physeq_sample_id
+
+# align to distance matrix order
+keep_ids <- rownames(dist_mat)
+same_habitat_mat <- same_habitat_mat[keep_ids, keep_ids]
+same_coast_mat <- same_coast_mat[keep_ids, keep_ids]
+
+# run MRM: does sharing habitat or coast predict community similarity?
+mrm_result <- MRM(as.dist(dist_mat) ~ as.dist(1 - same_habitat_mat) + as.dist(1 - same_coast_mat),
+  nperm = 999)
+
+message("MRM results (habitat vs coast as predictors of UniFrac distance):")
+print(mrm_result)
+
+mrm_tbl <- tibble(predictor = c("different_habitat", "different_coast"),
+  coefficient = mrm_result$coef[2:3, 1],
+  r2 = mrm_result$r.squared[1],
+  p_value = mrm_result$coef[2:3, 2])
+
+write_csv(mrm_tbl, file.path(out_dir, "mrm_habitat_vs_coast_unifrac.csv"))
 
 # plot figure s4
 p_pairwise_categories_no_site <- ggplot(pairwise_df_no_site, aes(x = pair_category, y = distance)) +

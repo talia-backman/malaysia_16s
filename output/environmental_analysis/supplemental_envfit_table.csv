@@ -1,12 +1,12 @@
-environmental_variable,effect_size_r2,p_value
-Sea surface temperature (mean),0.153,0.001
-Chlorophyll concentration (mean),0.267,0.001
-Chlorophyll concentration (range),0.244,0.001
-Dissolved oxygen (mean),0.125,0.002
-Nitrate concentration (mean),0.097,0.008
-Sea surface salinity (mean),0.084,0.013
-Sea surface temperature (range),0.067,0.025
-Photosynthetically available radiation,0.047,0.083
-Phosphate concentration (mean),0.03,0.203
-pH,0.02,0.348
-Sea surface salinity (range),0.001,0.953
+effect_size_r2,p_value,environmental_variable
+0.371,0.001,Sea surface temperature (mean)
+0.342,0.001,Sea surface temperature (range)
+0.192,0.001,Dissolved oxygen (mean)
+0.267,0.001,Photosynthetically available radiation
+0.201,0.002,Sea surface salinity (range)
+0.203,0.002,Phosphate concentration (mean)
+0.165,0.005,Chlorophyll concentration (mean)
+0.12,0.007,pH
+0.119,0.008,Chlorophyll concentration (range)
+0.102,0.026,Nitrate concentration (mean)
+0.087,0.038,Sea surface salinity (mean)

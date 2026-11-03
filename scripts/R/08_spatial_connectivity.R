@@ -31,8 +31,13 @@ fig_dir <- "./figures/figure2_spatial_connectivity"
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 dir.create(fig_dir, recursive = TRUE, showWarnings = FALSE)
 
-# load phyloseq object
-ps <- readRDS(ps_path)
+# load rarefied object for unweighted UniFrac and un-rarefied with tree for weighted UniFrac
+ps_rare <- readRDS(file.path("./output", "phyloseq_rarefied_16s.rds"))
+ps_tree <- readRDS(ps_path)
+
+shared_taxa <- intersect(taxa_names(ps_rare), taxa_names(ps_tree))
+ps <- merge_phyloseq(ps_rare, phy_tree(ps_tree))
+ps <- prune_taxa(taxa_names(ps) %in% shared_taxa, ps)
 ps <- prune_samples(sample_sums(ps) > 0, ps)
 ps <- prune_taxa(taxa_sums(ps) > 0, ps)
 
@@ -128,7 +133,8 @@ dist_wunif <- dist_wunif[keep, keep, drop = FALSE]
 ocean_km <- ocean_km[keep, keep, drop = FALSE]
 
 meta_keep <- meta_ps %>% mutate(east_or_west = str_to_lower(as.character(east_or_west)), habitat = str_to_lower(as.character(habitat))) %>%
-  filter(sample_name %in% keep) %>% slice(match(keep, sample_name))
+  filter(sample_name %in% keep)
+meta_keep <- meta_keep[match(keep, meta_keep$sample_name), ]
 
 # run mantel tests
 mantel_results <- list()
