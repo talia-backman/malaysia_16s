@@ -167,7 +167,7 @@ if (taxa_are_rows(ps_rel)) otu_site <- t(otu_site)
 
 otu_site <- as.data.frame(otu_site) %>% rownames_to_column("sample_name") %>%
   left_join(as(sample_data(ps_rel), "data.frame") %>% rownames_to_column("sample_name") %>% 
-              select(sample_name, site_code), by = "sample_name") %>%
+              dplyr::select(sample_name, site_code), by = "sample_name") %>%
   group_by(site_code) %>%
   summarise(across(where(is.numeric), mean), .groups = "drop") %>%
   column_to_rownames("site_code")
