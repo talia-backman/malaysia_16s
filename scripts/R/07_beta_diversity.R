@@ -26,20 +26,12 @@ fig_dir <- "./figures/figure1_beta_diversity"
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 dir.create(fig_dir, recursive = TRUE, showWarnings = FALSE)
 
-# load rarefied object and add phylogenetic tree
-# tree was built from the filtered ASV set in script 05
-ps_rare <- readRDS(file.path("./output", "phyloseq_rarefied_16s.rds"))
-ps_tree <- readRDS(file.path("./output", "16s_physeq_cleaned_w_tree.RDS"))
-
-# add tree to rarefied object -- subset tree tips to rarefied ASV set
-shared_taxa <- intersect(taxa_names(ps_rare), taxa_names(ps_tree))
-ps <- merge_phyloseq(ps_rare, phy_tree(ps_tree))
-ps <- prune_taxa(taxa_names(ps) %in% shared_taxa, ps)
+# load depth-filtered phyloseq object with tree
+ps <- readRDS(file.path("./output", "16s_physeq_cleaned_w_tree.RDS"))
 ps <- prune_samples(sample_sums(ps) > 0, ps)
 ps <- prune_taxa(taxa_sums(ps) > 0, ps)
-
-message("samples after merging tree: ", nsamples(ps))
-message("taxa after merging tree: ", ntaxa(ps))
+message("samples: ", nsamples(ps))
+message("taxa: ", ntaxa(ps))
 
 # prepare metadata
 meta_raw <- as(sample_data(ps), "data.frame")
@@ -138,16 +130,19 @@ geo_envfit_tbl <- tibble(variable = rownames(geo_envfit$vectors$arrows),
 write_csv(geo_envfit_tbl, file.path(out_dir, "geographic_envfit_summary.csv"))
 geo_envfit_tbl
 
-# sample-level PERMANOVA (reported alongside site-level as sensitivity check)
-adon_eastwest <- adonis2(dist_unif ~ east_or_west, data = meta, permutations = 999)
-adon_habitat <- adonis2(dist_unif ~ habitat, data = meta, permutations = 999)
-adon_site <- adonis2(dist_unif ~ site_code, data = meta, permutations = 999)
-adon_protected <- adonis2(dist_unif ~ protected_area, data = meta, permutations = 999)
-adon_additive <- adonis2(dist_unif ~ east_or_west + habitat, data = meta, permutations = 999)
-adon_interaction <- adonis2(dist_unif ~ east_or_west * habitat, data = meta, permutations = 999)
-adon_full_additive <- adonis2(dist_unif ~ east_or_west + habitat + protected_area, data = meta, permutations = 999)
-adon_spatial_prot <- adonis2(dist_unif ~ east_or_west * habitat + protected_area, data = meta, permutations = 999)
-adon_prot_siteblock <- adonis2(dist_unif ~ protected_area, data = meta, permutations = 999, strata = meta$site_code)
+# add log read depth as covariate to control for sequencing depth differences
+meta$log_read_depth <- log(sample_sums(ps)[meta$sample_name])
+
+# sample-level PERMANOVA with read depth as covariate (reported alongside site-level)
+adon_eastwest <- adonis2(dist_unif ~ log_read_depth + east_or_west, data = meta, permutations = 999)
+adon_habitat <- adonis2(dist_unif ~ log_read_depth + habitat, data = meta, permutations = 999)
+adon_site <- adonis2(dist_unif ~ log_read_depth + site_code, data = meta, permutations = 999)
+adon_protected <- adonis2(dist_unif ~ log_read_depth + protected_area, data = meta, permutations = 999)
+adon_additive <- adonis2(dist_unif ~ log_read_depth + east_or_west + habitat, data = meta, permutations = 999)
+adon_interaction <- adonis2(dist_unif ~ log_read_depth + east_or_west * habitat, data = meta, permutations = 999)
+adon_full_additive <- adonis2(dist_unif ~ log_read_depth + east_or_west + habitat + protected_area, data = meta, permutations = 999)
+adon_spatial_prot <- adonis2(dist_unif ~ log_read_depth + east_or_west * habitat + protected_area, data = meta, permutations = 999)
+adon_prot_siteblock <- adonis2(dist_unif ~ protected_area, data = meta, permutations = 999)
 capture.output(adon_eastwest, file = file.path(out_dir, "adonis2_unifrac_east_or_west.txt"))
 capture.output(adon_habitat, file = file.path(out_dir, "adonis2_unifrac_habitat.txt"))
 capture.output(adon_site, file = file.path(out_dir, "adonis2_unifrac_site_code.txt"))

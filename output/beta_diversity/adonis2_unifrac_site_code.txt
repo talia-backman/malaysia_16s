@@ -2,10 +2,10 @@ Permutation test for adonis under reduced model
 Permutation: free
 Number of permutations: 999
 
-adonis2(formula = dist_unif ~ site_code, data = meta, permutations = 999)
+adonis2(formula = dist_unif ~ log_read_depth + site_code, data = meta, permutations = 999)
          Df SumOfSqs      R2      F Pr(>F)    
-Model    18  13.8235 0.72034 7.8703  0.001 ***
-Residual 55   5.3668 0.27966                  
-Total    73  19.1903 1.00000                  
+Model    19  14.2425 0.73312 7.8074  0.001 ***
+Residual 54   5.1847 0.26688                  
+Total    73  19.4272 1.00000                  
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

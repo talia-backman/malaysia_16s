@@ -22,12 +22,8 @@ fig_dir <- "./figures/supplemental/figure_s4_habitat_vs_geography"
 dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
 dir.create(fig_dir, showWarnings = FALSE, recursive = TRUE)
 
-# load rarefied object with tree for unweighted UniFrac
-ps_rare <- readRDS(file.path("./output", "phyloseq_rarefied_16s.rds"))
-ps_tree <- readRDS(ps_path)
-shared_taxa <- intersect(taxa_names(ps_rare), taxa_names(ps_tree))
-ps <- merge_phyloseq(ps_rare, phy_tree(ps_tree))
-ps <- prune_taxa(taxa_names(ps) %in% shared_taxa, ps)
+# load depth-filtered phyloseq object with tree
+ps <- readRDS(ps_path)
 ps <- prune_samples(sample_sums(ps) > 0, ps)
 ps <- prune_taxa(taxa_sums(ps) > 0, ps)
 

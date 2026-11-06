@@ -475,12 +475,12 @@ message("environmental samples excluded (zero reads): ",
 message("environmental samples excluded (below depth threshold): ",
         sum(str_detect(env_qc$`Final analysis status`, "below minimum"), na.rm = TRUE))
 
-message("environmental samples retained after depth filter: ", nsamples(ps_clean))
+message("environmental samples retained after depth filter: ", nsamples(ps_depth_filtered))
 message(
   "retained environmental sequencing depth min/median/max: ",
-  min(sample_sums(ps_clean)), " / ",
-  median(sample_sums(ps_clean)), " / ",
-  max(sample_sums(ps_clean))
+  min(sample_sums(ps_depth_filtered)), " / ",
+  median(sample_sums(ps_depth_filtered)), " / ",
+  max(sample_sums(ps_depth_filtered))
 )
 
 message("negative controls: ", nrow(neg_qc))
@@ -584,61 +584,7 @@ writeLines(c(
   paste0("final cleaned:      ", nsamples(ps_clean), " samples; ", ntaxa(ps_clean), " ASVs")
 ), con = con)
 
-message("script 4 done. outputs in: ", out_dir)# 04b_rarefy.R
-#
-# rarefy cleaned phyloseq object to even sequencing depth
-# used for unweighted UniFrac and presence/absence analyses
-# saves rarefied phyloseq object for downstream use
-
-library(phyloseq)
-library(tidyverse)
-
-out_dir <- "./output"
-ps_clean <- readRDS(file.path(out_dir, "phyloseq_cleaned_16s.rds"))
-
-# explore rarefaction depth tradeoffs
-depths_to_try <- c(500, 525, 750, 1000, 1500, 2000)
-
-message("samples retained at each rarefaction depth:")
-for (d in depths_to_try) {
-  n <- sum(sample_sums(ps_clean) >= d)
-  message("  ", d, " reads: ", n, " samples retained")
-}
-
-# rarefy to minimum depth -- 525 retains all 74 filtered samples
-rarefy_depth <- 525
-
-set.seed(666) # recorded for reproducibility
-ps_rare <- rarefy_even_depth(
-  ps_clean,
-  sample.size = rarefy_depth,
-  rngseed = FALSE,
-  replace = FALSE,
-  trimOTUs = TRUE,
-  verbose = TRUE
-)
-
-message("rarefied object: ", nsamples(ps_rare), " samples, ", ntaxa(ps_rare), " ASVs")
-message("rarefaction depth: ", rarefy_depth)
-
-# confirm all samples are at target depth
-stopifnot(all(sample_sums(ps_rare) == rarefy_depth))
-message("all samples confirmed at ", rarefy_depth, " reads")
-
-# check coast balance after rarefaction
-coast_check <- data.frame(
-  coast = sample_data(ps_rare)$east_or_west,
-  habitat = sample_data(ps_rare)$habitat
-) %>%
-  group_by(coast, habitat) %>%
-  summarise(n = n(), .groups = "drop")
-
-message("sample distribution after rarefaction:")
-print(coast_check)
-
-saveRDS(ps_rare, file.path(out_dir, "phyloseq_rarefied_16s.rds"))
-message("rarefied phyloseq saved. script 04b done.")
-# 05_build_phylogeny.R
+message("script 4 done. outputs in: ", out_dir)# 05_build_phylogeny.R
 #
 # align retained 16s asvs
 # build neighbor-joining tree
@@ -1600,7 +1546,7 @@ p_ocean_distance <- ggplot(ocean_plot_tbl, aes(x = ocean_distance_km, y = commun
 
 p_mrm_compare <- ggplot(mrm_compare_tbl, aes(x = model, y = r2)) + geom_col(width = 0.7) +
   geom_text(aes(label = paste0("R² = ", round(r2, 3))), vjust = -0.4, size = 4) +
-  labs(x = NULL, y = expression(R^2), title = "C") + ylim(0, 0.115) + theme_classic(base_size = 12) +
+  labs(x = NULL, y = expression(R^2), title = "C") + ylim(0, 0.14) + theme_classic(base_size = 12) +
   theme(axis.text.x = element_text(angle = 30, hjust = 1), plot.title = element_text(face = "bold", size = 16))
 
 figure4_gdm <- wrap_plots(p_gdm_importance, p_ocean_distance, p_mrm_compare, ncol = 3, widths = c(1.2, 1, 1))
