@@ -1,7 +1,3 @@
-if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
-BiocManager::install("ANCOMBC", update = FALSE, ask = FALSE)
-
-
 # 16_ancombc2_sensitivity.R
 #
 # evaluate habitat and coast differential abundance using ancom-bc2
@@ -13,6 +9,7 @@ set.seed(666)
 library(tidyverse)
 library(phyloseq)
 library(ANCOMBC)
+library(microbiome)
 
 # set paths
 ps_path <- "./output/16s_physeq_cleaned_w_tree.RDS"
@@ -44,7 +41,10 @@ sample_data(ps_genus)$site_code <- factor(sample_data(ps_genus)$site_code)
 stopifnot(nsamples(ps_genus) == 74, nlevels(sample_data(ps_genus)$site_code) == 19)
 
 # assign stable taxon IDs and save taxonomy lookup
-tax_lookup <- as.data.frame(as(tax_table(ps_genus), "matrix")) %>% rownames_to_column("original_asv") %>%
+tax_df <- as.data.frame(as(tax_table(ps_genus), "matrix"), check.names = FALSE)
+colnames(tax_df) <- make.unique(colnames(tax_df))
+
+tax_lookup <- tax_df %>% rownames_to_column("original_asv") %>%
   mutate(taxon_id = paste0("Taxon_", row_number())) %>%
   dplyr::select(taxon_id, original_asv, Phylum, Class, Order, Family, Genus)
 
@@ -52,8 +52,6 @@ taxa_names(ps_genus) <- tax_lookup$taxon_id
 write_csv(tax_lookup, file.path(out_dir, "ancombc2_taxonomy_lookup.csv"))
 
 # fit site-aware ancom-bc2 model
-set.seed(666)
-
 ancom_res <- ANCOMBC::ancombc2(data = ps_genus, tax_level = NULL, fix_formula = "habitat + east_or_west",
                                rand_formula = "(1 | site_code)", p_adj_method = "BH", prv_cut = 0,
                                lib_cut = 0, group = NULL, struc_zero = FALSE, neg_lb = FALSE,
