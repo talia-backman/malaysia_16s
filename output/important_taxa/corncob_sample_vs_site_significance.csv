@@ -1,0 +1,169 @@
+taxon_id,sample_habitat_sig,site_habitat_sig,sample_coast_sig,site_coast_sig,sample_combined_sig,site_combined_sig,Phylum,Class,Order,Family,Genus,taxonomy
+Taxon_1,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Gemmatimonadota,BD2-11 terrestrial group,NA,NA,NA,Gemmatimonadota
+Taxon_4,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Marinimicrobia (SAR406 clade),NA,NA,NA,NA,Marinimicrobia (SAR406 clade)
+Taxon_5,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Actinomycetota,Acidimicrobiia,Acidimicrobiales,Acidimicrobiaceae,NA,Acidimicrobiaceae
+Taxon_6,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Actinomycetota,Acidimicrobiia,Microtrichales,Microtrichaceae,Sva0996 marine group,Microtrichaceae: Sva0996 marine group
+Taxon_7,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Actinomycetota,Acidimicrobiia,Microtrichales,Ilumatobacteraceae,CL500-29 marine group,Ilumatobacteraceae: CL500-29 marine group
+Taxon_8,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,Actinomycetota,Acidimicrobiia,Microtrichales,Ilumatobacteraceae,Ilumatobacter,Ilumatobacteraceae: Ilumatobacter
+Taxon_9,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Actinomycetota,Acidimicrobiia,Microtrichales,Ilumatobacteraceae,Desertimonas,Ilumatobacteraceae: Desertimonas
+Taxon_10,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Actinomycetota,Acidimicrobiia,Microtrichales,Ilumatobacteraceae,NA,Ilumatobacteraceae
+Taxon_11,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Actinomycetota,Actinobacteria,Frankiales,Sporichthyaceae,hgcI clade,Sporichthyaceae: hgcI clade
+Taxon_12,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Actinomycetota,Actinobacteria,PeM15,NA,NA,PeM15
+Taxon_13,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Actinomycetota,Actinobacteria,Micrococcales,Microbacteriaceae,Leifsonia,Microbacteriaceae: Leifsonia
+Taxon_14,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Actinomycetota,Actinobacteria,Micrococcales,Microbacteriaceae,Aurantimicrobium,Microbacteriaceae: Aurantimicrobium
+Taxon_15,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Actinomycetota,Actinobacteria,Micrococcales,Microbacteriaceae,MWH-Ta3,Microbacteriaceae: MWH-Ta3
+Taxon_16,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Actinomycetota,Actinobacteria,Micrococcales,Microbacteriaceae,DS001,Microbacteriaceae: DS001
+Taxon_17,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Actinomycetota,Actinobacteria,Micrococcales,Microbacteriaceae,Rhodoluna,Microbacteriaceae: Rhodoluna
+Taxon_18,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Actinomycetota,Actinobacteria,Micrococcales,Microbacteriaceae,Candidatus Planktoluna,Microbacteriaceae: Candidatus Planktoluna
+Taxon_19,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Actinomycetota,Actinobacteria,Micrococcales,Microbacteriaceae,Candidatus Flaviluna,Microbacteriaceae: Candidatus Flaviluna
+Taxon_20,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Actinomycetota,Actinobacteria,Micrococcales,Microbacteriaceae,Candidatus Aquiluna,Microbacteriaceae: Candidatus Aquiluna
+Taxon_21,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Actinomycetota,Acidimicrobiia,Actinomarinales,NA,NA,Actinomarinales
+Taxon_22,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,Actinomycetota,Acidimicrobiia,Actinomarinales,Actinomarinaceae,Candidatus Actinomarina,Actinomarinaceae: Candidatus Actinomarina
+Taxon_23,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Planctomycetota,Pla3 lineage,NA,NA,NA,Planctomycetota
+Taxon_24,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,Planctomycetota,OM190,NA,NA,NA,Planctomycetota
+Taxon_25,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Planctomycetota,Planctomycetes,Isosphaerales,Isosphaeraceae,NA,Isosphaeraceae
+Taxon_26,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,Planctomycetota,Planctomycetes,Pirellulales,Pirellulaceae,Pirellula,Pirellulaceae: Pirellula
+Taxon_28,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,Planctomycetota,Planctomycetes,Pirellulales,Pirellulaceae,Rubripirellula,Pirellulaceae: Rubripirellula
+Taxon_29,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,Planctomycetota,Planctomycetes,Pirellulales,Pirellulaceae,Mariniblastus,Pirellulaceae: Mariniblastus
+Taxon_30,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Planctomycetota,Planctomycetes,Planctomycetales,Rubinisphaeraceae,Fuerstia,Rubinisphaeraceae: Fuerstia
+Taxon_31,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Planctomycetota,Planctomycetes,Planctomycetales,Rubinisphaeraceae,NA,Rubinisphaeraceae
+Taxon_32,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,Planctomycetota,Planctomycetes,Planctomycetales,Gimesiaceae,NA,Gimesiaceae
+Taxon_33,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,Planctomycetota,Planctomycetes,Pirellulales,Pirellulaceae,NA,Pirellulaceae
+Taxon_35,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,Planctomycetota,Phycisphaerae,Phycisphaerales,Phycisphaeraceae,CL500-3,Phycisphaeraceae: CL500-3
+Taxon_36,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Planctomycetota,Phycisphaerae,Phycisphaerales,Phycisphaeraceae,Phycisphaera,Phycisphaeraceae: Phycisphaera
+Taxon_37,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Verrucomicrobiota,Lentisphaeria,Lentisphaerales,Lentisphaeraceae,Lentisphaera,Lentisphaeraceae: Lentisphaera
+Taxon_39,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Verrucomicrobiota,Kiritimatiellia,Kiritimatiellales,Kiritimatiellaceae,R76-B128,Kiritimatiellaceae: R76-B128
+Taxon_41,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,Verrucomicrobiota,Verrucomicrobiia,Pedosphaerales,Pedosphaeraceae,SCGC AAA164-E04,Pedosphaeraceae: SCGC AAA164-E04
+Taxon_42,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Verrucomicrobiota,Verrucomicrobiia,Pedosphaerales,Pedosphaeraceae,NA,Pedosphaeraceae
+Taxon_46,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Verrucomicrobiota,Verrucomicrobiia,Chthoniobacterales,Chthoniobacteraceae,LD29,Chthoniobacteraceae: LD29
+Taxon_47,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,Verrucomicrobiota,Verrucomicrobiia,Verrucomicrobiales,DEV007,NA,DEV007
+Taxon_50,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Verrucomicrobiota,Verrucomicrobiia,Verrucomicrobiales,Rubritaleaceae,Persicirhabdus,Rubritaleaceae: Persicirhabdus
+Taxon_51,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Verrucomicrobiota,Verrucomicrobiia,Verrucomicrobiales,Rubritaleaceae,Roseibacillus,Rubritaleaceae: Roseibacillus
+Taxon_52,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Verrucomicrobiota,Verrucomicrobiia,Opitutales,Puniceicoccaceae,Lentimonas,Puniceicoccaceae: Lentimonas
+Taxon_53,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Verrucomicrobiota,Verrucomicrobiia,Opitutales,Puniceicoccaceae,Coraliomargarita,Puniceicoccaceae: Coraliomargarita
+Taxon_54,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Verrucomicrobiota,Verrucomicrobiia,NA,NA,NA,Verrucomicrobiota
+Taxon_55,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Verrucomicrobiota,Verrucomicrobiia,Opitutales,Puniceicoccaceae,MB11C04 marine group,Puniceicoccaceae: MB11C04 marine group
+Taxon_56,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,Bacillota,Bacilli,Acholeplasmatales,Acholeplasmataceae,Acholeplasma,Acholeplasmataceae: Acholeplasma
+Taxon_59,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Balneolota,Balneolia,Balneolales,Balneolaceae,Balneola,Balneolaceae: Balneola
+Taxon_60,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Bacteroidota,Bacteroidia,Chitinophagales,Saprospiraceae,NA,Saprospiraceae
+Taxon_61,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,Bacteroidota,Bacteroidia,Chitinophagales,NA,NA,Chitinophagales
+Taxon_63,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Bacteroidota,Bacteroidia,Chitinophagales,Chitinophagaceae,NA,Chitinophagaceae
+Taxon_64,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Bacteroidota,Bacteroidia,Chitinophagales,Chitinophagaceae,Sediminibacterium,Chitinophagaceae: Sediminibacterium
+Taxon_65,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Bacteroidota,Bacteroidia,Chitinophagales,Chitinophagaceae,Puia,Chitinophagaceae: Puia
+Taxon_66,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Bacteroidota,Bacteroidia,Cytophagales,NA,NA,Cytophagales
+Taxon_68,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Bacteroidota,Bacteroidia,Cytophagales,Spirosomataceae,Emticicia,Spirosomataceae: Emticicia
+Taxon_69,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,Bacteroidota,Bacteroidia,Cytophagales,Spirosomataceae,Sandaracinomonas,Spirosomataceae: Sandaracinomonas
+Taxon_71,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,Bacteroidota,Bacteroidia,Cytophagales,Cyclobacteriaceae,Marinoscillum,Cyclobacteriaceae: Marinoscillum
+Taxon_73,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,Bacteroidota,Bacteroidia,Sphingobacteriales,NS11-12 marine group,NA,NS11-12 marine group
+Taxon_75,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Bacteroidota,Bacteroidia,Flavobacteriales,Weeksellaceae,Cloacibacterium,Weeksellaceae: Cloacibacterium
+Taxon_76,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,Bacteroidota,Bacteroidia,Flavobacteriales,Flavobacteriaceae,Pseudotenacibaculum,Flavobacteriaceae: Pseudotenacibaculum
+Taxon_77,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Bacteroidota,Bacteroidia,Flavobacteriales,Flavobacteriaceae,Lutibacter,Flavobacteriaceae: Lutibacter
+Taxon_78,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,Bacteroidota,Bacteroidia,Flavobacteriales,Flavobacteriaceae,Robiginitalea,Flavobacteriaceae: Robiginitalea
+Taxon_79,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Bacteroidota,Bacteroidia,Flavobacteriales,Flavobacteriaceae,Aureimarina,Flavobacteriaceae: Aureimarina
+Taxon_81,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Bacteroidota,Bacteroidia,Flavobacteriales,Flavobacteriaceae,Aquibacter,Flavobacteriaceae: Aquibacter
+Taxon_82,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,Bacteroidota,Bacteroidia,Flavobacteriales,Flavobacteriaceae,NS2b marine group,Flavobacteriaceae: NS2b marine group
+Taxon_85,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,Bacteroidota,Bacteroidia,Flavobacteriales,Flavobacteriaceae,NA,Flavobacteriaceae
+Taxon_86,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Bacteroidota,Bacteroidia,Flavobacteriales,Flavobacteriaceae,Flavobacterium,Flavobacteriaceae: Flavobacterium
+Taxon_87,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,Bacteroidota,Bacteroidia,Flavobacteriales,Flavobacteriaceae,NS5 marine group,Flavobacteriaceae: NS5 marine group
+Taxon_88,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,Bacteroidota,Bacteroidia,Flavobacteriales,Flavobacteriaceae,NS4 marine group,Flavobacteriaceae: NS4 marine group
+Taxon_90,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Bacteroidota,Bacteroidia,Flavobacteriales,Cryomorphaceae,NS10 marine group,Cryomorphaceae: NS10 marine group
+Taxon_91,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Bacteroidota,Bacteroidia,Flavobacteriales,Crocinitomicaceae,Crocinitomix,Crocinitomicaceae: Crocinitomix
+Taxon_92,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,Bacteroidota,Bacteroidia,Flavobacteriales,NS7 marine group,NA,NS7 marine group
+Taxon_93,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,Bacteroidota,Bacteroidia,Flavobacteriales,Crocinitomicaceae,Salinirepens,Crocinitomicaceae: Salinirepens
+Taxon_94,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Bacteroidota,Bacteroidia,Flavobacteriales,Crocinitomicaceae,NA,Crocinitomicaceae
+Taxon_95,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,Bacteroidota,Bacteroidia,Flavobacteriales,Crocinitomicaceae,Fluviicola,Crocinitomicaceae: Fluviicola
+Taxon_96,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,Bacteroidota,Bacteroidia,Flavobacteriales,NS9 marine group,NA,NS9 marine group
+Taxon_97,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,Bacteroidota,Bacteroidia,Flavobacteriales,Cryomorphaceae,NA,Cryomorphaceae
+Taxon_98,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,Cyanobacteriota,Cyanobacteriia,Synechococcales,Cyanobiaceae,Cyanobium PCC-6307,Cyanobiaceae: Cyanobium PCC-6307
+Taxon_99,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,Cyanobacteriota,Cyanobacteriia,Synechococcales,Cyanobiaceae,Synechococcus CC9902,Cyanobiaceae: Synechococcus CC9902
+Taxon_100,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Campylobacterota,Campylobacteria,Campylobacterales,Sulfurovaceae,Sulfurovum,Sulfurovaceae: Sulfurovum
+Taxon_102,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Campylobacterota,Campylobacteria,Campylobacterales,Arcobacteraceae,Arcobacter,Arcobacteraceae: Arcobacter
+Taxon_104,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Campylobacterota,Campylobacteria,Campylobacterales,Sulfurimonadaceae,Sulfurimonas,Sulfurimonadaceae: Sulfurimonas
+Taxon_105,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,Pseudomonadota,Gammaproteobacteria,Pseudomonadales,Halieaceae,OM60(NOR5) clade,Halieaceae: OM60(NOR5) clade
+Taxon_106,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Gammaproteobacteria Incertae Sedis,Unknown Family,NA,Unknown Family
+Taxon_107,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Chromatiales,Chromatiaceae,Candidatus Thiobios,Chromatiaceae: Candidatus Thiobios
+Taxon_109,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Ectothiorhodospirales,Ectothiorhodospiraceae,NA,Ectothiorhodospiraceae
+Taxon_112,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Ga0077536,NA,NA,Ga0077536
+Taxon_114,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Pseudomonadales,Halieaceae,Luminiphilus,Halieaceae: Luminiphilus
+Taxon_116,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Pseudomonadales,Spongiibacteraceae,BD1-7 clade,Spongiibacteraceae: BD1-7 clade
+Taxon_117,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,Pseudomonadota,Gammaproteobacteria,Pseudomonadales,Nitrincolaceae,Marinobacterium,Nitrincolaceae: Marinobacterium
+Taxon_118,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Pseudomonadales,Nitrincolaceae,NA,Nitrincolaceae
+Taxon_119,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,Pseudomonadota,Gammaproteobacteria,Pseudomonadales,OM182 clade,NA,OM182 clade
+Taxon_120,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Pseudomonadales,Litorivicinaceae,Litorivicinus,Litorivicinaceae: Litorivicinus
+Taxon_122,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Methylococcales,Methylococcaceae,Methyloparacoccus,Methylococcaceae: Methyloparacoccus
+Taxon_123,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Pseudomonadales,Thioglobaceae,SUP05 cluster,Thioglobaceae: SUP05 cluster
+Taxon_124,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Coxiellales,Coxiellaceae,Coxiella,Coxiellaceae: Coxiella
+Taxon_128,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Steroidobacterales,Woeseiaceae,Woeseia,Woeseiaceae: Woeseia
+Taxon_129,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,UBA10353 marine group,NA,NA,UBA10353 marine group
+Taxon_130,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Pseudomonadales,SAR86 clade,NA,SAR86 clade
+Taxon_131,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Burkholderiales,Comamonadaceae,NA,Comamonadaceae
+Taxon_132,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Burkholderiales,Comamonadaceae,Thiomonas,Comamonadaceae: Thiomonas
+Taxon_133,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Burkholderiales,Rhodocyclaceae,C39,Rhodocyclaceae: C39
+Taxon_135,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Burkholderiales,Methylophilaceae,OM43 clade,Methylophilaceae: OM43 clade
+Taxon_136,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Burkholderiales,Methylophilaceae,NA,Methylophilaceae
+Taxon_137,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Burkholderiales,Methylophilaceae,Pseudomethylobacillus,Methylophilaceae: Pseudomethylobacillus
+Taxon_138,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,Pseudomonadota,Gammaproteobacteria,Burkholderiales,Nitrosomonadaceae,IS-44,Nitrosomonadaceae: IS-44
+Taxon_139,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Burkholderiales,Hydrogenophilaceae,NA,Hydrogenophilaceae
+Taxon_141,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Burkholderiales,Burkholderiaceae,Limnobacter,Burkholderiaceae: Limnobacter
+Taxon_143,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Burkholderiales,Oxalobacteraceae,Lacisediminimonas,Oxalobacteraceae: Lacisediminimonas
+Taxon_145,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Burkholderiales,Burkholderiaceae,Polynucleobacter,Burkholderiaceae: Polynucleobacter
+Taxon_146,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Burkholderiales,Comamonadaceae,Aquabacterium,Comamonadaceae: Aquabacterium
+Taxon_147,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Burkholderiales,Comamonadaceae,RS62 marine group,Comamonadaceae: RS62 marine group
+Taxon_149,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Burkholderiales,Comamonadaceae,Hydrogenophaga,Comamonadaceae: Hydrogenophaga
+Taxon_151,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Burkholderiales,Comamonadaceae,Rhodoferax,Comamonadaceae: Rhodoferax
+Taxon_152,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Burkholderiales,Comamonadaceae,Candidatus Symbiobacter,Comamonadaceae: Candidatus Symbiobacter
+Taxon_153,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Burkholderiales,Comamonadaceae,Limnohabitans,Comamonadaceae: Limnohabitans
+Taxon_154,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Burkholderiales,Comamonadaceae,Ramlibacter,Comamonadaceae: Ramlibacter
+Taxon_155,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,Pseudomonadota,Gammaproteobacteria,Burkholderiales,Ferrovaceae,Ferrovum,Ferrovaceae: Ferrovum
+Taxon_156,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,SAR324 clade(Marine group B),Incertae Sedis,Incertae Sedis,Incertae Sedis,Candidatus Nitrosoarchaeum,Incertae Sedis: Candidatus Nitrosoarchaeum
+Taxon_159,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Bdellovibrionota,Bacteriovoracia,Bacteriovoracales,Bacteriovoracaceae,Peredibacter,Bacteriovoracaceae: Peredibacter
+Taxon_160,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Bdellovibrionota,Oligoflexia,Oligoflexales,Oligoflexaceae,NA,Oligoflexaceae
+Taxon_161,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Bdellovibrionota,Oligoflexia,Oligoflexales,Oligoflexaceae,Pseudobacteriovorax,Oligoflexaceae: Pseudobacteriovorax
+Taxon_162,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Pelagibacterales,Clade III,NA,Clade III
+Taxon_163,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Pelagibacterales,Clade II,NA,Clade II
+Taxon_164,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Pelagibacterales,NA,NA,Pelagibacterales
+Taxon_165,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Pelagibacterales,Clade I,Clade Ia,Clade I: Clade Ia
+Taxon_166,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Pelagibacterales,Clade I,Clade Ib,Clade I: Clade Ib
+Taxon_170,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Puniceispirillales,SAR116 clade,NA,SAR116 clade
+Taxon_171,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Rickettsiales,S25-593,NA,S25-593
+Taxon_174,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Rhodospirillales,AEGEAN-169 marine group,NA,AEGEAN-169 marine group
+Taxon_175,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Paracaedibacterales,Paracaedibacteraceae,NA,Paracaedibacteraceae
+Taxon_176,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Acetobacterales,Acetobacteraceae,Acidocella,Acetobacteraceae: Acidocella
+Taxon_177,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Acetobacterales,Acetobacteraceae,Rhodopila,Acetobacteraceae: Rhodopila
+Taxon_178,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Acetobacterales,Acetobacteraceae,NA,Acetobacteraceae
+Taxon_179,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Puniceispirillales,NA,NA,Puniceispirillales
+Taxon_180,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Parvibaculales,PS1 clade,NA,PS1 clade
+Taxon_182,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Hyphomicrobiales,Hyphomicrobiales Incertae Sedis,Anderseniella,Hyphomicrobiales Incertae Sedis: Anderseniella
+Taxon_184,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Hyphomicrobiales,Hyphomicrobiales Incertae Sedis,NA,Hyphomicrobiales Incertae Sedis
+Taxon_187,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Hyphomicrobiales,Hyphomicrobiaceae,Filomicrobium,Hyphomicrobiaceae: Filomicrobium
+Taxon_188,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Hyphomicrobiales,Hyphomicrobiaceae,NA,Hyphomicrobiaceae
+Taxon_190,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Hyphomicrobiales,Beijerinckiaceae,NA,Beijerinckiaceae
+Taxon_191,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Hyphomicrobiales,Beijerinckiaceae,FukuN57,Beijerinckiaceae: FukuN57
+Taxon_192,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Hyphomicrobiales,Hyphomicrobiales Incertae Sedis,Alsobacter,Hyphomicrobiales Incertae Sedis: Alsobacter
+Taxon_194,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Hyphomicrobiales,Beijerinckiaceae,alphaI cluster,Beijerinckiaceae: alphaI cluster
+Taxon_196,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Sphingomonadales,Sphingomonadaceae,Erythrobacter,Sphingomonadaceae: Erythrobacter
+Taxon_197,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Sphingomonadales,Sphingomonadaceae,Qinpengyuania,Sphingomonadaceae: Qinpengyuania
+Taxon_200,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Sphingomonadales,Sphingomonadaceae,Altererythrobacter,Sphingomonadaceae: Altererythrobacter
+Taxon_201,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Sphingomonadales,Sphingomonadaceae,NA,Sphingomonadaceae
+Taxon_202,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Sphingomonadales,Sphingomonadaceae,Novosphingobium,Sphingomonadaceae: Novosphingobium
+Taxon_203,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,Pseudomonadota,Alphaproteobacteria,Hyphomicrobiales,Stappiaceae,NA,Stappiaceae
+Taxon_204,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Caulobacterales,Hyphomonadaceae,NA,Hyphomonadaceae
+Taxon_208,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Rhodobacterales,Paracoccaceae,Silicimonas,Paracoccaceae: Silicimonas
+Taxon_209,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Rhodobacterales,Paracoccaceae,Tropicimonas-Psychromarinibacter,Paracoccaceae: Tropicimonas-Psychromarinibacter
+Taxon_210,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Rhodobacterales,Paracoccaceae,Gemmobacter,Paracoccaceae: Gemmobacter
+Taxon_211,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Rhodobacterales,Paracoccaceae,Pararhodobacter,Paracoccaceae: Pararhodobacter
+Taxon_212,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Rhodobacterales,Paracoccaceae,Cereibacter,Paracoccaceae: Cereibacter
+Taxon_213,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Rhodobacterales,Paracoccaceae,Tabrizicola,Paracoccaceae: Tabrizicola
+Taxon_214,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Rhodobacterales,Paracoccaceae,Fuscovulum,Paracoccaceae: Fuscovulum
+Taxon_215,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Rhodobacterales,Paracoccaceae,Rhodobacter,Paracoccaceae: Rhodobacter
+Taxon_216,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Rhodobacterales,Paracoccaceae,NA,Paracoccaceae
+Taxon_217,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,Pseudomonadota,Alphaproteobacteria,Rhodobacterales,Paracoccaceae,Marivivens,Paracoccaceae: Marivivens
+Taxon_218,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Rhodobacterales,Paracoccaceae,Pacificitalea,Paracoccaceae: Pacificitalea
+Taxon_219,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Rhodobacterales,Paracoccaceae,Flavimaricola,Paracoccaceae: Flavimaricola
+Taxon_222,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,Pseudomonadota,Alphaproteobacteria,Rhodobacterales,Paracoccaceae,Roseovarius,Paracoccaceae: Roseovarius
+Taxon_223,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Rhodobacterales,Paracoccaceae,Aestuariicoccus,Paracoccaceae: Aestuariicoccus
+Taxon_225,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Rhodobacterales,Paracoccaceae,Thalassobius,Paracoccaceae: Thalassobius
+Taxon_226,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Rhodobacterales,Paracoccaceae,Cognatishimia,Paracoccaceae: Cognatishimia
+Taxon_227,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,Pseudomonadota,Alphaproteobacteria,Rhodobacterales,Paracoccaceae,Litorimicrobium,Paracoccaceae: Litorimicrobium
+Taxon_228,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Rhodobacterales,Paracoccaceae,Ascidiaceihabitans,Paracoccaceae: Ascidiaceihabitans
+Taxon_229,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,Pseudomonadota,Alphaproteobacteria,Rhodobacterales,Paracoccaceae,HIMB11,Paracoccaceae: HIMB11

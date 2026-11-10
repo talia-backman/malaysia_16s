@@ -48,10 +48,15 @@ saveRDS(ps_genus, file.path(out_dir, "phyloseq_genus_level.RDS"))
 message("genus-level taxa: ", ntaxa(ps_genus))
 
 # prevalence filter genus-level taxa
+
 prev_threshold <- ceiling(0.05 * nsamples(ps_genus))
-tax_prev <- apply(otu_table(ps_genus), 2, function(x) sum(x > 0))
-ps_genus_filt <- prune_taxa(tax_prev >= prev_threshold, ps_genus)
+otu_prev <- as(otu_table(ps_genus), "matrix")
+if (taxa_are_rows(ps_genus)) otu_prev <- t(otu_prev)
+tax_prev <- colSums(otu_prev > 0)
+ps_genus_filt <- prune_taxa(names(tax_prev)[tax_prev >= prev_threshold], ps_genus)
 ps_genus_filt <- prune_taxa(taxa_sums(ps_genus_filt) > 0, ps_genus_filt)
+
+stopifnot(ntaxa(ps_genus_filt) > 0)
 
 saveRDS(ps_genus_filt, file.path(out_dir, "phyloseq_genus_level_prev5pct.RDS"))
 
@@ -183,5 +188,75 @@ sig_overlap_tbl <- tibble(taxon_id = unique(c(habitat_sig_taxa, coast_sig_taxa, 
                               !is.na(Order) ~ Order, TRUE ~ Phylum)) %>% arrange(category, taxonomy)
 
 write_csv(sig_overlap_tbl, file.path(out_dir, "significant_taxa_model_overlap.csv"))
+
+# ============================================================
+# site-level corncob sensitivity analysis
+# ============================================================
+
+# aggregate genus-level counts within each site
+ps_site_da <- merge_samples(ps_genus_filt, "site_code")
+ps_site_da <- prune_taxa(taxa_sums(ps_site_da) > 0, ps_site_da)
+
+# restore site metadata from the original sample-level object
+site_metadata <- as(sample_data(ps_genus_filt), "data.frame") %>%
+  rownames_to_column("sample_name") %>%
+  group_by(site_code) %>%
+  summarise(habitat = first(as.character(habitat)), east_or_west = first(as.character(east_or_west)),
+            n_samples = n(), .groups = "drop")
+
+stopifnot(nrow(site_metadata) == 19, all(site_metadata$site_code %in% sample_names(ps_site_da)))
+
+site_metadata <- site_metadata[match(sample_names(ps_site_da), site_metadata$site_code), ]
+stopifnot(identical(as.character(site_metadata$site_code), sample_names(ps_site_da)))
+
+sample_data(ps_site_da)$habitat <- factor(site_metadata$habitat)
+sample_data(ps_site_da)$east_or_west <- factor(site_metadata$east_or_west)
+
+message("site-level samples: ", nsamples(ps_site_da), " | taxa: ", ntaxa(ps_site_da))
+print(table(sample_data(ps_site_da)$east_or_west, sample_data(ps_site_da)$habitat))
+
+# save site-level phyloseq object and metadata
+saveRDS(ps_site_da, file.path(out_dir, "phyloseq_genus_site_level.RDS"))
+write_csv(site_metadata, file.path(out_dir, "site_level_da_metadata.csv"))
+
+# run corncob models with sites as independent observations
+set.seed(666)
+site_habitat_da <- corncob::differentialTest(formula = ~ habitat, phi.formula = ~ 1, formula_null = ~ 1, phi.formula_null = ~ 1,
+                                             test = "Wald", boot = FALSE, data = ps_site_da, fdr_cutoff = 0.05, full_output = TRUE)
+
+set.seed(666)
+site_coast_da <- corncob::differentialTest(formula = ~ east_or_west, phi.formula = ~ 1, formula_null = ~ 1, phi.formula_null = ~ 1,
+                                           test = "Wald", boot = FALSE, data = ps_site_da, fdr_cutoff = 0.05, full_output = TRUE)
+
+set.seed(666)
+site_combined_da <- corncob::differentialTest(formula = ~ habitat + east_or_west, phi.formula = ~ 1, formula_null = ~ 1,
+                                              phi.formula_null = ~ 1, test = "Wald", boot = FALSE, data = ps_site_da,
+                                              fdr_cutoff = 0.05, full_output = TRUE)
+
+# save full model objects
+saveRDS(site_habitat_da, file.path(out_dir, "corncob_site_habitat_analysis.RDS"))
+saveRDS(site_coast_da, file.path(out_dir, "corncob_site_coast_analysis.RDS"))
+saveRDS(site_combined_da, file.path(out_dir, "corncob_site_combined_analysis.RDS"))
+
+# compare significant taxa between sample-level and site-level analyses
+site_sig_overlap <- tibble(taxon_id = taxa_names(ps_genus_filt)) %>%
+  mutate(sample_habitat_sig = taxon_id %in% habitat_sig_taxa, site_habitat_sig = taxon_id %in% site_habitat_da$significant_taxa,
+         sample_coast_sig = taxon_id %in% coast_sig_taxa, site_coast_sig = taxon_id %in% site_coast_da$significant_taxa,
+         sample_combined_sig = taxon_id %in% combined_sig_taxa, site_combined_sig = taxon_id %in% site_combined_da$significant_taxa) %>%
+  left_join(retained_taxa %>% rownames_to_column("tax_row") %>% mutate(taxon_id = taxa_names(ps_genus_filt)) %>%
+              dplyr::select(taxon_id, Phylum, Class, Order, Family, Genus), by = "taxon_id") %>%
+  mutate(taxonomy = case_when(!is.na(Genus) ~ paste(Family, Genus, sep = ": "), !is.na(Family) ~ Family,
+                              !is.na(Order) ~ Order, TRUE ~ Phylum))
+
+write_csv(site_sig_overlap, file.path(out_dir, "corncob_sample_vs_site_significance.csv"))
+
+# summarize counts of significant taxa
+site_da_summary <- tibble(model = c("habitat", "coast", "combined"),
+                          sample_level_significant = c(length(habitat_sig_taxa), length(coast_sig_taxa), length(combined_sig_taxa)),
+                          site_level_significant = c(length(site_habitat_da$significant_taxa), length(site_coast_da$significant_taxa),
+                                                     length(site_combined_da$significant_taxa)))
+
+write_csv(site_da_summary, file.path(out_dir, "corncob_site_sensitivity_summary.csv"))
+print(site_da_summary)
 
 message("script 9 done. outputs in: ", out_dir)
