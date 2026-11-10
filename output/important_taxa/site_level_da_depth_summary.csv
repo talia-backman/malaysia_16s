@@ -1,0 +1,20 @@
+site_code,habitat,east_or_west,n_samples,total_reads,mean_reads,min_reads,max_reads
+Man_PPAF,Mangrove,West,5,76174,15234.8,13961,17023
+Man_Batu_Pahat,Mangrove,West,5,38120,7624,4231,13167
+Cor_ PB_PP,Coral,West,5,29073,5814.6,4578,7029
+Man_Merang,Mangrove,East,5,28063,5612.6,2569,12085
+Cor_Pulau_Intan,Coral,West,5,24734,4946.8,2244,8837
+ManSeG_Paka,Seagrass,East,5,24079,4815.8,2328,7974
+Man_Kukup,Mangrove,West,5,21069,4213.8,2623,7073
+SeG_Tanjung_Rhu,Seagrass,West,5,18439,3687.8,1552,5156
+Man_Selat_Nyior,Mangrove,West,5,18233,3646.6,2245,4936
+Man_Sungai_Ular,Mangrove,East,4,16646,4161.5,750,9651
+Man_Kuala_Sepetang,Mangrove,West,5,9495,1899,1002,2730
+Man_Penaga,Mangrove,West,5,9338,1867.6,656,2719
+Man_Pulau_Tinggi,Mangrove,East,3,4805,1601.6666666666667,894,2949
+Cor_Pulau_Ular,Coral,East,3,4787,1595.6666666666667,1252,1908
+SeG_Pulau_Kezambo,Seagrass,West,3,4263,1421,744,2498
+Cor_Pulau_Tinggi,Coral,East,3,2629,876.3333333333334,525,1402
+Man_Nenasi,Mangrove,East,1,1032,1032,1032,1032
+Man_Pulau_Ketam,Mangrove,West,1,900,900,900,900
+SeG_PulauTinggi,Seagrass,East,1,538,538,538,538

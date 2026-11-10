@@ -217,7 +217,27 @@ print(table(sample_data(ps_site_da)$east_or_west, sample_data(ps_site_da)$habita
 
 # save site-level phyloseq object and metadata
 saveRDS(ps_site_da, file.path(out_dir, "phyloseq_genus_site_level.RDS"))
+
 write_csv(site_metadata, file.path(out_dir, "site_level_da_metadata.csv"))
+
+# check sequencing depth and replication across sites
+sample_depth_df <- tibble(sample_name = sample_names(ps_genus_filt), site_code = as.character(sample_data(ps_genus_filt)$site_code),
+                          habitat = as.character(sample_data(ps_genus_filt)$habitat),
+                          east_or_west = as.character(sample_data(ps_genus_filt)$east_or_west),
+                          sequencing_depth = as.numeric(sample_sums(ps_genus_filt)))
+
+site_depth_summary <- sample_depth_df %>% group_by(site_code, habitat, east_or_west) %>%
+  summarise(n_samples = n(), total_reads = sum(sequencing_depth), mean_reads = mean(sequencing_depth),
+            min_reads = min(sequencing_depth), max_reads = max(sequencing_depth), .groups = "drop") %>%
+  arrange(desc(total_reads))
+
+write_csv(site_depth_summary, file.path(out_dir, "site_level_da_depth_summary.csv"))
+
+message("site-level sequencing depth and replication:")
+print(site_depth_summary, n = Inf)
+
+message("range of retained samples per site: ", min(site_depth_summary$n_samples), " - ", max(site_depth_summary$n_samples))
+message("range of pooled reads per site: ", min(site_depth_summary$total_reads), " - ", max(site_depth_summary$total_reads))
 
 # run corncob models with sites as independent observations
 set.seed(666)
