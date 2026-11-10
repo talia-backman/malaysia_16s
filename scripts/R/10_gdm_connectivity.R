@@ -14,6 +14,7 @@ library(janitor)
 library(vegan)
 library(ecodist)
 library(patchwork)
+library(geosphere)
 
 # set paths
 ps_path <- "./output/16s_physeq_cleaned_w_tree.RDS"
@@ -99,13 +100,36 @@ ocean_dist <- readRDS(ocean_dist_path)
 ocean_dist <- as.matrix(ocean_dist)
 ocean_dist_gdm <- ocean_dist[meta_gdm$sample_id, meta_gdm$sample_id]
 
+
+# calculate community dissimilarity and geographic distances in kilometers
 comm_dist_pa <- vegdist(pa_mat_gdm, method = "bray", binary = TRUE)
-geo_dist <- dist(meta_gdm %>% dplyr::select(longitude, latitude))
+
+coords <- meta_gdm %>% dplyr::select(longitude, latitude) %>%
+  mutate(longitude = as.numeric(longitude), latitude = as.numeric(latitude)) %>% as.matrix()
+
+stopifnot(!anyNA(coords), nrow(coords) == nrow(pa_mat_gdm), identical(meta_gdm$sample_id, rownames(pa_mat_gdm)))
+
+geo_dist_km <- geosphere::distm(coords, fun = geosphere::distHaversine) / 1000
+rownames(geo_dist_km) <- colnames(geo_dist_km) <- meta_gdm$sample_id
+
+geo_dist <- as.dist(geo_dist_km)
 ocean_dist_as_dist <- as.dist(ocean_dist_gdm)
 
-mrm_geo <- MRM(comm_dist_pa ~ geo_dist, nperm = 999)
-mrm_ocean <- MRM(comm_dist_pa ~ ocean_dist_as_dist, nperm = 999)
-mrm_geo_ocean <- MRM(comm_dist_pa ~ geo_dist + ocean_dist_as_dist, nperm = 999)
+message("straight-line distance range (km): ", round(min(geo_dist), 1), " - ", round(max(geo_dist), 1))
+message("ocean-connected distance range (km): ", round(min(ocean_dist_as_dist), 1), " - ", round(max(ocean_dist_as_dist), 1))
+
+write_csv(as.data.frame(geo_dist_km) %>% rownames_to_column("sample_id"), file.path(out_dir, "geographic_distance_km.csv"))
+
+
+# compare straight-line and ocean-connected distances
+set.seed(666)
+mrm_geo <- MRM(comm_dist_pa ~ geo_dist, nperm = 9999)
+
+set.seed(666)
+mrm_ocean <- MRM(comm_dist_pa ~ ocean_dist_as_dist, nperm = 9999)
+
+set.seed(666)
+mrm_geo_ocean <- MRM(comm_dist_pa ~ geo_dist + ocean_dist_as_dist, nperm = 9999)
 
 mrm_compare_tbl <- tibble(model = c("Euclidean geographic distance", "Ocean-connected distance", "Both predictors"),
                           r2 = c(mrm_geo$r.squared["R2"], mrm_ocean$r.squared["R2"], mrm_geo_ocean$r.squared["R2"]),

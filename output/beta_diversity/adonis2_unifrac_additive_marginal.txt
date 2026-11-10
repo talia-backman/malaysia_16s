@@ -1,0 +1,14 @@
+Permutation test for adonis under reduced model
+Marginal effects of terms
+Permutation: free
+Number of permutations: 999
+
+adonis2(formula = dist_unif ~ log_read_depth + east_or_west + habitat, data = meta, permutations = 999, by = "margin")
+               Df SumOfSqs      R2      F Pr(>F)    
+log_read_depth  1   1.3641 0.07021 6.5508  0.001 ***
+east_or_west    1   1.5101 0.07773 7.2524  0.001 ***
+habitat         2   2.0893 0.10754 5.0169  0.001 ***
+Residual       69  14.3676 0.73956                  
+Total          73  19.4272 1.00000                  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

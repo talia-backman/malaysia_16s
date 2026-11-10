@@ -70,7 +70,7 @@ write_csv(centroid_distances, file.path(out_dir, "habitat_unifrac_centroid_dista
 seagrass_intermediate_summary <- centroid_distances %>%
   mutate(comparison = paste(habitat_1, habitat_2, sep = "_vs_")) %>%
   dplyr::select(comparison, unifrac_centroid_distance) %>% pivot_wider(names_from = comparison,
-              values_from = unifrac_centroid_distance) %>%
+                                                                       values_from = unifrac_centroid_distance) %>%
   mutate(seagrass_closer_to_coral_than_mangrove_is =
            Coral_vs_Seagrass < Coral_vs_Mangrove,
          seagrass_closer_to_mangrove_than_coral_is =
@@ -138,8 +138,13 @@ adon_eastwest <- adonis2(dist_unif ~ log_read_depth + east_or_west, data = meta,
 adon_habitat <- adonis2(dist_unif ~ log_read_depth + habitat, data = meta, permutations = 999)
 adon_site <- adonis2(dist_unif ~ log_read_depth + site_code, data = meta, permutations = 999)
 adon_protected <- adonis2(dist_unif ~ log_read_depth + protected_area, data = meta, permutations = 999)
+# Original overall-model tests
 adon_additive <- adonis2(dist_unif ~ log_read_depth + east_or_west + habitat, data = meta, permutations = 999)
 adon_interaction <- adonis2(dist_unif ~ log_read_depth + east_or_west * habitat, data = meta, permutations = 999)
+# NEW: marginal tests for independent predictor contributions
+adon_additive_margin <- adonis2(dist_unif ~ log_read_depth + east_or_west + habitat, data = meta, permutations = 999, by = "margin")
+# NEW: sequential tests for comparison
+adon_additive_terms <- adonis2(dist_unif ~ log_read_depth + east_or_west + habitat, data = meta, permutations = 999, by = "terms")
 adon_full_additive <- adonis2(dist_unif ~ log_read_depth + east_or_west + habitat + protected_area, data = meta, permutations = 999)
 adon_spatial_prot <- adonis2(dist_unif ~ log_read_depth + east_or_west * habitat + protected_area, data = meta, permutations = 999)
 adon_prot_siteblock <- adonis2(dist_unif ~ protected_area, data = meta, permutations = 999)
@@ -148,13 +153,18 @@ capture.output(adon_habitat, file = file.path(out_dir, "adonis2_unifrac_habitat.
 capture.output(adon_site, file = file.path(out_dir, "adonis2_unifrac_site_code.txt"))
 capture.output(adon_protected, file = file.path(out_dir, "adonis2_unifrac_protected_area.txt"))
 capture.output(adon_additive, file = file.path(out_dir, "adonis2_unifrac_east_or_west_plus_habitat.txt"))
+# NEW: export marginal and sequential PERMANOVA results
+capture.output(adon_additive_margin, file = file.path(out_dir, "adonis2_unifrac_additive_marginal.txt"))
+capture.output(adon_additive_terms, file = file.path(out_dir, "adonis2_unifrac_additive_sequential.txt"))
 capture.output(adon_interaction, file = file.path(out_dir, "adonis2_unifrac_east_or_west_by_habitat.txt"))
 capture.output(adon_full_additive, file = file.path(out_dir, "adonis2_unifrac_east_or_west_plus_habitat_plus_protected_area.txt"))
 capture.output(adon_spatial_prot, file = file.path(out_dir, "adonis2_unifrac_east_or_west_by_habitat_plus_protected_area.txt"))
 capture.output(adon_prot_siteblock, file = file.path(out_dir, "adonis2_unifrac_protected_area_blocked_by_site.txt"))
 
-# site-level PERMANOVA
-# aggregate samples to site-level mean relative abundance profiles
+# SITE-LEVEL PERMANOVA
+# Treat sampling sites, rather than seawater replicates, as independent observational units.
+
+# Average relative-abundance profiles within each site
 ps_rel <- transform_sample_counts(ps, function(x) x / sum(x))
 
 site_meta <- as(sample_data(ps_rel), "data.frame") %>%
@@ -162,33 +172,127 @@ site_meta <- as(sample_data(ps_rel), "data.frame") %>%
   rownames_to_column("sample_name") %>%
   distinct(site_code, east_or_west, habitat, protected_area)
 
-otu_site <- as.data.frame(as(otu_table(ps_rel), "matrix"))
+otu_site <- as(otu_table(ps_rel), "matrix")
 if (taxa_are_rows(ps_rel)) otu_site <- t(otu_site)
 
-otu_site <- as.data.frame(otu_site) %>% rownames_to_column("sample_name") %>%
-  left_join(as(sample_data(ps_rel), "data.frame") %>% rownames_to_column("sample_name") %>% 
+otu_site <- as.data.frame(otu_site) %>%
+  rownames_to_column("sample_name") %>%
+  left_join(as(sample_data(ps_rel), "data.frame") %>%
+              rownames_to_column("sample_name") %>%
               dplyr::select(sample_name, site_code), by = "sample_name") %>%
   group_by(site_code) %>%
   summarise(across(where(is.numeric), mean), .groups = "drop") %>%
   column_to_rownames("site_code")
 
 site_meta <- site_meta[match(rownames(otu_site), site_meta$site_code), ]
+
 stopifnot(identical(rownames(otu_site), site_meta$site_code))
+stopifnot(nrow(otu_site) == 19)
 
-dist_site <- vegdist(otu_site, method = "bray")
 
-adon_site_coast <- adonis2(dist_site ~ east_or_west, data = site_meta, permutations = 999)
-adon_site_habitat <- adonis2(dist_site ~ habitat, data = site_meta, permutations = 999)
-adon_site_additive <- adonis2(dist_site ~ east_or_west + habitat, data = site_meta, permutations = 999)
+# BRAY-CURTIS: abundance-sensitive community differences
+dist_site_bray <- vegdist(otu_site, method = "bray")
 
-message("site-level PERMANOVA results:")
+adon_site_coast <- adonis2(dist_site_bray ~ east_or_west, data = site_meta, permutations = 999)
+adon_site_habitat <- adonis2(dist_site_bray ~ habitat, data = site_meta, permutations = 999)
+adon_site_additive <- adonis2(dist_site_bray ~ east_or_west + habitat, data = site_meta, permutations = 999)
+adon_site_bray_margin <- adonis2(dist_site_bray ~ east_or_west + habitat, data = site_meta, permutations = 999, by = "margin")
+
+
+# UNWEIGHTED UNIFRAC: phylogenetic community membership
+# Merge replicate counts within sites, then calculate UniFrac.
+# This creates one community per independent sampling site.
+
+ps_site <- merge_samples(ps, "site_code")
+ps_site <- prune_taxa(taxa_sums(ps_site) > 0, ps_site)
+
+# Ensure the phylogenetic tree is retained
+stopifnot(!is.null(phy_tree(ps_site, errorIfNULL = FALSE)))
+
+# Align site metadata with the merged phyloseq object
+site_meta_unif <- site_meta[match(sample_names(ps_site), site_meta$site_code), ]
+
+stopifnot(identical(as.character(site_meta_unif$site_code), as.character(sample_names(ps_site))))
+
+dist_site_unif <- phyloseq::distance(ps_site, method = "unifrac")
+
+adon_site_unif_coast <- adonis2(dist_site_unif ~ east_or_west, data = site_meta_unif, permutations = 999)
+adon_site_unif_habitat <- adonis2(dist_site_unif ~ habitat, data = site_meta_unif, permutations = 999)
+adon_site_unif_additive <- adonis2(dist_site_unif ~ east_or_west + habitat, data = site_meta_unif, permutations = 999)
+adon_site_unif_margin <- adonis2(dist_site_unif ~ east_or_west + habitat, data = site_meta_unif, permutations = 999, by = "margin")
+
+message("site-level Bray-Curtis PERMANOVA:")
 print(adon_site_coast)
 print(adon_site_habitat)
 print(adon_site_additive)
+print(adon_site_bray_margin)
 
-write_csv(bind_rows(tidy_adonis(adon_site_coast, "site_level_coast"),
-    tidy_adonis(adon_site_habitat, "site_level_habitat"), tidy_adonis(adon_site_additive, "site_level_additive")),
+message("site-level unweighted UniFrac PERMANOVA:")
+print(adon_site_unif_coast)
+print(adon_site_unif_habitat)
+print(adon_site_unif_additive)
+print(adon_site_unif_margin)
+
+# Preserve original site-level summary
+write_csv(bind_rows(
+  tidy_adonis(adon_site_coast, "site_level_coast"),
+  tidy_adonis(adon_site_habitat, "site_level_habitat"),
+  tidy_adonis(adon_site_additive, "site_level_additive")), 
   file.path(out_dir, "permanova_site_level_summary.csv"))
+
+# Separate combined site-level comparison
+site_level_comparison <- bind_rows(
+  tidy_adonis(adon_site_bray_margin, "bray_marginal"),
+  tidy_adonis(adon_site_unif_coast, "unifrac_coast"),
+  tidy_adonis(adon_site_unif_habitat, "unifrac_habitat"),
+  tidy_adonis(adon_site_unif_additive, "unifrac_additive"),
+  tidy_adonis(adon_site_unif_margin, "unifrac_marginal"))
+
+write_csv(site_level_comparison, file.path(out_dir, "permanova_site_level_metric_comparison.csv"))
+
+capture.output(adon_site_bray_margin, file = file.path(out_dir, "adonis2_site_bray_marginal.txt"))
+
+capture.output(adon_site_unif_margin, file = file.path(out_dir, "adonis2_site_unifrac_marginal.txt"))
+
+# ============================================================
+# validate site-level permanova
+# ============================================================
+
+# confirm site counts and metadata assignments
+site_design <- site_meta_unif %>%
+  mutate(site_code = as.character(site_code), east_or_west = as.character(east_or_west), habitat = as.character(habitat)) %>%
+  select(site_code, east_or_west, habitat)
+
+stopifnot(nrow(site_design) == 19, n_distinct(site_design$site_code) == 19, !anyNA(site_design))
+
+write_csv(site_design, file.path(out_dir, "validation_site_design.csv"))
+
+message("site-level coast x habitat distribution:")
+print(table(site_design$east_or_west, site_design$habitat))
+
+# confirm each original site has consistent metadata
+original_site_metadata <- meta %>% group_by(site_code) %>%
+  summarise(n_coasts = n_distinct(east_or_west), n_habitats = n_distinct(habitat), n_samples = n(), .groups = "drop")
+
+stopifnot(all(original_site_metadata$n_coasts == 1), all(original_site_metadata$n_habitats == 1))
+
+write_csv(original_site_metadata, file.path(out_dir, "validation_site_metadata.csv"))
+
+# rerun marginal permanova with 9999 permutations to check p-value stability
+set.seed(666)
+unif_perm <- adonis2(dist_site_unif ~ east_or_west + habitat, data = site_meta_unif, permutations = 9999, by = "margin")
+
+set.seed(666)
+bray_perm <- adonis2(dist_site_bray ~ east_or_west + habitat, data = site_meta, permutations = 9999, by = "margin")
+
+capture.output(unif_perm, file = file.path(out_dir, "validation_site_unifrac_9999perm.txt"))
+capture.output(bray_perm, file = file.path(out_dir, "validation_site_bray_9999perm.txt"))
+
+# save coast x habitat site counts
+design_summary <- site_design %>% count(east_or_west, habitat, name = "n_sites")
+write_csv(design_summary, file.path(out_dir, "validation_coast_habitat_counts.csv"))
+
+message("site-level permanova validation complete.")
 
 perm_tbl <- bind_rows(tidy_adonis(adon_eastwest, "east_or_west"), tidy_adonis(adon_habitat, "habitat"),
                       tidy_adonis(adon_site, "site_code"), tidy_adonis(adon_protected, "protected_area"),
@@ -198,6 +302,9 @@ perm_tbl <- bind_rows(tidy_adonis(adon_eastwest, "east_or_west"), tidy_adonis(ad
                       tidy_adonis(adon_prot_siteblock, "protected_area_blocked_by_site"))
 
 write_csv(perm_tbl, file.path(out_dir, "permanova_unifrac_summary.csv"))
+# NEW: export term-specific results in one table
+permanova_term_specific <- bind_rows(tidy_adonis(adon_additive_margin, "additive_marginal"), tidy_adonis(adon_additive_terms, "additive_sequential"))
+write_csv(permanova_term_specific, file.path(out_dir, "permanova_term_specific_summary.csv"))
 
 # betadisper tests
 bd_eastwest <- run_betadisp(dist_unif, meta$east_or_west, "east_or_west")

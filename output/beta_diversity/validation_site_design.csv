@@ -1,0 +1,20 @@
+site_code,east_or_west,habitat
+Cor_ PB_PP,West,Coral
+Cor_Pulau_Intan,West,Coral
+Cor_Pulau_Tinggi,East,Coral
+Cor_Pulau_Ular,East,Coral
+Man_Batu_Pahat,West,Mangrove
+Man_Kuala_Sepetang,West,Mangrove
+Man_Kukup,West,Mangrove
+Man_Merang,East,Mangrove
+Man_Nenasi,East,Mangrove
+Man_Penaga,West,Mangrove
+Man_PPAF,West,Mangrove
+Man_Pulau_Ketam,West,Mangrove
+Man_Pulau_Tinggi,East,Mangrove
+Man_Selat_Nyior,West,Mangrove
+Man_Sungai_Ular,East,Mangrove
+ManSeG_Paka,East,Seagrass
+SeG_Pulau_Kezambo,West,Seagrass
+SeG_PulauTinggi,East,Seagrass
+SeG_Tanjung_Rhu,West,Seagrass

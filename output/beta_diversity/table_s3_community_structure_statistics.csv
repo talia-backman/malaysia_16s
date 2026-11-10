@@ -5,6 +5,6 @@ PERMANOVA,site identity,19,0.7331223379994736,7.807363268053576,0.001
 PERMANOVA,protected-area status,2,0.1376235773982656,5.665318380225166,0.001
 geographic envfit,longitude,NA,0.3074823900597672,NA,0.001
 geographic envfit,latitude,NA,0.10492507625994404,NA,0.016
-betadisper,east-west coast identity,NA,NA,6.231970420968993e-5,0.994
-betadisper,habitat identity,NA,NA,11.549242284933536,0.001
-betadisper,protected-area status,NA,NA,8.222636142131176,0.003
+betadisper,east-west coast identity,NA,NA,6.231970420968993e-5,0.989
+betadisper,habitat identity,NA,NA,11.549242284933536,0.002
+betadisper,protected-area status,NA,NA,8.222636142131176,0.007

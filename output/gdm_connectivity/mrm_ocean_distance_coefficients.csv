@@ -1,8 +1,8 @@
 model,term,comm_dist_pa,pval
-Euclidean geographic distance,Int,0.8073707936149176,1
-Euclidean geographic distance,geo_dist,0.021708552752925124,0.001001001001001001
+Euclidean geographic distance,Int,0.8073877544696252,1
+Euclidean geographic distance,geo_dist,1.952302251342318e-4,1.0001000100010001e-4
 Ocean-connected distance,Int,0.7965022051900115,1
-Ocean-connected distance,ocean_dist_as_dist,0.00015831083832088701,0.001001001001001001
-Both predictors,Int,0.7975374357863761,1
-Both predictors,geo_dist,-0.0022684384275188686,0.6716716716716716
-Both predictors,ocean_dist_as_dist,1.7012370418269823e-4,0.001001001001001001
+Ocean-connected distance,ocean_dist_as_dist,0.00015831083832088701,1.0001000100010001e-4
+Both predictors,Int,0.7975302097261611,1
+Both predictors,geo_dist,-2.0205022735632716e-5,0.6776677667766776
+Both predictors,ocean_dist_as_dist,1.7000074482358794e-4,1.0001000100010001e-4

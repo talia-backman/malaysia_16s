@@ -1,14 +1,14 @@
 $coef
-                    comm_dist_pa        pval
-Int                 0.7975374358 1.000000000
-geo_dist           -0.0022684384 0.671671672
-ocean_dist_as_dist  0.0001701237 0.001001001
+                    comm_dist_pa       pval
+Int                 7.975302e-01 1.00000000
+geo_dist           -2.020502e-05 0.67766777
+ocean_dist_as_dist  1.700007e-04 0.00010001
 
 $r.squared
-         R2        pval 
-0.121008458 0.001001001 
+        R2       pval 
+0.12100432 0.00010001 
 
 $F.test
            F       F.pval 
-1.857133e+02 1.001001e-03 
+185.70606512   0.00010001 
 
