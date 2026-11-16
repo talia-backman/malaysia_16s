@@ -80,11 +80,8 @@ direct_contrast_summary <- direct_contrast_df %>% group_by(contrast_group) %>%
   summarise(n_pairs = n(), mean_distance = mean(distance, na.rm = TRUE), median_distance = median(distance, na.rm = TRUE),
             sd_distance = sd(distance, na.rm = TRUE), .groups = "drop")
 
-wilcox_direct_contrast <- wilcox.test(distance ~ contrast_group, data = direct_contrast_df)
-
 write_csv(direct_contrast_df, file.path(out_dir, "direct_habitat_vs_geography_contrast_distances.csv"))
 write_csv(direct_contrast_summary, file.path(out_dir, "direct_habitat_vs_geography_contrast_summary.csv"))
-capture.output(wilcox_direct_contrast, file = file.path(out_dir, "direct_habitat_vs_geography_wilcox_test.txt"))
 
 # repeat after removing within-site comparisons
 pairwise_df_no_site <- pairwise_df %>% filter(!same_site)
@@ -102,11 +99,8 @@ direct_contrast_summary_no_site <- direct_contrast_no_site %>% group_by(contrast
   summarise(n_pairs = n(), mean_distance = mean(distance, na.rm = TRUE), median_distance = median(distance, na.rm = TRUE),
             sd_distance = sd(distance, na.rm = TRUE), .groups = "drop")
 
-wilcox_direct_contrast_no_site <- wilcox.test(distance ~ contrast_group, data = direct_contrast_no_site)
-
 write_csv(pairwise_summary_no_site, file.path(out_dir, "pairwise_habitat_geography_summary_no_site.csv"))
 write_csv(direct_contrast_summary_no_site, file.path(out_dir, "direct_habitat_vs_geography_summary_no_site.csv"))
-capture.output(wilcox_direct_contrast_no_site, file = file.path(out_dir, "direct_habitat_vs_geography_wilcox_no_site.txt"))
 
 # site-level robustness check
 ps_site <- merge_samples(ps, "site_code")
@@ -140,12 +134,9 @@ site_contrast <- site_df %>% filter(pair_category %in% c("Different habitat / sa
 site_contrast_summary <- site_contrast %>% group_by(contrast_group) %>%
   summarise(n_pairs = n(), mean_distance = mean(distance), median_distance = median(distance), sd_distance = sd(distance), .groups = "drop")
 
-site_wilcox <- wilcox.test(distance ~ contrast_group, data = site_contrast)
-
 write_csv(site_df, file.path(out_dir, "site_level_habitat_geography_distances.csv"))
 write_csv(site_summary, file.path(out_dir, "site_level_habitat_geography_summary.csv"))
 write_csv(site_contrast_summary, file.path(out_dir, "site_level_habitat_vs_geography_contrast_summary.csv"))
-capture.output(site_wilcox, file = file.path(out_dir, "site_level_habitat_vs_geography_wilcox.txt"))
 
 # MRM to test habitat vs coast effect on community distances
 # accounts for non-independence of pairwise distances

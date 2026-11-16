@@ -1,7 +1,0 @@
-
-	Wilcoxon rank sum test with continuity correction
-
-data:  distance by contrast_group
-W = 158646, p-value = 8.742e-15
-alternative hypothesis: true location shift is not equal to 0
-

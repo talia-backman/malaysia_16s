@@ -1,0 +1,9 @@
+Permutation test for adonis under reduced model
+Permutation: free
+Number of permutations: 9999
+
+adonis2(formula = site_dist_nestedness ~ habitat, data = site_meta, permutations = 9999)
+         Df SumOfSqs       R2       F Pr(>F)
+Model     2 -0.01865 -0.05963 -0.4502 0.8307
+Residual 16  0.33148  1.05963               
+Total    18  0.31283  1.00000               

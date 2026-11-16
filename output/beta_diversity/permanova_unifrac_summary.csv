@@ -23,6 +23,3 @@ Total,73,19.427184964099588,1,NA,NA,east_or_west_plus_habitat_plus_protected_are
 Model,7,6.53356081338118,0.33631021815331735,4.777721460761466,0.001,east_or_west_by_habitat_plus_protected_area
 Residual,66,12.893624150718413,0.6636897818466828,NA,NA,east_or_west_by_habitat_plus_protected_area
 Total,73,19.427184964099588,1,NA,NA,east_or_west_by_habitat_plus_protected_area
-Model,1,1.3444733421856412,0.06920577246112378,5.353294498157805,0.001,protected_area_blocked_by_site
-Residual,72,18.082711621913955,0.9307942275388766,NA,NA,protected_area_blocked_by_site
-Total,73,19.427184964099588,1,NA,NA,protected_area_blocked_by_site

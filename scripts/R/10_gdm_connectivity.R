@@ -131,7 +131,7 @@ mrm_ocean <- MRM(comm_dist_pa ~ ocean_dist_as_dist, nperm = 9999)
 set.seed(666)
 mrm_geo_ocean <- MRM(comm_dist_pa ~ geo_dist + ocean_dist_as_dist, nperm = 9999)
 
-mrm_compare_tbl <- tibble(model = c("Euclidean geographic distance", "Ocean-connected distance", "Both predictors"),
+mrm_compare_tbl <- tibble(model = c("Straight-line geographic distance", "Ocean-connected distance", "Both predictors"),
                           r2 = c(mrm_geo$r.squared["R2"], mrm_ocean$r.squared["R2"], mrm_geo_ocean$r.squared["R2"]),
                           p_value = c(mrm_geo$r.squared["pval"], mrm_ocean$r.squared["pval"], mrm_geo_ocean$r.squared["pval"])) %>%
   mutate(model = factor(model, levels = model))
@@ -155,7 +155,7 @@ write_csv(ocean_plot_tbl, file.path(out_dir, "ocean_connected_distance_decay.csv
 
 # build figure 4 panels
 gdm_importance_plot_tbl <- gdm_importance_tbl %>% mutate(predictor = recode(predictor,
-                                                                            Geographic = "Euclidean geographic distance", coast_east = "East-west coast",
+                                                                            Geographic = "Straight-line geographic distance", coast_east = "East-west coast",
                                                                             habitat_mangrove = "Mangrove habitat", habitat_coral = "Coral habitat", protected_yes = "Protected area"),
                                                          sig_label = case_when(p_value < 0.001 ~ "***", p_value < 0.01 ~ "**", p_value < 0.05 ~ "*", TRUE ~ "ns"),
                                                          predictor = factor(predictor, levels = predictor[order(importance)]))

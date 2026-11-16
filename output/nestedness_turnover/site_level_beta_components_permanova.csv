@@ -1,0 +1,10 @@
+term,df,sum_of_sqs,r2,statistic,p.value,model
+Model,2,0.739694788950673,0.11196912330112345,1.008695767132351,0.4354,site_level_total_sorensen_habitat
+Residual,16,5.866544209289757,0.8880308766988766,NA,NA,site_level_total_sorensen_habitat
+Total,18,6.60623899824043,1,NA,NA,site_level_total_sorensen_habitat
+Model,2,0.8115942670862372,0.16193342662636048,1.5457810324017298,0.1027,site_level_turnover_habitat
+Residual,16,4.200306512107925,0.8380665733736392,NA,NA,site_level_turnover_habitat
+Total,18,5.011900779194164,1,NA,NA,site_level_turnover_habitat
+Model,2,-0.018653882323542776,-0.059630088576479195,-0.4501955104471374,0.8307,site_level_nestedness_habitat
+Residual,16,0.33148055705869844,1.0596300885764793,NA,NA,site_level_nestedness_habitat
+Total,18,0.31282667473515563,1,NA,NA,site_level_nestedness_habitat

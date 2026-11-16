@@ -147,7 +147,6 @@ adon_additive_margin <- adonis2(dist_unif ~ log_read_depth + east_or_west + habi
 adon_additive_terms <- adonis2(dist_unif ~ log_read_depth + east_or_west + habitat, data = meta, permutations = 999, by = "terms")
 adon_full_additive <- adonis2(dist_unif ~ log_read_depth + east_or_west + habitat + protected_area, data = meta, permutations = 999)
 adon_spatial_prot <- adonis2(dist_unif ~ log_read_depth + east_or_west * habitat + protected_area, data = meta, permutations = 999)
-adon_prot_siteblock <- adonis2(dist_unif ~ protected_area, data = meta, permutations = 999)
 capture.output(adon_eastwest, file = file.path(out_dir, "adonis2_unifrac_east_or_west.txt"))
 capture.output(adon_habitat, file = file.path(out_dir, "adonis2_unifrac_habitat.txt"))
 capture.output(adon_site, file = file.path(out_dir, "adonis2_unifrac_site_code.txt"))
@@ -159,7 +158,6 @@ capture.output(adon_additive_terms, file = file.path(out_dir, "adonis2_unifrac_a
 capture.output(adon_interaction, file = file.path(out_dir, "adonis2_unifrac_east_or_west_by_habitat.txt"))
 capture.output(adon_full_additive, file = file.path(out_dir, "adonis2_unifrac_east_or_west_plus_habitat_plus_protected_area.txt"))
 capture.output(adon_spatial_prot, file = file.path(out_dir, "adonis2_unifrac_east_or_west_by_habitat_plus_protected_area.txt"))
-capture.output(adon_prot_siteblock, file = file.path(out_dir, "adonis2_unifrac_protected_area_blocked_by_site.txt"))
 
 # SITE-LEVEL PERMANOVA
 # Treat sampling sites, rather than seawater replicates, as independent observational units.
@@ -298,8 +296,7 @@ perm_tbl <- bind_rows(tidy_adonis(adon_eastwest, "east_or_west"), tidy_adonis(ad
                       tidy_adonis(adon_site, "site_code"), tidy_adonis(adon_protected, "protected_area"),
                       tidy_adonis(adon_additive, "east_or_west_plus_habitat"), tidy_adonis(adon_interaction, "east_or_west_by_habitat"),
                       tidy_adonis(adon_full_additive, "east_or_west_plus_habitat_plus_protected_area"),
-                      tidy_adonis(adon_spatial_prot, "east_or_west_by_habitat_plus_protected_area"),
-                      tidy_adonis(adon_prot_siteblock, "protected_area_blocked_by_site"))
+                      tidy_adonis(adon_spatial_prot, "east_or_west_by_habitat_plus_protected_area"))
 
 write_csv(perm_tbl, file.path(out_dir, "permanova_unifrac_summary.csv"))
 # NEW: export term-specific results in one table

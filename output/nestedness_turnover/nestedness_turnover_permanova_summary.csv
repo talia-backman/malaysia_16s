@@ -8,12 +8,6 @@ Total,73,0.4749531979516466,1,NA,NA,nestedness_protected_area
 Model,1,1.2781861876971101,0.04538280288125302,3.422902727200461,0.001,total_sorensen_protected_area
 Residual,72,26.886363080922653,0.9546171971187466,NA,NA,total_sorensen_protected_area
 Total,73,28.164549268619773,1,NA,NA,total_sorensen_protected_area
-Model,1,1.4309358731738526,0.059572473004854784,4.56092355149839,1,turnover_protected_area_blocked_by_site
-Residual,72,22.589149260059408,0.9404275269951449,NA,NA,turnover_protected_area_blocked_by_site
-Total,73,24.02008513323327,1,NA,NA,turnover_protected_area_blocked_by_site
-Model,1,-0.052434697058579144,-0.11039971366592914,-7.1584847205196045,1,nestedness_protected_area_blocked_by_site
-Residual,72,0.5273878950102258,1.1103997136659292,NA,NA,nestedness_protected_area_blocked_by_site
-Total,73,0.4749531979516466,1,NA,NA,nestedness_protected_area_blocked_by_site
 Model,1,2.732939973196456,0.11377728088961953,9.243685641771826,0.001,turnover_east_or_west
 Residual,72,21.2871451600368,0.8862227191103799,NA,NA,turnover_east_or_west
 Total,73,24.02008513323327,1,NA,NA,turnover_east_or_west
