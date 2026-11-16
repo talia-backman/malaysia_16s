@@ -75,7 +75,7 @@ nestedness_tbl <- bind_rows(
   tidy_adonis(adon_nestedness_habitat, "nestedness_habitat")
 )
 
-write_csv(nestedness_tbl, file.path(out_dir, "nestedness_turnover_permanova_summary.csv"))
+write_csv(nestedness_tbl, file.path(out_dir, "nestedness_turnover_sample_level_summary.csv"))
 
 # pairwise turnover and nestedness summaries among focal habitats
 pairwise_beta_df <- tibble(
@@ -152,6 +152,16 @@ site_beta_permanova <- bind_rows(tidy_adonis(adon_site_total_sor, "site_level_to
   tidy_adonis(adon_site_nestedness, "site_level_nestedness_habitat"))
 
 write_csv(site_beta_permanova, file.path(out_dir, "site_level_beta_components_permanova.csv"))
+
+site_beta_final_summary <- site_beta_permanova %>%
+  filter(term != "Residual", term != "Total") %>%
+  transmute(metric = recode(model,
+                            site_level_total_sorensen_habitat = "Total Sørensen dissimilarity",
+                            site_level_turnover_habitat = "Turnover",
+                            site_level_nestedness_habitat = "Nestedness"),
+            df, r2, statistic, p_value = p.value)
+
+write_csv(site_beta_final_summary, file.path(out_dir, "table_s4d_site_level_beta_components.csv"))
 
 capture.output(adon_site_total_sor, file = file.path(out_dir, "adonis2_site_total_sorensen_habitat.txt"))
 capture.output(adon_site_turnover, file = file.path(out_dir, "adonis2_site_turnover_habitat.txt"))
