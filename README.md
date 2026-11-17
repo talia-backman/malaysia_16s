@@ -6,14 +6,29 @@ Analysis of PacBio HiFi full-length 16S rRNA sequencing data from coral reef, ma
 
 Final analytical dataset:
 
-- 107 environmental samples
-- 1,806 ASVs
+- 74 environmental samples retained after quality filtering and a minimum 500-read sequencing-depth threshold
+- 1,795 ASVs
 - Coral reef, mangrove, and seagrass habitats
 - East and west coasts of Peninsular Malaysia
 - Environmental data from Bio-ORACLE v2.2
 - Sample metadata in `MetaData_eDNA_Malaysia_withQC.tsv`
 
+The initial post-quality-control dataset contained 107 environmental samples and 1,795 ASVs. Three samples with zero retained reads and 33 samples with fewer than 500 reads were excluded from downstream analyses.
+
 Raw sequence data are available through NCBI BioProject `PRJNA1516003`.
+
+## Analysis updates in v1.0.2
+
+This version contains the revised analysis workflow used for the Environmental Microbiology manuscript. Major updates from v1.0.1 include:
+
+- Applied a minimum 500-read sequencing-depth threshold, resulting in 74 retained environmental samples.
+- Included log-transformed sequencing depth as a covariate in sample-level PERMANOVA models.
+- Added site-level PERMANOVA using 19 sampling sites as the units of replication to address non-independence among replicate samples.
+- Replaced pairwise Wilcoxon inference for habitat-versus-coast comparisons with multiple regression on distance matrices (MRM).
+- Added site-level sensitivity analyses for differential-abundance results.
+- Added site-level inference for Sørensen dissimilarity, turnover, and nestedness.
+- Calculated straight-line geographic distances as Haversine distances in kilometers.
+- Removed obsolete pairwise Wilcoxon and site-blocked protected-area analyses from the final workflow.
 
 ## Repository structure
 
@@ -22,7 +37,6 @@ Raw sequence data are available through NCBI BioProject `PRJNA1516003`.
 - `scripts/R/` – R processing and analysis scripts
 - `output/` – intermediate data and statistical outputs
 - `figures/` – main and supplemental manuscript figures
-- `manuscript/` – manuscript-related files
 
 ## Analysis workflow
 

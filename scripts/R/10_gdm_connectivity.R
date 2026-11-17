@@ -143,7 +143,7 @@ mrm_coef_tbl <- bind_rows(as.data.frame(mrm_geo$coef) %>% rownames_to_column("te
 write_csv(mrm_compare_tbl, file.path(out_dir, "mrm_ocean_distance_comparison.csv"))
 write_csv(mrm_coef_tbl, file.path(out_dir, "mrm_ocean_distance_coefficients.csv"))
 
-capture.output(mrm_geo, file = file.path(out_dir, "mrm_euclidean_geography.txt"))
+capture.output(mrm_geo, file = file.path(out_dir, "mrm_straight_line_geography.txt"))
 capture.output(mrm_ocean, file = file.path(out_dir, "mrm_ocean_least_cost.txt"))
 capture.output(mrm_geo_ocean, file = file.path(out_dir, "mrm_both_distance_predictors.txt"))
 
